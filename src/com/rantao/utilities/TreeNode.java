@@ -1,4 +1,4 @@
-package CtCILibrary;
+package com.rantao.utilities;
 
 /* One node of a binary tree. The data element stored is a single 
  * character.

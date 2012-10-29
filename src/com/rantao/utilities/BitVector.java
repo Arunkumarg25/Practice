@@ -1,4 +1,4 @@
-package CtCILibrary;
+package com.rantao.utilities;
 
 public class BitVector {
 	private static int DATA_SIZE = 32;

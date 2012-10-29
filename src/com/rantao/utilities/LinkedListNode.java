@@ -1,4 +1,4 @@
-package CtCILibrary;
+package com.rantao.utilities;
 
 public class LinkedListNode {
 	public LinkedListNode next;
