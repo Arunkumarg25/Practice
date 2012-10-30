@@ -1,3 +1,4 @@
+package com.rantao.practice;
 
 public class IsPermutation {
 	

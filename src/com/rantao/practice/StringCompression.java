@@ -1,3 +1,4 @@
+package com.rantao.practice;
 
 public class StringCompression {
 	public static String strCompression(String s){
