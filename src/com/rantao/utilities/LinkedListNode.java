@@ -36,6 +36,7 @@ public class LinkedListNode {
 		}
 	}
 	
+	@Override
 	public LinkedListNode clone() {
 		LinkedListNode next2 = null;
 		if (next != null) {

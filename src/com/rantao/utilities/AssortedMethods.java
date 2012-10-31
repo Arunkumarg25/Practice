@@ -176,7 +176,7 @@ public class AssortedMethods {
 			boolean done = false;
 			int i = 1 ;
 			while (!done) {
-				TreeNode r = (TreeNode) queue.element();
+				TreeNode r = queue.element();
 				if (r.left == null) {
 					r.left = new TreeNode(array[i]);
 					i++;

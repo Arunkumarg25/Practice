@@ -8,23 +8,21 @@ public class RemoveDuplicates {
 	
 	public static void removeDup(LinkedListNode head){
 		LinkedListNode pointer;
-		LinkedListNode previous;
+		LinkedListNode current;
 		if(head == null || head.next == null){
 			return;
 		}
-		pointer = head.next;
-		previous = head;
-		while(head !=null){
-			while(pointer !=null){
-				if(pointer.data == head.data){
-					previous.next = pointer.next;
-					pointer = pointer.next;					
+		current = head;
+		while(current !=null){
+			pointer = current;
+			while(pointer.next !=null){
+				if(pointer.next.data == current.data){
+					pointer.next = pointer.next.next;					
 				} else {
 					pointer = pointer.next;
-					previous = previous.next;
 				}
 			}
-			head = head.next;
+			current = current.next;			
 		}
 	}
 	
@@ -34,7 +32,7 @@ public class RemoveDuplicates {
 		LinkedListNode previous = head;
 		HashMap<Integer, Boolean> map = new HashMap<Integer, Boolean>();
 		while(head != null){
-			if(map.get(head.data)){
+			if(map.containsKey(head.data)){
 				previous.next = head.next;
 			}else{
 				map.put(head.data, true);
@@ -50,6 +48,10 @@ public class RemoveDuplicates {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		LinkedListNode head = com.rantao.utilities.AssortedMethods.randomLinkedList(10, 0, 2);
+		//System.out.println(head.printForward());
+		removeDup(head);
+		System.out.println(head.printForward());
 
 	}
 
