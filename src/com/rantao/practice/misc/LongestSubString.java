@@ -1,4 +1,4 @@
-package com.rantao.practice;
+package com.rantao.practice.misc;
 public class LongestSubString {
 
 	public static String longestSubstring(String str1, String str2) {

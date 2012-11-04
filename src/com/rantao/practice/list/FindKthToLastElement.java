@@ -1,4 +1,4 @@
-package com.rantao.practice;
+package com.rantao.practice.list;
 import com.rantao.utilities.LinkedListNode;
 
 public class FindKthToLastElement {

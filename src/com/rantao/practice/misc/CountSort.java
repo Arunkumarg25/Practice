@@ -1,4 +1,4 @@
-package com.rantao.practice;
+package com.rantao.practice.misc;
 
 public class CountSort {
 	public static int[] sort(int[] input){

@@ -1,4 +1,4 @@
-package com.rantao.practice;
+package com.rantao.practice.misc;
 import java.util.HashSet;
 
 
