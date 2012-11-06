@@ -2,26 +2,27 @@ package com.rantao.practice.tree;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Queue;
-import java.util.Stack;
 
 public class PrintPaths {
-	ArrayList<TreeNode> path = new ArrayList<TreeNode>();
-	ArrayList<ArrayList<TreeNode>> paths = new ArrayList<ArrayList<TreeNode>>();
+	//ArrayList<TreeNode> path = new ArrayList<TreeNode>();
+	ArrayList<int[]> paths = new ArrayList<int[]>();
 	HashSet<TreeNode> hs = new HashSet<TreeNode>();
 	
-	public ArrayList<ArrayList<TreeNode>> print(TreeNode root, int level){
+	public void print(TreeNode root, int[] path, int level){
 		if(root == null){
-			paths.add(path);
-			path = new ArrayList<TreeNode>();			
+			return;
 		}
-		else {
-			path.add(root);
-			print(root.left, level+1);
-			print(root.right, level+1);
-		}		
-		return paths;
+		path[level] = root.data;
+		level++;
+		if(root.left == null && root.right == null) {
+			for(int i = 0; i < path.length; i++){
+				System.out.print(path[i]+"->");
+			}
+			System.out.print("\n");
+		}else {			
+			print(root.left, path, level);
+			print(root.right, path,	level);
+		}	
 	}
 	
 	public static void main(String[] args) {
@@ -40,15 +41,8 @@ public class PrintPaths {
 		b.setRightChild(d);
 		a.setRightChild(e);
 		b.setLeftChild(f);
-		ArrayList<ArrayList<TreeNode>> paths = pp.print(root, 0);
-		Iterator<ArrayList<TreeNode>> it =paths.iterator();
-		while(it.hasNext()){
-			ArrayList<TreeNode> temp = it.next();
-			for(int i = 0; i < temp.size(); i ++){
-				System.out.print(temp.get(i).data + "->");
-			}
-			System.out.print("\n");
-		}
+		int[] path = new int[3];
+		pp.print(root, path, 0);
 		
 	}
 
