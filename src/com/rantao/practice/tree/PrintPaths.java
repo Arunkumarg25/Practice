@@ -24,10 +24,6 @@ public class PrintPaths {
 		return paths;
 	}
 	
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		
 		PrintPaths pp = new PrintPaths();
