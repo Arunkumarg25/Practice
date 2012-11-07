@@ -3,9 +3,7 @@ package com.rantao.practice.tree;
 import java.util.ArrayList;
 
 public class PrintPaths {
-	//ArrayList<TreeNode> path = new ArrayList<TreeNode>();
 	ArrayList<int[]> paths = new ArrayList<int[]>();
-	//HashSet<TreeNode> hs = new HashSet<TreeNode>();
 	
 	public void print(TreeNode root, int[] path, int level){
 		if(root == null){
