@@ -3,8 +3,6 @@ package com.rantao.practice.tree;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Queue;
-import java.util.Stack;
 
 public class PrintPaths {
 	ArrayList<TreeNode> path = new ArrayList<TreeNode>();
