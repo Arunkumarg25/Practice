@@ -32,6 +32,8 @@ public class MyTreeNode {
 		else 
 			return Math.max(checkHeight(root.left), checkHeight(root.right)) + 1;		
 	}
+	
+	
 	/**
 	 * @param args
 	 */
