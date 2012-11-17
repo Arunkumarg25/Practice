@@ -22,5 +22,4 @@ public class FindTheLoopStartNode {
 		}
 		return slow;		
 	}
-
 }
