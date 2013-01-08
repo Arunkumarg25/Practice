@@ -10,17 +10,13 @@ public class ReverseString {
 		}
 		System.out.println(results);
 		return results;
-	}
-	
+	}	
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String s = "abcdefg";
 		reverse(s);
-
 	}
-
 }
