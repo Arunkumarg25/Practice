@@ -19,5 +19,4 @@ public class ClimbStairs {
 		int i = cs.climbStairs(5);
 		System.out.println(i);
 	}
-
 }
