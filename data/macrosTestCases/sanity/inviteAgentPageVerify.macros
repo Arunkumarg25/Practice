@@ -1,0 +1,29 @@
+testcase(testfamily=gui, testgroup=agent, testcase=verify_invite_agent, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+workflow(driver=selenium, wfid=inviteAgentPageVerify, stoptype=abort, profile=webdriver)
+#1. login as agent
+#2. hover on menu item agents
+#3. click on sub-menu "Invite Agent"
+#4. leave email address field blank and click on send invite
+#5. verify correct error message
+#6. input 1 email address and click on send invite
+#7. verify correct message
+#8. input 2 email address and click on send invite
+#9. verify correct message
+config(path=./data/selenium_config/page_log_in.xml)
+login(url=https://www.t5a.l1.cisco.com, username=jearnold1, password=Test1234)
+verify(type=page, value=Overview)
+hover(type=menu, value=Agents)
+click(type=submenu, value=Invite Agent)
+verify(type=page, value=Invite Agent)
+config(path=./data/selenium_config/page_invite_agent.xml)
+input(type=text field, label=Email Address(es), value=)
+click(type=button, value=Send Invite)
+verify(type=error message, value=Invalid email address(es))
+input(type=text field, label=Email Address(es), value=test1@rcdn4test-301.cisco.com)
+click(type=button, value=Send Invite)
+waitfor(type=status message, value=Email Invitations Sent: 1, time=5)
+verify(type=text, label=status message, value=Email Invitations Sent: 1)
+input(type=text field, label=Email Address(es), value=test1@rcdn4test-301.cisco.com, test2@rcdn4test-301.cisco.com)
+click(type=button, value=Send Invite)
+waitfor(type=status message, value=Email Invitations Sent: 2, time=5)
+verify(type=text, label=status message, value=Email Invitations Sent: 2)

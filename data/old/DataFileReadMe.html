@@ -1,0 +1,326 @@
+<html>
+<title>Data File Read me</title>
+<head>
+</head>
+<body style="min-width:900px">
+<div id="top" style="position:fixed;bottom:20px;right:20px;"><a href="#">Back to top</a></div>
+<h1>Data File Read Me</h1>
+<h2><a href="#testcase">Columns used by each test case</a></h2>
+<h2><a href="#columns">Each column explained</a></h2>
+
+<br>
+<br>
+<br>
+<a name="testcase"/>
+<h2>Columns used by each test case</h2>
+<p>
+<a href="#register">register</a> | <a href="#subregister">subregister</a> | <a href="#approve">approve</a> | 
+<a href="#login">login</a> | <a href="#changefp">changefp</a> | <a href="#sendfeedback">sendfeedback</a> | 
+<a href="#addcustomers">addcustomers</a> | <a href="#editcustomers">editcustomers</a> | <a href="#delcustomers">delcustomers</a> <br>
+<a href="#addcontacts">addcontacts</a> | <a href="#addrules">addrules</a> | <a href="#editcontacts">editcontacts</a> | 
+<a href="#editrules">editrules</a> | <a href="#delcontacts">delcontacts</a> | <a href="#delrules">delrules</a> | 
+<a href="#addreports">addreports</a> | <a href="#delschedulefrequency">delschedulefrequency</a> | <a href="#delallschedule">delallschedule</a>
+</p>
+<a name="register"></a>
+<h3>register - registers agents</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","AgentID","AgentPassword","FirstName","LastName","Company","JobRole","JobLevel",
+								"Timezone","TimezoneCity","Address1","Address2","Email","EmailDomain","City","State","Zip","Phone");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="subregister"></a>
+<h3>subregister - registers subagents</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","AgentID","AgentPassword","FirstName","LastName","Company","JobRole","JobLevel",
+								"Timezone","TimezoneCity","Address1","Address2","Email","EmailDomain","City","State","Zip","Phone");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="approve"></a>
+<h3>approve - approves agents or subagents</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","AgentID");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="login"></a>
+<h3>login - logs in as agent or subagent and accept terms & conditions if apply</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","AgentID","AgentPassword");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="changefp"></a>
+<h3>changefp - (admin only) changes the feature pack of customers one by one</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","FeaturePack");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="sendfeedback"></a>
+<h3>sendfeedback - sends feedback on every page</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","FeedbackCategory","FeedbackMessage");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="addcustomers"></a>
+<h3>addcustomers - adds customers as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName","CustomerImage","DevicePassword","StreetAddress","Industry","City","State","Zip",
+								"Country","AddContact","FirstName","LastName","Email","EmailDomain","AlternateEmail","AlternateEmailDomain","SMSEmail","SMSEmailDoamin",
+								"AlternateSMSEmail","AlternateSMSEmailDomain");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="editcustomers"></a>
+<h3>editcustomers - edits existing customers as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName","Edit-CustomerName","Edit-CustomerImage","Edit-StreetAddress",
+								"Edit-Industry","Edit-City","Edit-State","Edit-Zip","Edit-Country","Edit-Timezone","Edit-TimezoneCity");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="delcustomers"></a>
+<h3>delcustomers - deletes customers as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="addcontacts"></a>
+<h3>addcontacts - adds delivery contacts as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName","Email","EmailDomain","AlternateEmail","AlternateEmailDomain",
+								"SMSEmail","SMSEmailDomain","AlternateSMSEmail","AlternateSMSEmailDomain","FistName","LastName");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="addrules"></a>
+<h3>addrules - adds delivery rules as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName","Email","EmailDomain","FistName","LastName","Notifications-Severity");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="editcontacts"></a>
+<h3>editcontacts - edits delivery contacts as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName","Edit-Email","Edit-EmailDomain",
+								"Edit-AlternateEmail","Edit-AlternateEmailDomain","Edit-SMSEmail","Edit-SMSEmailDomain",
+								"Edit-AlternateSMSEmail","Edit-AlternateSMSEmailDomain","Edit-FirstName","Edit-LastName");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="editrules"></a>
+<h3>editrules - edits delivery rules as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName","Edit-Email","Edit-EmailDomain",
+								"Edit-FirstName","Edit-LastName","Edit-Notifications-Severity");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="delcontacts"></a>
+<h3>delcontacts - deletes delivery contacts for customers as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="delrules"></a>
+<h3>delrules - deletes delivery rules for customers as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","CustomerName");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="addreports"></a>
+<h3>addreports - adds one time or scheduled reports as agent or subagent</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","Reports-Customer","Reports-ReportType","Reports-ReportFormat","Reports-CoverPageNotes",
+								"Reports-ConnectionSummary","Reports-CustomerAddress","Reports-CustomerContacts","Reports-DeviceCategories",
+								"Reports-DeviceSummary","Reports-DeviceDetails","Reports-MarketShare","Reports-Severity","Reports-EmergencyEvents",
+								"Reports-AlertEvents","Reports-CriticalEvents","Reports-ErrorEvents","Reports-NoticeEvents","Reports-InformationalEvents",
+								"Reports-CustomerInformation","Reports-DeviceStatus","Reports-InternetConnectivity","Reports-MonitoredNetwork",
+								"Reports-NetworkEvents","Reports-ProductWarranties","Reports-EndOfSaleAndLife","Reports-ServiceContracts",
+								"Reports-SecurityAdvisories","Reports-TransmittedNotificationsEvents","Reports-InhibitedNotificationEvents",
+								"Reports-RetransmittedNotificationEvents","Reports-Frequency","Reports-StartDate","Reports-EndDate","Reports-ScheduleStartDate",
+								"Reports-ScheduleEndDate","Reports-Notify","Reports-ReportRecipient","Reports-RecipientEmail","Reports-RecipientEmailDomain",
+								"Reports-EmailMessage");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="delschedulefrequency"></a>
+<h3>delschedulefrequency - deletes scheduled reports based on the frequency of the reports</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword","Reports-RemoveFrequency");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<a name="delallschedule"></a>
+<h3>delallschedule - deletes all scheduled reports</h3>
+<ol>
+	<script type="text/javascript">
+		var columns = new Array("Brand","BrandLogin","BrandPassword");
+		for(var i = 0; i < columns.length; i++){
+			document.write("<li>"+columns[i]+"</li>");
+		}
+	</script>
+</ol>
+<br>
+<br>
+<a name="columns"/>
+<h2>Each column explained</h2>
+<h3>Register</h3>
+<table id = "demo" border = "1">
+	<tr>
+		<th>Column Title</th>
+		<th>Description</th>
+		<th>Format/Example</th>
+	</tr>
+<script type="text/javascript">
+	var x = 0;
+ 	var info=new Array("Brand","The Brand URL used to run the test cases","https://www.t5.l1.cisco.com",
+ 						"Brandlogin","The username used to login to the portal","1-qa.t5.l1.cisco.com",
+ 						"BrandPassword","The password used to login to the portal","123test",
+						"AgentID","The Agent ID to use to register","var1",
+						"AgentPassword","The Agent's password that is used to register","Test1234",
+						"FirstName","Agent's first name","Bob",
+						"LastName","Agent's last name","Smith",
+						"Company","Agent's company","Cisco PSP",
+						"JobRole","Agent's Job role (selection box)","Account Manager",
+						"JobLevel","Agent's job level (selection box)","Administrator",
+						"Timezone","Agent's Timezone","Etc",
+						"TimezoneCity","Agent's Timezone city","UCT",
+						"Address1","Agent's address, first line","2200 E. George Bush Hwy.",
+						"Address2","Agent's address, second line","Apt 123",
+						"City","Agent's City","Richardson",
+						"State","Agent's State","Texas",
+						"Zip","Agent's postal code","75080",
+						"Email","Agent's email before @ sign","var1",
+						"EmailDomain","Agent's email including and after @ sign","@rcdn4test-301.cisco.com",
+						"Phone","Agent's phone number","1231231234");
+	for(var i=0; i < (info.length/3); i++)
+	{
+		document.write("<tr><td>" + info[x] + "</td><td>" + info[x+1] + "</td><td>" + info[x+2] + "</td></tr>");
+		x+=3;
+	}
+</script>
+</table>
+<h3>Everything else</h3>
+<table id = "demo" border = "1">
+	<tr>
+		<th>Column Title</th>
+		<th>Description</th>
+		<th>Format/Example</th>
+	</tr>
+<script type="text/javascript">
+	var x = 0;
+ 	var info=new Array("Brand","The Brand URL used to run the test cases","https://www.t5.l1.cisco.com",
+ 						"Brandlogin","The username used to login to the portal","1-qa.t5.l1.cisco.com",
+ 						"BrandPassword","The password used to login to the portal","123test",
+ 						"FeaturePack","The feature pack to change to (admin login only)","OnPlus-Alpha",
+ 						"DeviceIP","The IP address of the device to activate","192.168.75.105",
+ 						"DeviceMAC","The Mac address of the device to activate","f0:ad:4e:00:54:76",
+ 						"DevicePassword","The device password to use to login to device after customer is created","123123",
+ 						"CustomerName","The business name of the customer","Cisco System INC",
+						"CustomerImage","The path+name of the image for the customer to add","cisco_image.jpg",
+ 						"Email","The first part of the customer's email before @ sign","c0",
+ 						"EmailDomain","The second part of the customer's email, after and including the @ sign","@www.rcdn4test-301.cisco.com",
+						"AlternateEmail","The first part of the customer's alternate email address before the @ sign","alt0",
+						"AlternateEmailDomain","The second part of the customer's alternate email address, including and after the @ sign","@cisco.com",
+						"SMSEmail","The first part of the customer's SMS email address, before the @ sign","9995551212",
+						"SMSEmailDomain","The second part of the customer's SMS email address, including and after the @ sign","@serviceprovider.net",
+						"AlternateSMSEmail","The first part of the customer's alternate SMS email address","9995551213",
+						"AlternateSMSEmailDomain","The second part of the customer's alternate SMS email address","@serviceprovider.com",
+ 						"FirstName","The first name of the customer (letters only)","Jerry",
+ 						"LastName","The last name of the customer (letters only)","Arnold",
+ 						"StreeAddress","The Street Address of the customer","2200 George Bush HWY",
+ 						"Industry","The industry of the customer (selection box)","Insurance",
+ 						"City","The city of the customer","Richardson",
+ 						"State","The state of the customer","Texas",
+ 						"Zip","The zip code of the customer","78053",
+ 						"Country","Country (Selection box)","USA",
+ 						"AddContact","To add a contact or not while adding customer, Choose Yes/No (check box)","No",
+						"Edit-CustomerName","The customer name to change to when editing customer (=== for no change)","Cisco",
+						"Edit-CustomerImage","The customer image to change to when editing customer (=== for no change)","cisco_image_2.jpg",
+						"Edit-Email","The first part of the email to change to when editing contact (=== for no change)","a0",
+						"Edit-EmailDomain","The second part of the email to change to when editing contact (including and after @ sign) (=== for no change)","@cisco.com",
+						"Edit-AlternateEmail","The first part of the alternate email to change when editing contact (=== for no change)","editAlt0",
+						"Edit-AlternateEmailDomain","The second part of the alternate email address to change when editing contact (=== for no change)","@cisco.com",
+						"Edit-SMSEmail","The first part of the SMS email to change when editing contact (=== for no change)","9995551234",
+						"Edit-SMSEmailDomain","The second part of the SMS email to change when editing contact (=== for no change)","@att.net",
+						"Edit-AlternateSMSEmail","The first part of the alternate SMS email to change when editing contact (=== for no change)","5559991234",
+						"Edit-AlternateSMEEmailDomain","The second part of the alternate SMS email to change when editing contact (=== for no change)","@provider.net",
+						"Edit-FirstName","The first name to change to when editing contact (=== for no change)","Tom",
+						"Edit-LastName","The last name to change to when editing contact (=== for no change)","Smith",
+						"Edit-StreetAddress","The street address to change to when editing customer (=== for no change)", "1000 Main st.",
+						"Edit-Industry", "The industry to change to when editing customer (=== for no change)", "Retail",
+						"Edit-City","The city to change to when editing customer (=== for no change)","New York",
+						"Edit-State","The state to change to when editing customer (=== for no change)","New York",
+						"Edit-Zip","The postal code to change to when editing customer (=== for no change)","12345",
+						"Edit-Country","The country to change to when editing customer (selection box) (=== for no change)","Turkey",
+						"Edit-Timezone","The timezone to change to when editing customer (selection box) (=== for no change)","Arctic",
+						"Edit-TimezoneCity","The timezone city to change to when editing customer (selection box) (=== for no change)","Longyearbyen");
+	for(var i=0; i < (info.length/3); i++)
+	{
+		document.write("<tr><td>" + info[x] + "</td><td>" + info[x+1] + "</td><td>" + info[x+2] + "</td></tr>");
+		x+=3;
+	}
+</script>
+</table>
+
+</body>
+</html>

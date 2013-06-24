@@ -1,0 +1,134 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="end2end_gui" testgroup="agent" testcase="27_delete_contact_ge" parallel="false" workflowpause="0" location="${location}" customerid="${customerid}">
+  <!-- 1. Login to t5a as auto_var1 (agent)
+	 2. Go to delivery contacts page
+	 3. verify that Customer1 Contact1 is there
+	 4. delete the customer contact
+	 5. verify that the contact is deleted
+	 6. delete the global contact
+	 7. verify that the contact is deleted-->
+  <workflow driver="selenium" wfid="agent_delete_contact" stoptype="abort" profile="${profile}" browser="${browser}" rid="${rid}">
+    <!--login as agent-->
+    <action acid="0" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://${location}"/>
+      <actionparam paramtype="username" paramvalue="${agentname}"/>
+      <actionparam paramtype="password" paramvalue="${password}"/>
+    </action>
+    <!--go to delivery contacts page-->
+    <action acid="1" stoptype="abort">
+      <actionname>hover</actionname>
+      <actionparam paramtype="type" paramvalue="germanymenu"/>
+      <actionparam paramtype="value" paramvalue="Benachrichtigungen"/>
+    </action>
+    <action acid="2" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="submenu"/>
+      <actionparam paramtype="value" paramvalue="Übermittlungskontakte"/>
+    </action>
+    <!--verify that the h2 of the page is Delivery Contacts-->
+    <action acid="3" stoptype="continue" loop="1" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Übermittlungskontakte"/>
+    </action>
+    <!--verify that there is a customer contact for the agent-->
+    <action acid="4" stoptype="continue" loop="2" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Customer1 Contact1 auto_var3_customer1_german... auto_var3_customer1_german..."/>
+    </action>
+    <!--click on the row to be deleted-->
+    <action acid="5" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Customer1 Contact1 auto_var3_customer1_german... auto_var3_customer1_german..."/>
+    </action>
+    <!--sleep 1 second for the animation to complete-->
+    <action acid="6" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="1"/>
+    </action>
+    <!--click the delete button-->
+    <action acid="7" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div[2]/span[3]/a"/>
+    </action>
+    <!--click on the OK button-->
+    <action acid="8" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span/button"/>
+    </action>
+    <!--verify that the h2 of the page is Delivery Contacts-->
+    <action acid="9" stoptype="continue" loop="3" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Übermittlungskontakte"/>
+    </action>
+    <!--verify that the row is indeed deleted-->
+    <action acid="10" stoptype="continue" loop="4" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="novalue" paramvalue="Customer1 Contact1 auto_var3_customer1_german... auto_var3_customer1_german..."/>
+    </action>
+    <!--verify that the agent global contact row is there-->
+    <action acid="11" stoptype="continue" loop="5" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Agent Contact auto_var3_germany@automail..."/>
+    </action>
+    <!--click on the row-->
+    <action acid="12" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Agent Contact auto_var3_germany@automail..."/>
+    </action>
+    <!--sleep 1 second for the animation to complete-->
+    <action acid="13" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="1"/>
+    </action>
+    <!--click on the delete button-->
+    <action acid="14" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div[2]/span[3]/a"/>
+    </action>
+    <!--click on the ok button-->
+    <action acid="15" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span/button"/>
+    </action>
+    <!--verify that the h2 of the page is Delivery Contacts-->
+    <action acid="16" stoptype="continue" loop="6" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Übermittlungskontakte"/>
+    </action>
+    <!--verify that the row is indeed deleted-->
+    <action acid="17" stoptype="continue" loop="7" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="novalue" paramvalue="Agent Contact auto_var3_germany@automail..."/>
+    </action>
+    <action acid="18" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>
+

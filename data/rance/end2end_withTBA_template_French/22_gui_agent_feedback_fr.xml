@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testcase testfamily="end2end_gui" testgroup="agent" testcase="22_agent_feedback_fr" parallel="false" workflowpause="0" location="${location}" customerid="${customerid}">
+<workflow driver="selenium" wfid="feedback" stoptype="abort" profile="${profile}" browser="${browser}" rid="${rid}">
+<!--
+	1. Log in as a agent;
+	2. Click "Feedback";
+	3. Select "Website Overall";
+	4. Input some string;
+	5. Click "Send";
+	6. Validate the result string;
+	7. Click "Cancel";
+-->  
+  
+  <action acid="1" stoptype="abort" timeout="10">
+  <actionname>navigate</actionname> 
+  <actionparam paramtype="url" paramvalue="https://${loginurl}" /> 
+  </action>
+ <!-- Log in input --> 
+ <action acid="2" stoptype="abort" timeout="4">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="text field" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='accountid']" /> 
+  <actionparam paramtype="value" paramvalue="${agentname}" /> 
+  </action>
+ <action acid="3" stoptype="abort" timeout="4">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="text field" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='password']" /> 
+  <actionparam paramtype="value" paramvalue="${password}" /> 
+  </action>
+ <action acid="4" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='loginbutton']" /> 
+  </action>
+ <action acid="5" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="1" /> 
+  </action>
+    
+ <!--Click "Feedback"-->
+  <action acid="6" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='feedback']" />  
+  </action>
+  <action acid="7" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="1" />  
+  </action>
+   
+  <!--Select "Website Overall"-->
+  <action acid="8" stoptype="abort" timeout="30">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="select" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='category']" />  
+  <actionparam paramtype="value" paramvalue="Site Web" />
+  </action>   
+  
+  <!--Input test string-->
+  <action acid="9" stoptype="abort" timeout="30">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="text field" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='comments']" />  
+  <actionparam paramtype="value" paramvalue="Agent123!@#This is an automation test case running.123!@#" />
+  </action>
+    
+  <!--Click "Send"-->
+  <action acid="10" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span/button" />  
+  </action> 
+   <action acid="11" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="5" />  
+  </action>
+  
+  <!--Verify the default language-->
+  <action acid="12" stoptype="abort" timeout="30">
+  <actionname>verify</actionname> 
+  <actionparam paramtype="type" paramvalue="text" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[2]/span" />
+  <actionparam paramtype="value" paramvalue="Vos commentaires ont été envoyés. Merci" />   
+  </action> 
+  
+  <!--Click Cancel-->
+  <action acid="13" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/button" />  
+  </action>  
+</workflow>
+</testcase>

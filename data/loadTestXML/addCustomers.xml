@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow driver="selenium" wfID="addCustomer" stoptype="abort" profile="webdriver">
+ <action acID="1" stoptype="continue" timeout="">
+  <actionName>login</actionName>
+  <actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+  <actionParam paramType="username" paramValue="var5030" />
+  <actionParam paramType="password" paramValue="Test1234" />
+  <actionParam paramType="type" paramValue="Agent" />
+ </action>
+ <action acID="2" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer1" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="a" />
+  <actionParam paramType="city*" paramValue="a" />
+  <actionParam paramType="state" paramValue="a" />
+  <actionParam paramType="zip*" paramValue="a" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="a" />
+  <actionParam paramType="lastName*" paramValue="a" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer1@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+ <action acID="3" stoptype="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="4" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+ <action acID="5" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer2" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="b" />
+  <actionParam paramType="city*" paramValue="b" />
+  <actionParam paramType="state" paramValue="b" />
+  <actionParam paramType="zip*" paramValue="b" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="b" />
+  <actionParam paramType="lastName*" paramValue="b" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer2@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+  <action acID="6" stoptyp="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="7" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+  <action acID="8" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer3" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="c" />
+  <actionParam paramType="city*" paramValue="c" />
+  <actionParam paramType="state" paramValue="c" />
+  <actionParam paramType="zip*" paramValue="c" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="c" />
+  <actionParam paramType="lastName*" paramValue="c" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer3@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+  <action acID="9" stoptyp="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="10" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+  <action acID="11" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer4" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="d" />
+  <actionParam paramType="city*" paramValue="d" />
+  <actionParam paramType="state" paramValue="d" />
+  <actionParam paramType="zip*" paramValue="d" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="d" />
+  <actionParam paramType="lastName*" paramValue="d" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer4@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+  <action acID="12" stoptyp="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="13" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+  <action acID="14" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer5" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="e" />
+  <actionParam paramType="city*" paramValue="e" />
+  <actionParam paramType="state" paramValue="e" />
+  <actionParam paramType="zip*" paramValue="e" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="e" />
+  <actionParam paramType="lastName*" paramValue="e" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer5@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+  <action acID="15" stoptyp="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="16" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+  <action acID="17" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer6" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="f" />
+  <actionParam paramType="city*" paramValue="f" />
+  <actionParam paramType="state" paramValue="f" />
+  <actionParam paramType="zip*" paramValue="f" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="f" />
+  <actionParam paramType="lastName*" paramValue="f" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer6@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+  <action acID="18" stoptyp="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="19" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+  <action acID="20" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer7" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="g" />
+  <actionParam paramType="city*" paramValue="g" />
+  <actionParam paramType="state" paramValue="g" />
+  <actionParam paramType="zip*" paramValue="g" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="g" />
+  <actionParam paramType="lastName*" paramValue="g" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer7@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+  <action acID="21" stoptyp="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="22" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+  <action acID="23" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer8" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="h" />
+  <actionParam paramType="city*" paramValue="h" />
+  <actionParam paramType="state" paramValue="h" />
+  <actionParam paramType="zip*" paramValue="h" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="h" />
+  <actionParam paramType="lastName*" paramValue="h" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer8@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+  <action acID="24" stoptyp="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="25" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+  <action acID="26" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer9" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="i" />
+  <actionParam paramType="city*" paramValue="i" />
+  <actionParam paramType="state" paramValue="i" />
+  <actionParam paramType="zip*" paramValue="i" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="i" />
+  <actionParam paramType="lastName*" paramValue="i" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer9@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+  <action acID="27" stoptyp="continue" timeout="">
+	<actionName>click</actionName>
+	<actionParam paramType="type" paramValue="link" />
+	<actionParam paramType="value" paramValue="Log Out" />
+</action>
+<action acID="28" stoptype="continue" timeout="">
+	<actionName>login</actionName>
+	<actionParam paramType="url" paramValue="https://www.tb2.rcdnlab1.com" />
+	<actionParam paramType="username" paramValue="var5030" />
+	<actionParam paramType="password" paramValue="Test1234" />
+	<actionParam paramType="type" paramValue="Agent" />
+</action>
+  <action acID="29" stoptype="continue" timeout="">
+  <actionName>addCustomer</actionName>
+  <actionParam paramType="customerName*" paramValue="var5030-customer10" />
+  <actionParam paramType="industry*" paramValue="(Other)" />
+  <actionParam paramType="streetAddress*" paramValue="j" />
+  <actionParam paramType="city*" paramValue="j" />
+  <actionParam paramType="state" paramValue="j" />
+  <actionParam paramType="zip*" paramValue="j" />
+  <actionParam paramType="country*" paramValue="United States" />
+  <actionParam paramType="addContact*" paramValue="true" />
+  <actionParam paramType="firstName*" paramValue="j" />
+  <actionParam paramType="lastName*" paramValue="j" />
+  <actionParam paramType="emailAddress*" paramValue="var5030-customer10@1-qa.tb2.rcdnlab1.com" />
+  <actionParam paramType="altEmailAddress" paramValue="" />
+  <actionParam paramType="smsEmailAddress" paramValue="" />
+  <actionParam paramType="altSMSEmailAddress" paramValue="" />
+  <actionParam paramType="devicePassword*" paramValue="123123" />
+ </action>
+ <action acID="30" stoptype="abort" timeout="">
+  <actionName>submitTCResult</actionName>
+  <actionParam paramType="Boolean" paramValue="Boolean" />
+ </action>
+</workflow>

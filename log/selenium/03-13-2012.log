@@ -1,0 +1,1336 @@
+[03/13/2012 16:12:43 ERROR]************************************************************
+[03/13/2012 16:12:43 ERROR]Parse Exception on line: 58 The reference to entity "page" must end with the ';' delimiter.
+[03/13/2012 16:12:43 ERROR]************************************************************
+[03/13/2012 16:12:43 ERROR]************************************************************
+[03/13/2012 16:12:43 ERROR]XML file is null
+[03/13/2012 16:12:43 ERROR]************************************************************
+[03/13/2012 16:18:44 ERROR]************************************************************
+[03/13/2012 16:18:44 ERROR]Parse Exception on line: 191 The reference to entity "page" must end with the ';' delimiter.
+[03/13/2012 16:18:44 ERROR]************************************************************
+[03/13/2012 16:18:44 ERROR]************************************************************
+[03/13/2012 16:18:44 ERROR]XML file is null
+[03/13/2012 16:18:44 ERROR]************************************************************
+[03/13/2012 16:20:12  INFO]Starting Firefox...
+[03/13/2012 16:20:12  INFO]Using profile: webdriver
+[03/13/2012 16:21:00  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 16:21:00  INFO]--- 1 Action Start: navigate
+[03/13/2012 16:21:04  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 16:21:04  INFO]--- 2 Action Start: input
+[03/13/2012 16:21:06  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 16:21:06  INFO]--- 3 Action Start: input
+[03/13/2012 16:21:07  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 16:21:07  INFO]--- 4 Action Start: click
+[03/13/2012 16:21:10  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 16:21:10  INFO]--- 5 Action Start: wait
+[03/13/2012 16:21:10  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:21:11  INFO]--- 6 Action Start: navigate
+[03/13/2012 16:21:25  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 16:21:25  INFO]--- 7 Action Start: click
+[03/13/2012 16:21:26 ERROR]************************************************************
+[03/13/2012 16:21:26 ERROR]Cannot find element with given xpath: /html/body/div/div[2]/ul/li[7]/ul/li[3]/a
+[03/13/2012 16:21:26 ERROR]************************************************************
+[03/13/2012 16:21:26  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 16:21:26  INFO]Action 7: click aborted
+[03/13/2012 16:21:26  INFO]Result: Fail
+[03/13/2012 16:21:26  INFO]Time: 0 hours, 1 minutes, 14 seconds.
+[03/13/2012 16:47:15  INFO]Starting Firefox...
+[03/13/2012 16:47:15  INFO]Using profile: webdriver
+[03/13/2012 16:47:53  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 16:47:53  INFO]--- 1 Action Start: navigate
+[03/13/2012 16:47:55  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 16:47:55  INFO]--- 2 Action Start: input
+[03/13/2012 16:47:56  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 16:47:56  INFO]--- 3 Action Start: input
+[03/13/2012 16:47:56  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 16:47:56  INFO]--- 4 Action Start: click
+[03/13/2012 16:47:59  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 16:47:59  INFO]--- 5 Action Start: wait
+[03/13/2012 16:47:59  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:48:00  INFO]--- 6 Action Start: navigate
+[03/13/2012 16:48:04  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 16:48:04  INFO]--- 7 Action Start: hover
+[03/13/2012 16:48:04  INFO]Displayed sub-menu of: Profile
+[03/13/2012 16:48:04  INFO]--- 9 Action Start: click
+[03/13/2012 16:48:06  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 16:48:06  INFO]--- 8 Action Start: wait
+[03/13/2012 16:48:06  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:48:07  INFO]--- 9 Action Start: click
+[03/13/2012 16:48:08  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 16:48:08  INFO]--- 10 Action Start: wait
+[03/13/2012 16:48:08  INFO]Sleeping for: 3 seconds
+[03/13/2012 16:48:11  INFO]--- 11 Action Start: input
+[03/13/2012 16:48:11  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 16:48:11  INFO]--- 12 Action Start: input
+[03/13/2012 16:48:11  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 16:48:11  INFO]--- 13 Action Start: input
+[03/13/2012 16:48:12  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 16:48:12  INFO]--- 14 Action Start: wait
+[03/13/2012 16:48:12  INFO]Sleeping for: 3 seconds
+[03/13/2012 16:48:15  INFO]--- 15 Action Start: click
+[03/13/2012 16:48:15  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 16:48:15  INFO]--- 16 Action Start: click
+[03/13/2012 16:48:17 ERROR]************************************************************
+[03/13/2012 16:48:17 ERROR]Cannot find element with given xpath: //*[@id='email_send']
+[03/13/2012 16:48:17 ERROR]************************************************************
+[03/13/2012 16:48:17  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 16:48:17  INFO]Action 16: click aborted
+[03/13/2012 16:48:17  INFO]Result: Fail
+[03/13/2012 16:48:17  INFO]Time: 0 hours, 1 minutes, 2 seconds.
+[03/13/2012 16:51:51  INFO]Starting Firefox...
+[03/13/2012 16:51:51  INFO]Using profile: webdriver
+[03/13/2012 16:52:06  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 16:52:06  INFO]--- 1 Action Start: navigate
+[03/13/2012 16:52:07  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 16:52:07  INFO]--- 2 Action Start: input
+[03/13/2012 16:52:08  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 16:52:08  INFO]--- 3 Action Start: input
+[03/13/2012 16:52:08  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 16:52:08  INFO]--- 4 Action Start: click
+[03/13/2012 16:52:10  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 16:52:10  INFO]--- 5 Action Start: wait
+[03/13/2012 16:52:10  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:52:11  INFO]--- 6 Action Start: navigate
+[03/13/2012 16:52:15  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 16:52:15  INFO]--- 7 Action Start: hover
+[03/13/2012 16:52:15  INFO]Displayed sub-menu of: Profile
+[03/13/2012 16:52:15  INFO]--- 9 Action Start: click
+[03/13/2012 16:52:16  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 16:52:16  INFO]--- 8 Action Start: wait
+[03/13/2012 16:52:16  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:52:17  INFO]--- 9 Action Start: click
+[03/13/2012 16:52:17  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 16:52:17  INFO]--- 10 Action Start: wait
+[03/13/2012 16:52:17  INFO]Sleeping for: 3 seconds
+[03/13/2012 16:52:20  INFO]--- 11 Action Start: input
+[03/13/2012 16:52:20  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 16:52:20  INFO]--- 12 Action Start: input
+[03/13/2012 16:52:21  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 16:52:21  INFO]--- 13 Action Start: input
+[03/13/2012 16:52:21  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 16:52:21  INFO]--- 14 Action Start: wait
+[03/13/2012 16:52:21  INFO]Sleeping for: 3 seconds
+[03/13/2012 16:52:24  INFO]--- 15 Action Start: click
+[03/13/2012 16:52:24  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 16:52:24  INFO]--- 14 Action Start: wait
+[03/13/2012 16:52:24  INFO]Sleeping for: 2 seconds
+[03/13/2012 16:52:26  INFO]--- 15 Action Start: click
+[03/13/2012 16:52:26  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 16:52:26  INFO]--- 16 Action Start: click
+[03/13/2012 16:52:29  INFO]Clicked on button: //*[@id='email_send'], by given xpath method
+[03/13/2012 16:52:29  INFO]--- 17 Action Start: verify
+[03/13/2012 16:52:29 ERROR]************************************************************
+[03/13/2012 16:52:29 ERROR]org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//*[@id='resend_email_content']"}
+[03/13/2012 16:52:29 ERROR]Command duration or timeout: 17 milliseconds
+[03/13/2012 16:52:29 ERROR]For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+[03/13/2012 16:52:29 ERROR]Build info: version: '2.19.0', revision: '15849', time: '2012-02-08 16:11:19'
+[03/13/2012 16:52:29 ERROR]System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_02'
+[03/13/2012 16:52:29 ERROR]Driver info: driver.version: RemoteWebDriver
+[03/13/2012 16:52:29 ERROR]    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[03/13/2012 16:52:29 ERROR]    sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+[03/13/2012 16:52:29 ERROR]    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[03/13/2012 16:52:29 ERROR]    java.lang.reflect.Constructor.newInstance(Constructor.java:525)
+[03/13/2012 16:52:29 ERROR]    org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:170)
+[03/13/2012 16:52:29 ERROR]    org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:123)
+[03/13/2012 16:52:29 ERROR]    org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:439)
+[03/13/2012 16:52:29 ERROR]    org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:226)
+[03/13/2012 16:52:29 ERROR]    org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:299)
+[03/13/2012 16:52:29 ERROR]    org.openqa.selenium.By$ByXPath.findElement(By.java:344)
+[03/13/2012 16:52:29 ERROR]    org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:218)
+[03/13/2012 16:52:29 ERROR]    com.cisco.psp.minimacros.Verify.startTest(Verify.java:43)
+[03/13/2012 16:52:29 ERROR]    com.cisco.psp.testrunner.ScheduleRunner.runAction(ScheduleRunner.java:232)
+[03/13/2012 16:52:29 ERROR]    com.cisco.psp.testrunner.ScheduleRunner.runWorkflow(ScheduleRunner.java:109)
+[03/13/2012 16:52:29 ERROR]    com.cisco.psp.testrunner.TestRunner.main(TestRunner.java:123)
+[03/13/2012 16:52:29 ERROR]************************************************************
+[03/13/2012 16:52:29  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 16:52:29  INFO]Result: Incomplete
+[03/13/2012 16:52:29  INFO]Time: 0 hours, 0 minutes, 38 seconds.
+[03/13/2012 16:59:10  INFO]Starting Firefox...
+[03/13/2012 16:59:10  INFO]Using profile: webdriver
+[03/13/2012 16:59:21  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 16:59:21  INFO]--- 1 Action Start: navigate
+[03/13/2012 16:59:22  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 16:59:22  INFO]--- 2 Action Start: input
+[03/13/2012 16:59:23  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 16:59:23  INFO]--- 3 Action Start: input
+[03/13/2012 16:59:23  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 16:59:23  INFO]--- 4 Action Start: click
+[03/13/2012 16:59:26  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 16:59:26  INFO]--- 5 Action Start: wait
+[03/13/2012 16:59:26  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:59:27  INFO]--- 6 Action Start: navigate
+[03/13/2012 16:59:30  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 16:59:30  INFO]--- 7 Action Start: hover
+[03/13/2012 16:59:31  INFO]Displayed sub-menu of: Profile
+[03/13/2012 16:59:31  INFO]--- 9 Action Start: click
+[03/13/2012 16:59:32  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 16:59:32  INFO]--- 8 Action Start: wait
+[03/13/2012 16:59:32  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:59:33  INFO]--- 9 Action Start: click
+[03/13/2012 16:59:33  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 16:59:33  INFO]--- 10 Action Start: wait
+[03/13/2012 16:59:33  INFO]Sleeping for: 3 seconds
+[03/13/2012 16:59:36  INFO]--- 11 Action Start: input
+[03/13/2012 16:59:37  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 16:59:37  INFO]--- 12 Action Start: input
+[03/13/2012 16:59:37  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 16:59:37  INFO]--- 13 Action Start: input
+[03/13/2012 16:59:37  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 16:59:37  INFO]--- 14 Action Start: wait
+[03/13/2012 16:59:37  INFO]Sleeping for: 3 seconds
+[03/13/2012 16:59:40  INFO]--- 15 Action Start: click
+[03/13/2012 16:59:40  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 16:59:40  INFO]--- 14 Action Start: wait
+[03/13/2012 16:59:40  INFO]Sleeping for: 2 seconds
+[03/13/2012 16:59:42  INFO]--- 15 Action Start: click
+[03/13/2012 16:59:43  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 16:59:43  INFO]--- 18 Action Start: wait
+[03/13/2012 16:59:43  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:59:44  INFO]--- 16 Action Start: click
+[03/13/2012 16:59:46  INFO]Clicked on button: //*[@id='email_send'], by given xpath method
+[03/13/2012 16:59:46  INFO]--- 18 Action Start: wait
+[03/13/2012 16:59:46  INFO]Sleeping for: 1 seconds
+[03/13/2012 16:59:47  INFO]--- 17 Action Start: verify
+[03/13/2012 16:59:47 ERROR]************************************************************
+[03/13/2012 16:59:47 ERROR]java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+[03/13/2012 16:59:47 ERROR]    java.lang.String.substring(String.java:1952)
+[03/13/2012 16:59:47 ERROR]    java.lang.String.substring(String.java:1925)
+[03/13/2012 16:59:47 ERROR]    com.cisco.psp.minimacros.Verify.startTest(Verify.java:45)
+[03/13/2012 16:59:47 ERROR]    com.cisco.psp.testrunner.ScheduleRunner.runAction(ScheduleRunner.java:232)
+[03/13/2012 16:59:47 ERROR]    com.cisco.psp.testrunner.ScheduleRunner.runWorkflow(ScheduleRunner.java:109)
+[03/13/2012 16:59:47 ERROR]    com.cisco.psp.testrunner.TestRunner.main(TestRunner.java:123)
+[03/13/2012 16:59:47 ERROR]************************************************************
+[03/13/2012 16:59:47  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 16:59:47  INFO]Result: Incomplete
+[03/13/2012 16:59:47  INFO]Time: 0 hours, 0 minutes, 36 seconds.
+[03/13/2012 17:29:50  INFO]Starting Firefox...
+[03/13/2012 17:29:50  INFO]Using profile: webdriver
+[03/13/2012 17:30:02  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:30:02  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:30:04  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:30:04  INFO]--- 2 Action Start: input
+[03/13/2012 17:30:05  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:30:05  INFO]--- 3 Action Start: input
+[03/13/2012 17:30:05  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:30:05  INFO]--- 4 Action Start: click
+[03/13/2012 17:30:08  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:30:08  INFO]--- 5 Action Start: wait
+[03/13/2012 17:30:08  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:30:09  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:30:15  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:30:15  INFO]--- 7 Action Start: hover
+[03/13/2012 17:30:15  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:30:15  INFO]--- 9 Action Start: click
+[03/13/2012 17:30:16  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:30:16  INFO]--- 8 Action Start: wait
+[03/13/2012 17:30:16  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:30:17  INFO]--- 9 Action Start: click
+[03/13/2012 17:30:18  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:30:18  INFO]--- 10 Action Start: wait
+[03/13/2012 17:30:18  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:30:21  INFO]--- 11 Action Start: input
+[03/13/2012 17:30:21  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:30:21  INFO]--- 12 Action Start: input
+[03/13/2012 17:30:21  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:30:21  INFO]--- 13 Action Start: input
+[03/13/2012 17:30:22  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:30:22  INFO]--- 14 Action Start: wait
+[03/13/2012 17:30:22  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:30:25  INFO]--- 15 Action Start: click
+[03/13/2012 17:30:25  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:30:25  INFO]--- 14 Action Start: wait
+[03/13/2012 17:30:25  INFO]Sleeping for: 2 seconds
+[03/13/2012 17:30:27  INFO]--- 15 Action Start: click
+[03/13/2012 17:30:27  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:30:27  INFO]--- 18 Action Start: wait
+[03/13/2012 17:30:27  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:30:28  INFO]--- 16 Action Start: click
+[03/13/2012 17:30:31 ERROR]************************************************************
+[03/13/2012 17:30:31 ERROR]Cannot find element with given xpath: //*[@id='email_send']
+[03/13/2012 17:30:31 ERROR]************************************************************
+[03/13/2012 17:30:31  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:30:31  INFO]Action 16: click aborted
+[03/13/2012 17:30:31  INFO]Result: Fail
+[03/13/2012 17:30:31  INFO]Time: 0 hours, 0 minutes, 40 seconds.
+[03/13/2012 17:30:47  INFO]Starting Firefox...
+[03/13/2012 17:30:47  INFO]Using profile: webdriver
+[03/13/2012 17:30:57  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:30:57  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:30:59  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:30:59  INFO]--- 2 Action Start: input
+[03/13/2012 17:31:00  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:31:00  INFO]--- 3 Action Start: input
+[03/13/2012 17:31:00  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:31:00  INFO]--- 4 Action Start: click
+[03/13/2012 17:31:02  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:31:02  INFO]--- 5 Action Start: wait
+[03/13/2012 17:31:02  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:31:03  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:31:05  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:31:05  INFO]--- 7 Action Start: hover
+[03/13/2012 17:31:05  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:31:06  INFO]--- 9 Action Start: click
+[03/13/2012 17:31:06  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:31:06  INFO]--- 8 Action Start: wait
+[03/13/2012 17:31:06  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:31:07  INFO]--- 9 Action Start: click
+[03/13/2012 17:31:08  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:31:08  INFO]--- 10 Action Start: wait
+[03/13/2012 17:31:08  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:31:11  INFO]--- 11 Action Start: input
+[03/13/2012 17:31:11  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:31:11  INFO]--- 12 Action Start: input
+[03/13/2012 17:31:11  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:31:11  INFO]--- 13 Action Start: input
+[03/13/2012 17:31:12  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:31:12  INFO]--- 14 Action Start: wait
+[03/13/2012 17:31:12  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:31:15  INFO]--- 15 Action Start: click
+[03/13/2012 17:31:15  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:31:15  INFO]--- 14 Action Start: wait
+[03/13/2012 17:31:15  INFO]Sleeping for: 2 seconds
+[03/13/2012 17:31:17  INFO]--- 15 Action Start: click
+[03/13/2012 17:31:17  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:31:17  INFO]--- 18 Action Start: wait
+[03/13/2012 17:31:17  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:31:18  INFO]--- 16 Action Start: click
+[03/13/2012 17:31:20  INFO]Clicked on button: //*[@id='email_send'], by given xpath method
+[03/13/2012 17:31:20  INFO]--- 18 Action Start: wait
+[03/13/2012 17:31:20  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:31:21  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:31:22  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer_register.php?token=YWdlbnQ9bmh1aG9hbmcxLHVzZXI9cmFudGFvMTJAeWFob28uY29t
+[03/13/2012 17:31:22  INFO]--- 18 Action Start: wait
+[03/13/2012 17:31:22  INFO]Sleeping for: 5 seconds
+[03/13/2012 17:31:27  INFO]--- 19 Action Start: input
+[03/13/2012 17:31:27 ERROR]************************************************************
+[03/13/2012 17:31:27 ERROR]Action input with type: text is not supported!
+[03/13/2012 17:31:27 ERROR]************************************************************
+[03/13/2012 17:31:27  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:31:27  INFO]Action 19: input aborted
+[03/13/2012 17:31:27  INFO]Result: Fail
+[03/13/2012 17:31:27  INFO]Time: 0 hours, 0 minutes, 39 seconds.
+[03/13/2012 17:31:56  INFO]Starting Firefox...
+[03/13/2012 17:31:56  INFO]Using profile: webdriver
+[03/13/2012 17:32:05  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:32:05  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:32:07  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:32:07  INFO]--- 2 Action Start: input
+[03/13/2012 17:32:07  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:32:07  INFO]--- 3 Action Start: input
+[03/13/2012 17:32:08  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:32:08  INFO]--- 4 Action Start: click
+[03/13/2012 17:32:10  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:32:10  INFO]--- 5 Action Start: wait
+[03/13/2012 17:32:10  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:32:11  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:32:13  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:32:13  INFO]--- 7 Action Start: hover
+[03/13/2012 17:32:13  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:32:13  INFO]--- 9 Action Start: click
+[03/13/2012 17:32:15  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:32:15  INFO]--- 8 Action Start: wait
+[03/13/2012 17:32:15  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:32:16  INFO]--- 9 Action Start: click
+[03/13/2012 17:32:16  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:32:16  INFO]--- 10 Action Start: wait
+[03/13/2012 17:32:16  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:32:19  INFO]--- 11 Action Start: input
+[03/13/2012 17:32:19  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:32:19  INFO]--- 12 Action Start: input
+[03/13/2012 17:32:20  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:32:20  INFO]--- 13 Action Start: input
+[03/13/2012 17:32:20  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:32:20  INFO]--- 14 Action Start: wait
+[03/13/2012 17:32:20  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:32:23  INFO]--- 15 Action Start: click
+[03/13/2012 17:32:23  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:32:23  INFO]--- 14 Action Start: wait
+[03/13/2012 17:32:23  INFO]Sleeping for: 2 seconds
+[03/13/2012 17:32:25  INFO]--- 15 Action Start: click
+[03/13/2012 17:32:25  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:32:25  INFO]--- 18 Action Start: wait
+[03/13/2012 17:32:25  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:32:26  INFO]--- 16 Action Start: click
+[03/13/2012 17:32:29 ERROR]************************************************************
+[03/13/2012 17:32:29 ERROR]Cannot find element with given xpath: //*[@id='email_send']
+[03/13/2012 17:32:29 ERROR]************************************************************
+[03/13/2012 17:32:29  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:32:29  INFO]Action 16: click aborted
+[03/13/2012 17:32:29  INFO]Result: Fail
+[03/13/2012 17:32:29  INFO]Time: 0 hours, 0 minutes, 32 seconds.
+[03/13/2012 17:32:51  INFO]Starting Firefox...
+[03/13/2012 17:32:51  INFO]Using profile: webdriver
+[03/13/2012 17:33:00  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:33:00  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:33:01  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:33:01  INFO]--- 2 Action Start: input
+[03/13/2012 17:33:02  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:33:02  INFO]--- 3 Action Start: input
+[03/13/2012 17:33:02  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:33:02  INFO]--- 4 Action Start: click
+[03/13/2012 17:33:04  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:33:04  INFO]--- 5 Action Start: wait
+[03/13/2012 17:33:04  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:33:05  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:33:09  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:33:09  INFO]--- 7 Action Start: hover
+[03/13/2012 17:33:09  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:33:09  INFO]--- 9 Action Start: click
+[03/13/2012 17:33:10  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:33:10  INFO]--- 8 Action Start: wait
+[03/13/2012 17:33:10  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:33:11  INFO]--- 9 Action Start: click
+[03/13/2012 17:33:11  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:33:11  INFO]--- 10 Action Start: wait
+[03/13/2012 17:33:11  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:33:14  INFO]--- 11 Action Start: input
+[03/13/2012 17:33:15  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:33:15  INFO]--- 12 Action Start: input
+[03/13/2012 17:33:15  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:33:15  INFO]--- 13 Action Start: input
+[03/13/2012 17:33:15  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:33:15  INFO]--- 14 Action Start: wait
+[03/13/2012 17:33:15  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:33:18  INFO]--- 15 Action Start: click
+[03/13/2012 17:33:18  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:33:18  INFO]--- 14 Action Start: wait
+[03/13/2012 17:33:18  INFO]Sleeping for: 2 seconds
+[03/13/2012 17:33:20  INFO]--- 15 Action Start: click
+[03/13/2012 17:33:21  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:33:21  INFO]--- 18 Action Start: wait
+[03/13/2012 17:33:21  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:33:22  INFO]--- 16 Action Start: click
+[03/13/2012 17:33:24  INFO]Clicked on button: //*[@id='email_send'], by given xpath method
+[03/13/2012 17:33:24  INFO]--- 18 Action Start: wait
+[03/13/2012 17:33:24  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:33:25  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:33:26  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer_register.php?token=YWdlbnQ9bmh1aG9hbmcxLHVzZXI9cmFudGFvMTJAeWFob28uY29t
+[03/13/2012 17:33:26  INFO]--- 18 Action Start: wait
+[03/13/2012 17:33:26  INFO]Sleeping for: 5 seconds
+[03/13/2012 17:33:31  INFO]--- 19 Action Start: input
+[03/13/2012 17:33:31  INFO]Typed: qazWSX123 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:33:31  INFO]--- 20 Action Start: click
+[03/13/2012 17:33:34  INFO]Clicked on button: //*[@id='submitButton'], by given xpath method
+[03/13/2012 17:33:34  INFO]--- 21 Action Start: wait
+[03/13/2012 17:33:34  INFO]Sleeping for: 10 seconds
+[03/13/2012 17:33:44  INFO]--- 22 Action Start: navigate
+[03/13/2012 17:33:44  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:33:44  INFO]--- 23 Action Start: input
+[03/13/2012 17:33:44  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:33:44  INFO]--- 24 Action Start: input
+[03/13/2012 17:33:44  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:33:44  INFO]--- 25 Action Start: click
+[03/13/2012 17:33:47  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:33:47  INFO]--- 26 Action Start: wait
+[03/13/2012 17:33:47  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:33:48  INFO]--- 27 Action Start: navigate
+[03/13/2012 17:33:49  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:33:49  INFO]--- 7 Action Start: hover
+[03/13/2012 17:33:49  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:33:49  INFO]--- 9 Action Start: click
+[03/13/2012 17:33:50 ERROR]************************************************************
+[03/13/2012 17:33:50 ERROR]Cannot find submenu item with value: Customer Logins on page: -Unknown Page-
+[03/13/2012 17:33:50 ERROR]************************************************************
+[03/13/2012 17:33:50  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:33:50  INFO]Action 9: click aborted
+[03/13/2012 17:33:50  INFO]Result: Fail
+[03/13/2012 17:33:50  INFO]Time: 0 hours, 0 minutes, 58 seconds.
+[03/13/2012 17:35:53  INFO]Starting Firefox...
+[03/13/2012 17:35:53  INFO]Using profile: webdriver
+[03/13/2012 17:36:02  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:36:02  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:36:03  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:36:03  INFO]--- 2 Action Start: input
+[03/13/2012 17:36:03  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:36:03  INFO]--- 3 Action Start: input
+[03/13/2012 17:36:04  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:36:04  INFO]--- 4 Action Start: click
+[03/13/2012 17:36:06  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:36:06  INFO]--- 5 Action Start: wait
+[03/13/2012 17:36:06  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:36:07  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:36:13  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:36:13  INFO]--- 7 Action Start: hover
+[03/13/2012 17:36:13  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:36:13  INFO]--- 9 Action Start: click
+[03/13/2012 17:36:14  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:36:14  INFO]--- 8 Action Start: wait
+[03/13/2012 17:36:14  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:36:15  INFO]--- 9 Action Start: click
+[03/13/2012 17:36:15  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:36:15  INFO]--- 10 Action Start: wait
+[03/13/2012 17:36:15  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:36:18  INFO]--- 11 Action Start: input
+[03/13/2012 17:36:19  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:36:19  INFO]--- 12 Action Start: input
+[03/13/2012 17:36:19  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:36:19  INFO]--- 13 Action Start: input
+[03/13/2012 17:36:19  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:36:19  INFO]--- 14 Action Start: wait
+[03/13/2012 17:36:19  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:36:22  INFO]--- 15 Action Start: click
+[03/13/2012 17:36:22  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:36:22  INFO]--- 14 Action Start: wait
+[03/13/2012 17:36:22  INFO]Sleeping for: 2 seconds
+[03/13/2012 17:36:24  INFO]--- 15 Action Start: click
+[03/13/2012 17:36:25  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:36:25  INFO]--- 18 Action Start: wait
+[03/13/2012 17:36:25  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:36:26  INFO]--- 16 Action Start: click
+[03/13/2012 17:36:28  INFO]Clicked on button: //*[@id='email_send'], by given xpath method
+[03/13/2012 17:36:28  INFO]--- 18 Action Start: wait
+[03/13/2012 17:36:28  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:36:29  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:36:30  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer_register.php?token=YWdlbnQ9bmh1aG9hbmcxLHVzZXI9cmFudGFvMTJAeWFob28uY29t
+[03/13/2012 17:36:30  INFO]--- 18 Action Start: wait
+[03/13/2012 17:36:30  INFO]Sleeping for: 5 seconds
+[03/13/2012 17:36:35  INFO]--- 19 Action Start: input
+[03/13/2012 17:36:35  INFO]Typed: qazWSX123 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:36:35  INFO]--- 20 Action Start: click
+[03/13/2012 17:36:38  INFO]Clicked on button: //*[@id='submitButton'], by given xpath method
+[03/13/2012 17:36:38  INFO]--- 21 Action Start: wait
+[03/13/2012 17:36:38  INFO]Sleeping for: 10 seconds
+[03/13/2012 17:36:48  INFO]--- 22 Action Start: navigate
+[03/13/2012 17:36:48  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:36:48  INFO]--- 23 Action Start: input
+[03/13/2012 17:36:48  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:36:48  INFO]--- 24 Action Start: input
+[03/13/2012 17:36:48  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:36:48  INFO]--- 25 Action Start: click
+[03/13/2012 17:36:51  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:36:51  INFO]--- 26 Action Start: wait
+[03/13/2012 17:36:51  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:36:52  INFO]--- 27 Action Start: navigate
+[03/13/2012 17:36:53  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:36:53  INFO]--- 7 Action Start: hover
+[03/13/2012 17:36:53  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:36:53  INFO]--- 8 Action Start: wait
+[03/13/2012 17:36:53  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:36:54  INFO]--- 9 Action Start: click
+[03/13/2012 17:36:54 ERROR]************************************************************
+[03/13/2012 17:36:54 ERROR]Cannot find submenu item with value: Customer Logins on page: -Unknown Page-
+[03/13/2012 17:36:54 ERROR]************************************************************
+[03/13/2012 17:36:54  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:36:54  INFO]Action 9: click aborted
+[03/13/2012 17:36:54  INFO]Result: Fail
+[03/13/2012 17:36:54  INFO]Time: 0 hours, 1 minutes, 1 seconds.
+[03/13/2012 17:37:51  INFO]Starting Firefox...
+[03/13/2012 17:37:51  INFO]Using profile: webdriver
+[03/13/2012 17:38:01  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:38:01  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:38:03  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:38:03  INFO]--- 2 Action Start: input
+[03/13/2012 17:38:03  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:38:03  INFO]--- 3 Action Start: input
+[03/13/2012 17:38:04  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:38:04  INFO]--- 4 Action Start: click
+[03/13/2012 17:38:06  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:38:06  INFO]--- 5 Action Start: wait
+[03/13/2012 17:38:06  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:38:07  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:38:14  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:38:14  INFO]--- 7 Action Start: hover
+[03/13/2012 17:38:14  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:38:14  INFO]--- 9 Action Start: click
+[03/13/2012 17:38:15  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:38:15  INFO]--- 8 Action Start: wait
+[03/13/2012 17:38:15  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:38:16  INFO]--- 9 Action Start: click
+[03/13/2012 17:38:17  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:38:17  INFO]--- 10 Action Start: wait
+[03/13/2012 17:38:17  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:38:20  INFO]--- 11 Action Start: input
+[03/13/2012 17:38:20  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:38:20  INFO]--- 12 Action Start: input
+[03/13/2012 17:38:20  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:38:20  INFO]--- 13 Action Start: input
+[03/13/2012 17:38:21  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:38:21  INFO]--- 14 Action Start: wait
+[03/13/2012 17:38:21  INFO]Sleeping for: 3 seconds
+[03/13/2012 17:38:24  INFO]--- 15 Action Start: click
+[03/13/2012 17:38:24  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:38:24  INFO]--- 14 Action Start: wait
+[03/13/2012 17:38:24  INFO]Sleeping for: 2 seconds
+[03/13/2012 17:38:26  INFO]--- 15 Action Start: click
+[03/13/2012 17:38:27  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:38:27  INFO]--- 18 Action Start: wait
+[03/13/2012 17:38:27  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:38:28  INFO]--- 16 Action Start: click
+[03/13/2012 17:38:30  INFO]Clicked on button: //*[@id='email_send'], by given xpath method
+[03/13/2012 17:38:30  INFO]--- 18 Action Start: wait
+[03/13/2012 17:38:30  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:38:31  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:38:32  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer_register.php?token=YWdlbnQ9bmh1aG9hbmcxLHVzZXI9cmFudGFvMTJAeWFob28uY29t
+[03/13/2012 17:38:32  INFO]--- 18 Action Start: wait
+[03/13/2012 17:38:32  INFO]Sleeping for: 5 seconds
+[03/13/2012 17:38:37  INFO]--- 19 Action Start: input
+[03/13/2012 17:38:38  INFO]Typed: qazWSX123 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:38:38  INFO]--- 20 Action Start: click
+[03/13/2012 17:38:40  INFO]Clicked on button: //*[@id='submitButton'], by given xpath method
+[03/13/2012 17:38:40  INFO]--- 21 Action Start: wait
+[03/13/2012 17:38:40  INFO]Sleeping for: 10 seconds
+[03/13/2012 17:38:50  INFO]--- 22 Action Start: navigate
+[03/13/2012 17:38:50  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:38:50  INFO]--- 23 Action Start: input
+[03/13/2012 17:38:50  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:38:50  INFO]--- 24 Action Start: input
+[03/13/2012 17:38:50  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:38:50  INFO]--- 25 Action Start: click
+[03/13/2012 17:38:53  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:38:53  INFO]--- 26 Action Start: wait
+[03/13/2012 17:38:53  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:38:54  INFO]--- 27 Action Start: navigate
+[03/13/2012 17:38:55  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:38:55  INFO]--- 8 Action Start: wait
+[03/13/2012 17:38:55  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:38:56  INFO]--- 7 Action Start: hover
+[03/13/2012 17:38:56  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:38:56  INFO]--- 8 Action Start: wait
+[03/13/2012 17:38:56  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:38:57  INFO]--- 9 Action Start: click
+[03/13/2012 17:38:58  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:38:58  INFO]--- 8 Action Start: wait
+[03/13/2012 17:38:58  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:38:59  INFO]--- 29 Action Start: verify
+[03/13/2012 17:38:59  INFO]Found text: rantao12@yahoo.com
+[03/13/2012 17:38:59  INFO]Regex passed
+[03/13/2012 17:38:59  INFO]--- 30 Action Start: verify
+[03/13/2012 17:38:59  INFO]Found text: Active
+[03/13/2012 17:38:59  INFO]Regex passed
+[03/13/2012 17:38:59  INFO]--- 29 Action Start: verify
+[03/13/2012 17:38:59  INFO]Found text: Full Access
+[03/13/2012 17:38:59  INFO]Regex passed
+[03/13/2012 17:38:59  INFO]--- 30 Action Start: verify
+[03/13/2012 17:38:59  INFO]Found text: Comments123
+[03/13/2012 17:38:59  INFO]Regex passed
+[03/13/2012 17:38:59  INFO]--- 31 Action Start: click
+[03/13/2012 17:39:00  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr link, by given xpath method
+[03/13/2012 17:39:00  INFO]--- 32 Action Start: wait
+[03/13/2012 17:39:00  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:39:01  INFO]--- 33 Action Start: click
+[03/13/2012 17:39:03  INFO]Clicked on button: /html/body/div/div[2]/div[2]/div/div[3]/div/div[2]/span[2]/a, by given xpath method
+[03/13/2012 17:39:03  INFO]--- 34 Action Start: wait
+[03/13/2012 17:39:03  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:39:04  INFO]--- 35 Action Start: click
+[03/13/2012 17:39:04  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:39:04  INFO]--- 36 Action Start: wait
+[03/13/2012 17:39:04  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:39:05  INFO]--- 37 Action Start: verify
+[03/13/2012 17:39:06  INFO]Found text: No records found
+[03/13/2012 17:39:06  INFO]Regex passed
+[03/13/2012 17:39:06  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:39:06  INFO]Result: Pass
+[03/13/2012 17:39:06  INFO]Time: 0 hours, 1 minutes, 15 seconds.
+[03/13/2012 17:50:44  INFO]Starting Firefox...
+[03/13/2012 17:50:44  INFO]Using profile: webdriver
+[03/13/2012 17:50:54  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:50:54  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:50:57  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:50:57  INFO]--- 2 Action Start: input
+[03/13/2012 17:50:57  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:50:57  INFO]--- 3 Action Start: input
+[03/13/2012 17:50:57  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:50:57  INFO]--- 4 Action Start: click
+[03/13/2012 17:50:59  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:50:59  INFO]--- 5 Action Start: wait
+[03/13/2012 17:50:59  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:51:00  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:51:06  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:51:06  INFO]--- 7 Action Start: hover
+[03/13/2012 17:51:06  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:51:06  INFO]--- 9 Action Start: click
+[03/13/2012 17:51:08  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:51:08  INFO]--- 10 Action Start: wait
+[03/13/2012 17:51:08  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:51:09  INFO]--- 11 Action Start: click
+[03/13/2012 17:51:09  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:51:09  INFO]--- 12 Action Start: waitfor
+[03/13/2012 17:51:10  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 17:51:10  INFO]--- 13 Action Start: input
+[03/13/2012 17:51:10  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:51:10  INFO]--- 14 Action Start: input
+[03/13/2012 17:51:10  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:51:10  INFO]--- 15 Action Start: input
+[03/13/2012 17:51:11  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:51:11  INFO]--- 16 Action Start: waitfor
+[03/13/2012 17:51:11  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 17:51:11  INFO]--- 17 Action Start: click
+[03/13/2012 17:51:11  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:51:11  INFO]--- 18 Action Start: waitfor
+[03/13/2012 17:51:11  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 17:51:11  INFO]--- 19 Action Start: click
+[03/13/2012 17:51:11  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:51:11  INFO]--- 20 Action Start: wait
+[03/13/2012 17:51:11  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:51:12  INFO]--- 21 Action Start: click
+[03/13/2012 17:51:15 ERROR]************************************************************
+[03/13/2012 17:51:15 ERROR]Cannot find element with given xpath: //*[@id='email_send']
+[03/13/2012 17:51:15 ERROR]************************************************************
+[03/13/2012 17:51:15  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:51:15  INFO]Action 21: click aborted
+[03/13/2012 17:51:15  INFO]Result: Fail
+[03/13/2012 17:51:15  INFO]Time: 0 hours, 0 minutes, 30 seconds.
+[03/13/2012 17:52:13  INFO]Starting Firefox...
+[03/13/2012 17:52:13  INFO]Using profile: webdriver
+[03/13/2012 17:52:22  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:52:22  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:52:23  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:52:23  INFO]--- 2 Action Start: input
+[03/13/2012 17:52:24  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:52:24  INFO]--- 3 Action Start: input
+[03/13/2012 17:52:24  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:52:24  INFO]--- 4 Action Start: click
+[03/13/2012 17:52:26  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:52:26  INFO]--- 5 Action Start: wait
+[03/13/2012 17:52:26  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:52:27  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:52:31  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:52:31  INFO]--- 7 Action Start: hover
+[03/13/2012 17:52:31  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:52:31  INFO]--- 9 Action Start: click
+[03/13/2012 17:52:32  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:52:32  INFO]--- 10 Action Start: wait
+[03/13/2012 17:52:32  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:52:33  INFO]--- 11 Action Start: click
+[03/13/2012 17:52:33  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:52:33  INFO]--- 12 Action Start: waitfor
+[03/13/2012 17:52:33  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 17:52:33  INFO]--- 13 Action Start: input
+[03/13/2012 17:52:34  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:52:34  INFO]--- 14 Action Start: input
+[03/13/2012 17:52:34  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:52:34  INFO]--- 15 Action Start: input
+[03/13/2012 17:52:34  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:52:34  INFO]--- 16 Action Start: waitfor
+[03/13/2012 17:52:34  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 17:52:34  INFO]--- 17 Action Start: click
+[03/13/2012 17:52:34  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:52:34  INFO]--- 18 Action Start: waitfor
+[03/13/2012 17:52:34  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 17:52:34  INFO]--- 19 Action Start: click
+[03/13/2012 17:52:35  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:52:35  INFO]--- 20 Action Start: waitfor
+[03/13/2012 17:52:35 ERROR]************************************************************
+[03/13/2012 17:52:35 ERROR]Could not find element //*[@id='email_send'] after 5 seconds
+[03/13/2012 17:52:35 ERROR]************************************************************
+[03/13/2012 17:52:35  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:52:35  INFO]Action 20: waitfor aborted
+[03/13/2012 17:52:35  INFO]Result: Fail
+[03/13/2012 17:52:35  INFO]Time: 0 hours, 0 minutes, 22 seconds.
+[03/13/2012 17:52:49  INFO]Starting Firefox...
+[03/13/2012 17:52:49  INFO]Using profile: webdriver
+[03/13/2012 17:52:58  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:52:58  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:53:01  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:53:01  INFO]--- 2 Action Start: input
+[03/13/2012 17:53:01  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:53:01  INFO]--- 3 Action Start: input
+[03/13/2012 17:53:02  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:53:02  INFO]--- 4 Action Start: click
+[03/13/2012 17:53:04  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:53:04  INFO]--- 5 Action Start: wait
+[03/13/2012 17:53:04  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:53:05  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:53:08  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:53:08  INFO]--- 7 Action Start: hover
+[03/13/2012 17:53:09  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:53:09  INFO]--- 9 Action Start: click
+[03/13/2012 17:53:10  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:53:10  INFO]--- 10 Action Start: wait
+[03/13/2012 17:53:10  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:53:11  INFO]--- 11 Action Start: click
+[03/13/2012 17:53:11  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:53:11  INFO]--- 12 Action Start: waitfor
+[03/13/2012 17:53:12  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 17:53:12  INFO]--- 13 Action Start: input
+[03/13/2012 17:53:12  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:53:12  INFO]--- 14 Action Start: input
+[03/13/2012 17:53:12  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:53:12  INFO]--- 15 Action Start: input
+[03/13/2012 17:53:12  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:53:12  INFO]--- 16 Action Start: waitfor
+[03/13/2012 17:53:12  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 17:53:12  INFO]--- 17 Action Start: click
+[03/13/2012 17:53:13  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:53:13  INFO]--- 18 Action Start: waitfor
+[03/13/2012 17:53:13  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 17:53:13  INFO]--- 19 Action Start: click
+[03/13/2012 17:53:13  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:53:13  INFO]--- 20 Action Start: waitfor
+[03/13/2012 17:53:13 ERROR]************************************************************
+[03/13/2012 17:53:13 ERROR]Could not find element //*[@id='email_send'] after 5 seconds
+[03/13/2012 17:53:13 ERROR]************************************************************
+[03/13/2012 17:53:13  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:53:13  INFO]Action 20: waitfor aborted
+[03/13/2012 17:53:13  INFO]Result: Fail
+[03/13/2012 17:53:13  INFO]Time: 0 hours, 0 minutes, 24 seconds.
+[03/13/2012 17:54:04  INFO]Starting Firefox...
+[03/13/2012 17:54:04  INFO]Using profile: webdriver
+[03/13/2012 17:54:13  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:54:13  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:54:15  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:54:15  INFO]--- 2 Action Start: input
+[03/13/2012 17:54:15  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:54:15  INFO]--- 3 Action Start: input
+[03/13/2012 17:54:15  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:54:15  INFO]--- 4 Action Start: click
+[03/13/2012 17:54:18  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:54:18  INFO]--- 5 Action Start: wait
+[03/13/2012 17:54:18  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:54:19  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:54:25  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:54:25  INFO]--- 7 Action Start: hover
+[03/13/2012 17:54:25  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:54:25  INFO]--- 9 Action Start: click
+[03/13/2012 17:54:25  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:54:25  INFO]--- 10 Action Start: wait
+[03/13/2012 17:54:25  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:54:26  INFO]--- 11 Action Start: click
+[03/13/2012 17:54:27  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:54:27  INFO]--- 12 Action Start: waitfor
+[03/13/2012 17:54:27  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 17:54:27  INFO]--- 13 Action Start: input
+[03/13/2012 17:54:28  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:54:28  INFO]--- 14 Action Start: input
+[03/13/2012 17:54:28  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:54:28  INFO]--- 15 Action Start: input
+[03/13/2012 17:54:28  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:54:28  INFO]--- 16 Action Start: waitfor
+[03/13/2012 17:54:28  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 17:54:28  INFO]--- 17 Action Start: click
+[03/13/2012 17:54:28  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:54:28  INFO]--- 18 Action Start: waitfor
+[03/13/2012 17:54:28  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 17:54:28  INFO]--- 19 Action Start: click
+[03/13/2012 17:54:28  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:54:28  INFO]--- 20 Action Start: waitfor
+[03/13/2012 17:54:30 ERROR]************************************************************
+[03/13/2012 17:54:30 ERROR]Could not find element //*[@id='email_send'] after 5 seconds
+[03/13/2012 17:54:30 ERROR]************************************************************
+[03/13/2012 17:54:30  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:54:30  INFO]Action 20: waitfor aborted
+[03/13/2012 17:54:30  INFO]Result: Fail
+[03/13/2012 17:54:30  INFO]Time: 0 hours, 0 minutes, 25 seconds.
+[03/13/2012 17:54:56  INFO]Starting Firefox...
+[03/13/2012 17:54:56  INFO]Using profile: webdriver
+[03/13/2012 17:55:06  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:55:06  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:55:07  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:55:07  INFO]--- 2 Action Start: input
+[03/13/2012 17:55:07  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:55:07  INFO]--- 3 Action Start: input
+[03/13/2012 17:55:08  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:55:08  INFO]--- 4 Action Start: click
+[03/13/2012 17:55:10  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:55:10  INFO]--- 5 Action Start: wait
+[03/13/2012 17:55:10  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:55:11  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:55:15  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:55:15  INFO]--- 7 Action Start: hover
+[03/13/2012 17:55:15  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:55:15  INFO]--- 9 Action Start: click
+[03/13/2012 17:55:16  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:55:16  INFO]--- 10 Action Start: wait
+[03/13/2012 17:55:16  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:55:17  INFO]--- 11 Action Start: click
+[03/13/2012 17:55:18  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:55:18  INFO]--- 12 Action Start: waitfor
+[03/13/2012 17:55:18  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 17:55:18  INFO]--- 13 Action Start: input
+[03/13/2012 17:55:18  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:55:18  INFO]--- 14 Action Start: input
+[03/13/2012 17:55:18  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:55:18  INFO]--- 15 Action Start: input
+[03/13/2012 17:55:19  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:55:19  INFO]--- 16 Action Start: waitfor
+[03/13/2012 17:55:19  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 17:55:19  INFO]--- 17 Action Start: click
+[03/13/2012 17:55:19  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:55:19  INFO]--- 18 Action Start: waitfor
+[03/13/2012 17:55:19  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 17:55:19  INFO]--- 19 Action Start: click
+[03/13/2012 17:55:19  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:55:19  INFO]--- 20 Action Start: waitfor
+[03/13/2012 17:55:20 ERROR]************************************************************
+[03/13/2012 17:55:20 ERROR]Could not find element //*[@id='email_send'] after 20 seconds
+[03/13/2012 17:55:20 ERROR]************************************************************
+[03/13/2012 17:55:20  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:55:20  INFO]Action 20: waitfor aborted
+[03/13/2012 17:55:20  INFO]Result: Fail
+[03/13/2012 17:55:20  INFO]Time: 0 hours, 0 minutes, 24 seconds.
+[03/13/2012 17:55:34  INFO]Starting Firefox...
+[03/13/2012 17:55:34  INFO]Using profile: webdriver
+[03/13/2012 17:55:44  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:55:44  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:55:46  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:55:46  INFO]--- 2 Action Start: input
+[03/13/2012 17:55:46  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:55:46  INFO]--- 3 Action Start: input
+[03/13/2012 17:55:46  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:55:46  INFO]--- 4 Action Start: click
+[03/13/2012 17:55:49  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:55:49  INFO]--- 5 Action Start: wait
+[03/13/2012 17:55:49  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:55:50  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:55:53  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:55:53  INFO]--- 7 Action Start: hover
+[03/13/2012 17:55:53  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:55:54  INFO]--- 9 Action Start: click
+[03/13/2012 17:55:54  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:55:54  INFO]--- 10 Action Start: wait
+[03/13/2012 17:55:54  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:55:55  INFO]--- 11 Action Start: click
+[03/13/2012 17:55:56  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:55:56  INFO]--- 12 Action Start: waitfor
+[03/13/2012 17:55:56  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 17:55:56  INFO]--- 13 Action Start: input
+[03/13/2012 17:55:57  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:55:57  INFO]--- 14 Action Start: input
+[03/13/2012 17:55:57  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:55:57  INFO]--- 15 Action Start: input
+[03/13/2012 17:55:57  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:55:57  INFO]--- 16 Action Start: waitfor
+[03/13/2012 17:55:57  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 17:55:57  INFO]--- 17 Action Start: click
+[03/13/2012 17:55:57  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:55:57  INFO]--- 18 Action Start: waitfor
+[03/13/2012 17:55:57  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 17:55:57  INFO]--- 19 Action Start: click
+[03/13/2012 17:55:58  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:55:58  INFO]--- 20 Action Start: waitfor
+[03/13/2012 17:56:00 ERROR]************************************************************
+[03/13/2012 17:56:00 ERROR]Could not find element //*[@id='email_send'] after 20 seconds
+[03/13/2012 17:56:00 ERROR]************************************************************
+[03/13/2012 17:56:00  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:56:00  INFO]Action 20: waitfor aborted
+[03/13/2012 17:56:00  INFO]Result: Fail
+[03/13/2012 17:56:00  INFO]Time: 0 hours, 0 minutes, 25 seconds.
+[03/13/2012 17:56:58  INFO]Starting Firefox...
+[03/13/2012 17:56:58  INFO]Using profile: webdriver
+[03/13/2012 17:57:08  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:57:08  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:57:09  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:57:09  INFO]--- 2 Action Start: input
+[03/13/2012 17:57:09  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:57:09  INFO]--- 3 Action Start: input
+[03/13/2012 17:57:10  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:57:10  INFO]--- 4 Action Start: click
+[03/13/2012 17:57:12  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:57:12  INFO]--- 5 Action Start: wait
+[03/13/2012 17:57:12  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:57:13  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:57:16  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:57:16  INFO]--- 7 Action Start: hover
+[03/13/2012 17:57:16  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:57:16  INFO]--- 9 Action Start: click
+[03/13/2012 17:57:17  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:57:17  INFO]--- 10 Action Start: wait
+[03/13/2012 17:57:17  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:57:18  INFO]--- 11 Action Start: click
+[03/13/2012 17:57:18  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:57:18  INFO]--- 12 Action Start: waitfor
+[03/13/2012 17:57:19  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 17:57:19  INFO]--- 13 Action Start: input
+[03/13/2012 17:57:19  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:57:19  INFO]--- 14 Action Start: input
+[03/13/2012 17:57:19  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:57:19  INFO]--- 15 Action Start: input
+[03/13/2012 17:57:20  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:57:20  INFO]--- 16 Action Start: waitfor
+[03/13/2012 17:57:20  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 17:57:20  INFO]--- 17 Action Start: click
+[03/13/2012 17:57:20  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:57:20  INFO]--- 18 Action Start: waitfor
+[03/13/2012 17:57:20  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 17:57:20  INFO]--- 19 Action Start: click
+[03/13/2012 17:57:20  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 17:57:20  INFO]--- 21 Action Start: click
+[03/13/2012 17:57:22 ERROR]************************************************************
+[03/13/2012 17:57:22 ERROR]Cannot find element with given xpath: //*[@id='email_send']
+[03/13/2012 17:57:22 ERROR]************************************************************
+[03/13/2012 17:57:22  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:57:22  INFO]Action 21: click aborted
+[03/13/2012 17:57:22  INFO]Result: Fail
+[03/13/2012 17:57:22  INFO]Time: 0 hours, 0 minutes, 23 seconds.
+[03/13/2012 17:58:38  INFO]Starting Firefox...
+[03/13/2012 17:58:38  INFO]Using profile: webdriver
+[03/13/2012 17:58:48  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 17:58:48  INFO]--- 1 Action Start: navigate
+[03/13/2012 17:58:49  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 17:58:49  INFO]--- 2 Action Start: input
+[03/13/2012 17:58:49  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 17:58:49  INFO]--- 3 Action Start: input
+[03/13/2012 17:58:49  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 17:58:49  INFO]--- 4 Action Start: click
+[03/13/2012 17:58:52  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 17:58:52  INFO]--- 5 Action Start: wait
+[03/13/2012 17:58:52  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:58:53  INFO]--- 6 Action Start: navigate
+[03/13/2012 17:58:55  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 17:58:55  INFO]--- 7 Action Start: hover
+[03/13/2012 17:58:55  INFO]Displayed sub-menu of: Profile
+[03/13/2012 17:58:55  INFO]--- 9 Action Start: click
+[03/13/2012 17:58:56  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 17:58:56  INFO]--- 10 Action Start: wait
+[03/13/2012 17:58:56  INFO]Sleeping for: 1 seconds
+[03/13/2012 17:58:57  INFO]--- 11 Action Start: click
+[03/13/2012 17:58:57  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 17:58:57  INFO]--- 12 Action Start: waitfor
+[03/13/2012 17:58:57  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 17:58:57  INFO]--- 13 Action Start: input
+[03/13/2012 17:58:58  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 17:58:58  INFO]--- 14 Action Start: input
+[03/13/2012 17:58:58  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 17:58:58  INFO]--- 15 Action Start: input
+[03/13/2012 17:58:58  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 17:58:58  INFO]--- 16 Action Start: waitfor
+[03/13/2012 17:58:58  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 17:58:58  INFO]--- 17 Action Start: click
+[03/13/2012 17:58:58  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 17:58:58  INFO]--- 18 Action Start: waitfor
+[03/13/2012 17:58:59  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 17:58:59  INFO]--- 19 Action Start: click
+[03/13/2012 17:58:59  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr link, by given xpath method
+[03/13/2012 17:58:59  INFO]--- 20 Action Start: waitfor
+[03/13/2012 17:59:00 ERROR]************************************************************
+[03/13/2012 17:59:00 ERROR]Could not find element //*[@id='email_send'] after 20 seconds
+[03/13/2012 17:59:00 ERROR]************************************************************
+[03/13/2012 17:59:00  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 17:59:00  INFO]Action 20: waitfor aborted
+[03/13/2012 17:59:00  INFO]Result: Fail
+[03/13/2012 17:59:00  INFO]Time: 0 hours, 0 minutes, 22 seconds.
+[03/13/2012 18:00:31  INFO]Starting Firefox...
+[03/13/2012 18:00:31  INFO]Using profile: webdriver
+[03/13/2012 18:00:41  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 18:00:41  INFO]--- 1 Action Start: navigate
+[03/13/2012 18:00:43  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 18:00:43  INFO]--- 2 Action Start: input
+[03/13/2012 18:00:43  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 18:00:43  INFO]--- 3 Action Start: input
+[03/13/2012 18:00:43  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 18:00:43  INFO]--- 4 Action Start: click
+[03/13/2012 18:00:46  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 18:00:46  INFO]--- 5 Action Start: wait
+[03/13/2012 18:00:46  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:00:47  INFO]--- 6 Action Start: navigate
+[03/13/2012 18:00:50  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 18:00:50  INFO]--- 7 Action Start: hover
+[03/13/2012 18:00:50  INFO]Displayed sub-menu of: Profile
+[03/13/2012 18:00:50  INFO]--- 9 Action Start: click
+[03/13/2012 18:00:51  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 18:00:51  INFO]--- 10 Action Start: wait
+[03/13/2012 18:00:51  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:00:52  INFO]--- 11 Action Start: click
+[03/13/2012 18:00:52  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 18:00:52  INFO]--- 12 Action Start: waitfor
+[03/13/2012 18:00:53  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 18:00:53  INFO]--- 13 Action Start: input
+[03/13/2012 18:00:53  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 18:00:53  INFO]--- 14 Action Start: input
+[03/13/2012 18:00:53  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 18:00:53  INFO]--- 15 Action Start: input
+[03/13/2012 18:00:54  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 18:00:54  INFO]--- 16 Action Start: waitfor
+[03/13/2012 18:00:54  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 18:00:54  INFO]--- 17 Action Start: click
+[03/13/2012 18:00:54  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 18:00:54  INFO]--- 18 Action Start: waitfor
+[03/13/2012 18:00:54  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 18:00:54  INFO]--- 19 Action Start: click
+[03/13/2012 18:00:54  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr link, by given xpath method
+[03/13/2012 18:00:54  INFO]--- 20 Action Start: wait
+[03/13/2012 18:00:54  INFO]Sleeping for: 10 seconds
+[03/13/2012 18:01:04  INFO]--- 21 Action Start: click
+[03/13/2012 18:01:06 ERROR]************************************************************
+[03/13/2012 18:01:06 ERROR]Cannot find element with given xpath: //*[@id='email_send']
+[03/13/2012 18:01:06 ERROR]************************************************************
+[03/13/2012 18:01:06  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 18:01:06  INFO]Action 21: click aborted
+[03/13/2012 18:01:06  INFO]Result: Fail
+[03/13/2012 18:01:06  INFO]Time: 0 hours, 0 minutes, 35 seconds.
+[03/13/2012 18:03:25  INFO]Starting Firefox...
+[03/13/2012 18:03:25  INFO]Using profile: webdriver
+[03/13/2012 18:03:35  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 18:03:35  INFO]--- 1 Action Start: navigate
+[03/13/2012 18:03:37  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 18:03:37  INFO]--- 2 Action Start: input
+[03/13/2012 18:03:37  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 18:03:37  INFO]--- 3 Action Start: input
+[03/13/2012 18:03:37  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 18:03:37  INFO]--- 4 Action Start: click
+[03/13/2012 18:03:39  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 18:03:39  INFO]--- 5 Action Start: wait
+[03/13/2012 18:03:39  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:03:40  INFO]--- 6 Action Start: navigate
+[03/13/2012 18:03:43  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 18:03:43  INFO]--- 7 Action Start: hover
+[03/13/2012 18:03:44  INFO]Displayed sub-menu of: Profile
+[03/13/2012 18:03:44  INFO]--- 9 Action Start: click
+[03/13/2012 18:03:45  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 18:03:45  INFO]--- 10 Action Start: wait
+[03/13/2012 18:03:45  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:03:46  INFO]--- 11 Action Start: click
+[03/13/2012 18:03:46  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 18:03:46  INFO]--- 12 Action Start: waitfor
+[03/13/2012 18:03:46  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 18:03:46  INFO]--- 13 Action Start: input
+[03/13/2012 18:03:47  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 18:03:47  INFO]--- 14 Action Start: input
+[03/13/2012 18:03:47  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 18:03:47  INFO]--- 15 Action Start: input
+[03/13/2012 18:03:47  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 18:03:47  INFO]--- 16 Action Start: waitfor
+[03/13/2012 18:03:47  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 18:03:47  INFO]--- 17 Action Start: click
+[03/13/2012 18:03:48  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 18:03:48  INFO]--- 18 Action Start: waitfor
+[03/13/2012 18:03:48  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 18:03:48  INFO]--- 19 Action Start: click
+[03/13/2012 18:03:48 ERROR]************************************************************
+[03/13/2012 18:03:48 ERROR]Cannot find element with given xpath: //*[@id='drawer_handle']
+[03/13/2012 18:03:48 ERROR]************************************************************
+[03/13/2012 18:03:48  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 18:03:48  INFO]Action 19: click aborted
+[03/13/2012 18:03:48  INFO]Result: Fail
+[03/13/2012 18:03:48  INFO]Time: 0 hours, 0 minutes, 23 seconds.
+[03/13/2012 18:04:53  INFO]Starting Firefox...
+[03/13/2012 18:04:53  INFO]Using profile: webdriver
+[03/13/2012 18:05:02  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 18:05:02  INFO]--- 1 Action Start: navigate
+[03/13/2012 18:05:05  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 18:05:05  INFO]--- 2 Action Start: input
+[03/13/2012 18:05:05  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 18:05:05  INFO]--- 3 Action Start: input
+[03/13/2012 18:05:05  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 18:05:05  INFO]--- 4 Action Start: click
+[03/13/2012 18:05:08  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 18:05:08  INFO]--- 5 Action Start: wait
+[03/13/2012 18:05:08  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:05:09  INFO]--- 6 Action Start: navigate
+[03/13/2012 18:05:13  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 18:05:13  INFO]--- 7 Action Start: hover
+[03/13/2012 18:05:13  INFO]Displayed sub-menu of: Profile
+[03/13/2012 18:05:13  INFO]--- 9 Action Start: click
+[03/13/2012 18:05:14  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 18:05:14  INFO]--- 10 Action Start: wait
+[03/13/2012 18:05:14  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:05:15  INFO]--- 11 Action Start: click
+[03/13/2012 18:05:15  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 18:05:15  INFO]--- 12 Action Start: waitfor
+[03/13/2012 18:05:16  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 18:05:16  INFO]--- 13 Action Start: input
+[03/13/2012 18:05:16  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 18:05:16  INFO]--- 14 Action Start: input
+[03/13/2012 18:05:16  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 18:05:16  INFO]--- 15 Action Start: input
+[03/13/2012 18:05:17  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 18:05:17  INFO]--- 16 Action Start: waitfor
+[03/13/2012 18:05:17  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 18:05:17  INFO]--- 17 Action Start: click
+[03/13/2012 18:05:17  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 18:05:17  INFO]--- 18 Action Start: waitfor
+[03/13/2012 18:05:17  INFO]Element /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td displyed.
+[03/13/2012 18:05:17  INFO]--- 19 Action Start: click
+[03/13/2012 18:05:17 ERROR]************************************************************
+[03/13/2012 18:05:17 ERROR]Cannot find element with given xpath: //*[@id='drawer_handle']
+[03/13/2012 18:05:17 ERROR]************************************************************
+[03/13/2012 18:05:17  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 18:05:17  INFO]Action 19: click aborted
+[03/13/2012 18:05:17  INFO]Result: Fail
+[03/13/2012 18:05:17  INFO]Time: 0 hours, 0 minutes, 24 seconds.
+[03/13/2012 18:06:12  INFO]Starting Firefox...
+[03/13/2012 18:06:12  INFO]Using profile: webdriver
+[03/13/2012 18:06:22  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 18:06:22  INFO]--- 1 Action Start: navigate
+[03/13/2012 18:06:25  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 18:06:25  INFO]--- 2 Action Start: input
+[03/13/2012 18:06:25  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 18:06:25  INFO]--- 3 Action Start: input
+[03/13/2012 18:06:25  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 18:06:25  INFO]--- 4 Action Start: click
+[03/13/2012 18:06:28  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 18:06:28  INFO]--- 5 Action Start: wait
+[03/13/2012 18:06:28  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:06:29  INFO]--- 6 Action Start: navigate
+[03/13/2012 18:06:34  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 18:06:34  INFO]--- 7 Action Start: hover
+[03/13/2012 18:06:34  INFO]Displayed sub-menu of: Profile
+[03/13/2012 18:06:34  INFO]--- 9 Action Start: click
+[03/13/2012 18:06:35  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 18:06:35  INFO]--- 10 Action Start: wait
+[03/13/2012 18:06:35  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:06:36  INFO]--- 11 Action Start: click
+[03/13/2012 18:06:37  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 18:06:37  INFO]--- 12 Action Start: waitfor
+[03/13/2012 18:06:37  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 18:06:37  INFO]--- 13 Action Start: input
+[03/13/2012 18:06:37  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 18:06:37  INFO]--- 14 Action Start: input
+[03/13/2012 18:06:38  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 18:06:38  INFO]--- 15 Action Start: input
+[03/13/2012 18:06:38  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 18:06:38  INFO]--- 16 Action Start: waitfor
+[03/13/2012 18:06:38  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 18:06:38  INFO]--- 17 Action Start: click
+[03/13/2012 18:06:38  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 18:06:38  INFO]--- 18 Action Start: wait
+[03/13/2012 18:06:38  INFO]Sleeping for: 2 seconds
+[03/13/2012 18:06:40  INFO]--- 19 Action Start: click
+[03/13/2012 18:06:41 ERROR]************************************************************
+[03/13/2012 18:06:41 ERROR]Cannot find element with given xpath: //*[@id='drawer_handle']
+[03/13/2012 18:06:41 ERROR]************************************************************
+[03/13/2012 18:06:41  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 18:06:41  INFO]Action 19: click aborted
+[03/13/2012 18:06:41  INFO]Result: Fail
+[03/13/2012 18:06:41  INFO]Time: 0 hours, 0 minutes, 28 seconds.
+[03/13/2012 18:06:54  INFO]Starting Firefox...
+[03/13/2012 18:06:54  INFO]Using profile: webdriver
+[03/13/2012 18:07:03  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 18:07:03  INFO]--- 1 Action Start: navigate
+[03/13/2012 18:07:05  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 18:07:05  INFO]--- 2 Action Start: input
+[03/13/2012 18:07:05  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 18:07:05  INFO]--- 3 Action Start: input
+[03/13/2012 18:07:06  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 18:07:06  INFO]--- 4 Action Start: click
+[03/13/2012 18:07:08  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 18:07:08  INFO]--- 5 Action Start: wait
+[03/13/2012 18:07:08  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:07:09  INFO]--- 6 Action Start: navigate
+[03/13/2012 18:07:15  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 18:07:15  INFO]--- 7 Action Start: hover
+[03/13/2012 18:07:15  INFO]Displayed sub-menu of: Profile
+[03/13/2012 18:07:15  INFO]--- 9 Action Start: click
+[03/13/2012 18:07:17  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 18:07:17  INFO]--- 10 Action Start: wait
+[03/13/2012 18:07:17  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:07:18  INFO]--- 11 Action Start: click
+[03/13/2012 18:07:18  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 18:07:18  INFO]--- 12 Action Start: waitfor
+[03/13/2012 18:07:18  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 18:07:18  INFO]--- 13 Action Start: input
+[03/13/2012 18:07:18  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 18:07:18  INFO]--- 14 Action Start: input
+[03/13/2012 18:07:19  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 18:07:19  INFO]--- 15 Action Start: input
+[03/13/2012 18:07:19  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 18:07:19  INFO]--- 16 Action Start: waitfor
+[03/13/2012 18:07:19  INFO]Element /html/body/div[2]/div[3]/div/span/button displyed.
+[03/13/2012 18:07:19  INFO]--- 17 Action Start: click
+[03/13/2012 18:07:19  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 18:07:19  INFO]--- 18 Action Start: wait
+[03/13/2012 18:07:19  INFO]Sleeping for: 2 seconds
+[03/13/2012 18:07:21  INFO]--- 19 Action Start: click
+[03/13/2012 18:07:22 ERROR]************************************************************
+[03/13/2012 18:07:22 ERROR]Cannot find element with given xpath: //*[@id='drawer_handle']
+[03/13/2012 18:07:22 ERROR]************************************************************
+[03/13/2012 18:07:22  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 18:07:22  INFO]Action 19: click aborted
+[03/13/2012 18:07:22  INFO]Result: Fail
+[03/13/2012 18:07:22  INFO]Time: 0 hours, 0 minutes, 28 seconds.
+[03/13/2012 18:11:07  INFO]Starting Firefox...
+[03/13/2012 18:11:07  INFO]Using profile: webdriver
+[03/13/2012 18:11:18  INFO]=====Workflow invite_customer_login start=====
+[03/13/2012 18:11:18  INFO]--- 1 Action Start: navigate
+[03/13/2012 18:11:21  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 18:11:21  INFO]--- 2 Action Start: input
+[03/13/2012 18:11:21  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 18:11:21  INFO]--- 3 Action Start: input
+[03/13/2012 18:11:22  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 18:11:22  INFO]--- 4 Action Start: click
+[03/13/2012 18:11:24  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 18:11:24  INFO]--- 5 Action Start: wait
+[03/13/2012 18:11:24  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:11:25  INFO]--- 6 Action Start: navigate
+[03/13/2012 18:11:33  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 18:11:33  INFO]--- 7 Action Start: hover
+[03/13/2012 18:11:33  INFO]Displayed sub-menu of: Profile
+[03/13/2012 18:11:33  INFO]--- 9 Action Start: click
+[03/13/2012 18:11:35  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 18:11:35  INFO]--- 10 Action Start: wait
+[03/13/2012 18:11:35  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:11:36  INFO]--- 11 Action Start: click
+[03/13/2012 18:11:36  INFO]Clicked on: //*[@id='service_add'] link, by given xpath method
+[03/13/2012 18:11:36  INFO]--- 12 Action Start: waitfor
+[03/13/2012 18:11:37  INFO]Element //*[@id='add_customer_login'] displyed.
+[03/13/2012 18:11:37  INFO]--- 13 Action Start: input
+[03/13/2012 18:11:37  INFO]Typed: rantao12@yahoo.com in //*[@id='add_customer_login'] text field by given xpath method
+[03/13/2012 18:11:37  INFO]--- 14 Action Start: input
+[03/13/2012 18:11:37  INFO]Typed: Comments123 in //*[@id='add_ac_comment'] text field by given xpath method
+[03/13/2012 18:11:37  INFO]--- 15 Action Start: input
+[03/13/2012 18:11:37  INFO]Typed: taora@cisco.com in //*[@id='add_email_addr'] text field by given xpath method
+[03/13/2012 18:11:37  INFO]--- 16 Action Start: wait
+[03/13/2012 18:11:37  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:11:38  INFO]--- 17 Action Start: click
+[03/13/2012 18:11:39  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 18:11:39  INFO]--- 18 Action Start: wait
+[03/13/2012 18:11:39  INFO]Sleeping for: 2 seconds
+[03/13/2012 18:11:41  INFO]--- 19 Action Start: click
+[03/13/2012 18:11:41  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td link, by given xpath method
+[03/13/2012 18:11:41  INFO]--- 20 Action Start: wait
+[03/13/2012 18:11:41  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:11:42  INFO]--- 21 Action Start: click
+[03/13/2012 18:11:44  INFO]Clicked on button: //*[@id='email_send'], by given xpath method
+[03/13/2012 18:11:44  INFO]--- 22 Action Start: wait
+[03/13/2012 18:11:44  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:11:45  INFO]--- 23 Action Start: navigate
+[03/13/2012 18:11:46  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer_register.php?token=YWdlbnQ9bmh1aG9hbmcxLHVzZXI9cmFudGFvMTJAeWFob28uY29t
+[03/13/2012 18:11:46  INFO]--- 24 Action Start: waitfor
+[03/13/2012 18:11:46  INFO]Element //*[@id='password'] displyed.
+[03/13/2012 18:11:46  INFO]--- 25 Action Start: input
+[03/13/2012 18:11:47  INFO]Typed: qazWSX123 in //*[@id='password'] text field by given xpath method
+[03/13/2012 18:11:47  INFO]--- 26 Action Start: click
+[03/13/2012 18:11:49  INFO]Clicked on button: //*[@id='submitButton'], by given xpath method
+[03/13/2012 18:11:49  INFO]--- 27 Action Start: wait
+[03/13/2012 18:11:49  INFO]Sleeping for: 10 seconds
+[03/13/2012 18:11:59  INFO]--- 28 Action Start: navigate
+[03/13/2012 18:11:59  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/13/2012 18:11:59  INFO]--- 29 Action Start: input
+[03/13/2012 18:11:59  INFO]Typed: nhuhoang1 in //*[@id='accountid'] text field by given xpath method
+[03/13/2012 18:11:59  INFO]--- 30 Action Start: input
+[03/13/2012 18:12:00  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/13/2012 18:12:00  INFO]--- 31 Action Start: click
+[03/13/2012 18:12:02  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/13/2012 18:12:02  INFO]--- 32 Action Start: wait
+[03/13/2012 18:12:02  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:12:03  INFO]--- 33 Action Start: navigate
+[03/13/2012 18:12:05  INFO]Navigated to: https://4468.t5.l1.cisco.com/customer.html?c=23530.4468.t5.l1.cisco.com
+[03/13/2012 18:12:05  INFO]--- 34 Action Start: wait
+[03/13/2012 18:12:05  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:12:06  INFO]--- 35 Action Start: hover
+[03/13/2012 18:12:06  INFO]Displayed sub-menu of: Profile
+[03/13/2012 18:12:06  INFO]--- 36 Action Start: wait
+[03/13/2012 18:12:06  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:12:07  INFO]--- 37 Action Start: click
+[03/13/2012 18:12:07  INFO]Clicked on submenu: Customer Logins, by submenu value method
+[03/13/2012 18:12:07  INFO]--- 38 Action Start: wait
+[03/13/2012 18:12:07  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:12:08  INFO]--- 39 Action Start: verify
+[03/13/2012 18:12:08  INFO]Found text: rantao12@yahoo.com
+[03/13/2012 18:12:08  INFO]Regex passed
+[03/13/2012 18:12:08  INFO]--- 40 Action Start: verify
+[03/13/2012 18:12:08  INFO]Found text: Active
+[03/13/2012 18:12:08  INFO]Regex passed
+[03/13/2012 18:12:08  INFO]--- 41 Action Start: verify
+[03/13/2012 18:12:08  INFO]Found text: Full Access
+[03/13/2012 18:12:08  INFO]Regex passed
+[03/13/2012 18:12:08  INFO]--- 42 Action Start: verify
+[03/13/2012 18:12:08  INFO]Found text: Comments123
+[03/13/2012 18:12:08  INFO]Regex passed
+[03/13/2012 18:12:08  INFO]--- 43 Action Start: click
+[03/13/2012 18:12:09  INFO]Clicked on: /html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr link, by given xpath method
+[03/13/2012 18:12:09  INFO]--- 44 Action Start: wait
+[03/13/2012 18:12:09  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:12:10  INFO]--- 45 Action Start: click
+[03/13/2012 18:12:12  INFO]Clicked on button: /html/body/div/div[2]/div[2]/div/div[3]/div/div[2]/span[2]/a, by given xpath method
+[03/13/2012 18:12:12  INFO]--- 46 Action Start: wait
+[03/13/2012 18:12:12  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:12:13  INFO]--- 47 Action Start: click
+[03/13/2012 18:12:13  INFO]Clicked on: /html/body/div[2]/div[3]/div/span/button link, by given xpath method
+[03/13/2012 18:12:13  INFO]--- 48 Action Start: wait
+[03/13/2012 18:12:13  INFO]Sleeping for: 1 seconds
+[03/13/2012 18:12:14  INFO]--- 49 Action Start: verify
+[03/13/2012 18:12:16  INFO]Found text: No records found
+[03/13/2012 18:12:16  INFO]Regex passed
+[03/13/2012 18:12:16  INFO]=====Workflow invite_customer_login end=====
+[03/13/2012 18:12:16  INFO]Result: Pass
+[03/13/2012 18:12:16  INFO]Time: 0 hours, 1 minutes, 8 seconds.

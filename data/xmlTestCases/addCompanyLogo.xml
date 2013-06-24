@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow driver="selenium" wfID="addCompanyLogo" stoptype="abort" profile="webdriver">
+ <action acID="1" stoptype="abort" timeout="">
+  <actionName>login</actionName>
+  <actionParam paramType="url" paramValue="https://www.tb1.rcdnlab1.com" />
+  <actionParam paramType="username" paramValue="var1" />
+  <actionParam paramType="password" paramValue="Test1234" />
+  <actionParam paramType="type" paramValue="Agent" />
+ </action>
+ <action acID="2" stoptype="abort" timeout="">
+ 	<actionName>goTo</actionName>
+ 	<actionParam paramType="type" paramValue="page" />
+ 	<actionParam paramType="value" paramValue="Account" />
+ </action>
+ <action acID="3" stoptype="abort" timeout="">
+	<actionName>input</actionName>
+	<actionParam paramType="type" paramValue="file" />
+	<actionParam paramType="xpath" paramValue="//input[@id='agent_logo']" />
+	<actionParam paramType="value" paramValue="../data/images/logo2.gif" />
+ </action>
+ <action acID="4" stoptype="abort" timeout="">
+ 	<actionName>click</actionName>
+ 	<actionParam paramType="type" paramValue="Button" />
+	<actionParam paramType="xpath" paramValue="//button[@value='Save']" />
+ </action>
+ <action acID="5" stoptype="abort" timeout="">
+	<actionName>wait</actionName>
+	<actionParam paramType="type" paramValue="seconds" />
+	<actionParam paramType="value" paramValue="20" />
+ </action>
+ <action acID="6" stoptype="abort" timeout="">
+  <actionName>submitTCResult</actionName>
+  <actionParam paramType="Boolean" paramValue="Boolean" />
+ </action>
+</workflow>

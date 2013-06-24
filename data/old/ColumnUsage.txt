@@ -1,0 +1,14 @@
+Brand - All
+BrandLogin - All
+BrandPassword - All
+ServerID - ActivateDevice, DeactivateDevice
+ActivationID - ActivateDevice, DeactivateDevice, AddCustomers, RemoveCustomers
+ActivationPassword - ActivateDevice, DeactivateDevice, AddCustomers
+CustomerName - AddCustomers, RemoveCustomers, AddDeliveryContactAndRules, AddDeliveryContacts, AddDeliveryRules, RemoveDeliveryContacts, RemoveDeliveryRules, AddReports
+Email+EmailDomain - AddCustomers, AddDeliveryContactAndRules, AddDeliveryContacts, AddDeliveryRules
+FirstName+LastName - AddCustomers, AddDeliveryContactAndRules, AddDeliveryContacts, AddDeliveryRules
+StreeAddress+Industry+City+State+Zip+Country+AddContact - AddCustomers
+Reports-* - AddReports
+
+Important Notes:
+Reports-Severity ==> Values should be (0, 1, 2, 3, 4, 5, 6) only. 0=Emergency, 1=Alert, 2=Critical, 3=Error, 4=Warning, 5=Notice, 6=Informational

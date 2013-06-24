@@ -1,0 +1,28 @@
+testcase(testfamily=gui, testgroup=agent, testcase=end2end_delete_customer, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. Login to t5a as auto_var1 (agent)
+# 2. Click on customer auto_var1_customer1
+# 3. go to page Profile
+# 4. delete the customer
+# 5. verfiy the customer is deleted
+workflow(driver=selenium, wfid=agent_delete_customer, stoptype=abort, profile=webdriver, browser=firefox)
+#login as agent
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1, password=Test1234)
+#loop to verify that the customer is there
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=auto_var1_customer1, loop=1, break=y, iterations=10, sleep=1, stoptype=continue)
+#clicks on the agent customer row
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=auto_var1_customer1)
+#verify that the user is on the status page
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span, value=Status, loop=2, break=y, iterations=10, sleep=1, stoptype=continue)
+#go to the profile page
+hover(type=menu, value=Profile)
+click(type=submenu, value=Profile)
+#verify that the user is on the profile page
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span, value=Status, loop=3, break=y, iterations=10, sleep=1, stoptype=continue)
+#click the delete button
+click(type=button, xpath=//*[@id='delete'])
+#click the OK button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify that the user is taken to the overview page
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span, value=Overview, loop=4, break=y, iterations=10, sleep=1, stoptype=continue)
+#verify that the customer is indeed deleted
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, novalue=auto_var1_customer1, loop=5, break=y, iterations=10, sleep=1, stoptype=continue)

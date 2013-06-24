@@ -1,0 +1,52 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="end2end_tba" testgroup="tba" testcase="04_tba_pre_factory_reset_it" parallel="false" workflowpause="0" location="1-qa.t5a.l1.cisco.com" customerid='e2e.1-qa.t5a.l1.cisco.com'>
+  <!--
+	Before kicking off this TC, the password of TBA's administrator must be changed.
+	It should be done in the TC of create_customer  
+	1. Navigate to the tba admin page;
+	2. Click the maintainace;
+	3. Click the factory reset;
+	4. Wait for factory reset finish;
+	5. Verify the factory reset finished.
+  -->
+  <workflow driver="selenium" wfid="tba_factory_reset" stoptype="abort" profile="italian" browser="firefox" rid="tba">
+    <action acid="0" stoptype="abort">
+      <actionname>navigate</actionname>      
+      <actionparam paramtype="url" paramvalue="http://192.168.212.109/"/>
+    </action>
+    <!-- Click the reset -->     
+	<action acid="2" stoptype="abort" timeout="30">
+      <actionname>wait</actionname> 
+      <actionparam paramtype="type" paramvalue="seconds" /> 
+      <actionparam paramtype="value" paramvalue="1" /> 
+      </action>	
+    <action acid="3" stoptype="abort" timeout="30">
+      <actionname>click</actionname> 
+      <actionparam paramtype="type" paramvalue="button" /> 
+      <actionparam paramtype="xpath" paramvalue="/html/body/form[2]/input[2]" /> 
+      </action>     
+    <action acid="4" stoptype="abort" timeout="30">
+      <actionname>wait</actionname> 
+      <actionparam paramtype="type" paramvalue="seconds" /> 
+      <actionparam paramtype="value" paramvalue="1" /> 
+      </action>
+	<action acid="5" stoptype="abort" timeout="30">
+      <actionname>click</actionname> 
+      <actionparam paramtype="type" paramvalue="button" /> 
+      <actionparam paramtype="value" paramvalue="ok" /> 
+      </action>    
+     <!-- verify you get to activation page on tba -->
+	 <action acid="6" stoptype="continue" loop="1" sleep="5" iterations="3" break="y" timeout="3">
+      <actionname>wait</actionname> 
+      <actionparam paramtype="type" paramvalue="minutes" /> 
+      <actionparam paramtype="value" paramvalue="4" /> 
+      </action>
+     <action acid="7" stoptype="continue" loop="1">
+      <actionname>verify</actionname> 
+        <actionparam paramtype="type" paramvalue="text" /> 
+        <actionparam paramtype="xpath" paramvalue="/html/body/form/table/tbody/tr/td/nobr" />
+        <actionparam paramtype="value" paramvalue="ID di attivazione    " />   
+      </action> 
+  </workflow>
+</testcase>
+

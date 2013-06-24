@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?><testcase customerid="${customerid}" location="${location}" parallel="false" testcase="13_create_delete_rules_it" testfamily="end2end_gui" testgroup="subagent" workflowpause="0">
+  <!-- 1. login to t5a as auto_var1_subagent1 (subagent)
+	 2. go to delivery rules page
+	 3. click on + Add Delivery Rule
+	 4. add a delivery rule with severity = Informational
+	 5. verify the delivery rule is added
+	 6. delete the delivery rule
+	 7. verifty the delivery rule is deleted
+	 8. repeat 4-7 with the emergency severity levels
+	 9. add 1 more delivery rules with specifiy events
+	10. verify those are aded and deleted correctly-->
+  <workflow browser="${browser}" driver="selenium" profile="${profile}" rid="${rid}" stoptype="abort" wfid="subagent_create_delete_rules">
+    <!--login as subagent-->
+    <action acid="1" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://${location}"/>
+      <actionparam paramtype="username" paramvalue="${subagentname}"/>
+      <actionparam paramtype="password" paramvalue="${password}"/>
+    </action>
+	<action acid="2" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--go to Delivery rules page-->
+    <action acid="3" stoptype="abort">
+      <actionname>hover</actionname>
+      <actionparam paramtype="type" paramvalue="italianmenu"/>
+      <actionparam paramtype="value" paramvalue="Notifiche"/>
+    </action>
+    <action acid="4" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="submenu"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--verify the h2 of this page is indeed Delivery Rules-->
+    <action acid="5" break="y" iterations="10" loop="1" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--clicks on the + Add Delivery Rule button-->
+    <action acid="6" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='create_notification']"/>
+    </action>
+    <!--verify that the Customer select is up-->
+    <action acid="7" break="y" iterations="10" loop="3" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_customer']/option"/>
+    </action>
+    <!--select All as the Customer-->
+    <action acid="8" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_customer']"/>
+      <actionparam paramtype="value" paramvalue="Tutto"/>
+    </action>
+    <!--verify that the Severity select is up-->
+    <action acid="9" break="y" iterations="10" loop="4" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='severity_events']/option"/>
+    </action>
+    <!--select Informational as the severity-->
+    <action acid="10" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='severity_events']"/>
+      <actionparam paramtype="value" paramvalue="Informativo"/>
+    </action>
+    <!--verify that the Contact select is up-->
+    <action acid="11" break="y" iterations="10" loop="5" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_contact']/option"/>
+    </action>
+    <!--select Auto Var as the Contact-->
+    <action acid="12" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_contact']"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <!--make sure that at least one option under the method select is present-->
+    <action acid="13" break="y" iterations="10" loop="6" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//select[@id='add_target']/option"/>
+    </action>
+    <!--select auto_var1@mail.aws.rcdnlab1.com as the Method-->
+	<action acid="14" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="1"/>
+    </action>
+    <action acid="15" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_target']"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks the save button-->
+    <action acid="16" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/div/div/form/div[6]/span/a"/>
+    </action>
+	<action acid="17" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--verify the h2 of this page is indeed Delivery Rules-->
+    <action acid="18" break="y" iterations="10" loop="7" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--verify that the delivery rule is indeed added-->
+    <action acid="19" break="y" iterations="10" loop="8" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Informativo (Tutto) Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks on the row-->
+    <action acid="20" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Informativo (Tutto) Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+	<action acid="21" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--clicks the delete button-->
+    <action acid="22" break="y" iterations="20" loop="delrow" sleep="1" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div/span[5]/a"/>
+    </action>
+	<action acid="23" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--clicks the OK button on the confirmation dialog-->
+    <action acid="24" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//div[@class='ui-dialog-buttonset']/span/button"/>
+    </action>
+	<action acid="25" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--verify the h2 of this page is indeed Delivery Rules-->
+    <action acid="26" break="y" iterations="10" loop="9" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--verify that the row is indeed deleted-->
+    <action acid="27" break="y" iterations="30" loop="novalue1" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="novalue" paramvalue="Informativo (Tutto) Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks on the + Add Delivery Rule button-->
+    <action acid="28" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='create_notification']"/>
+    </action>
+    <!--verify that the Customer select is up-->
+    <action acid="29" break="y" iterations="10" loop="10" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_customer']/option"/>
+    </action>
+    <!--select All as the Customer-->
+    <action acid="30" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_customer']"/>
+      <actionparam paramtype="value" paramvalue="Tutto"/>
+    </action>
+    <!--verify that the Severity select is up-->
+    <action acid="31" break="y" iterations="10" loop="11" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='severity_events']/option"/>
+    </action>
+    <!--select Informational as the severity-->
+    <action acid="32" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='severity_events']"/>
+      <actionparam paramtype="value" paramvalue="Critico"/>
+    </action>
+    <!--verify that the Contact select is up-->
+    <action acid="33" break="y" iterations="10" loop="12" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_contact']/option"/>
+    </action>
+    <!--select Auto Var as the Contact-->
+    <action acid="34" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_contact']"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <!--make sure that at least one option under the method select is present-->
+    <action acid="35" break="y" iterations="10" loop="13" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div[2]/div/div/form/div[5]/select/option"/>
+    </action>
+	<action acid="36" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="1"/>
+    </action>
+    <!--select auto_var1@automail.aws.rcdnlab1.com as the Method-->
+    <action acid="37" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_target']"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks the save button-->
+    <action acid="38" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div[2]/div/div/form/div[6]/span/a"/>
+    </action>
+	<action acid="39" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--verify the h2 of this page is indeed Delivery Rules-->
+    <action acid="40" break="y" iterations="10" loop="14" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--verify that the delivery rule is indeed added-->
+    <action acid="41" break="y" iterations="10" loop="15" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Critico (Tutto) Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks on the row-->
+    <action acid="42" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Critico (Tutto) Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+	<action acid="43" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--clicks the delete button-->
+    <action acid="44" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div/span[5]/a"/>
+    </action>
+	<action acid="45" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--clicks the cancel link on the confirmation dialog-->
+    <action acid="46" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="link"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div[3]/div/button"/>
+    </action>
+	<action acid="47" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--verify the h2 of this page is indeed Delivery Rules-->
+    <action acid="48" break="y" iterations="10" loop="16" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--verify that the delivery rule is still there-->
+    <action acid="49" break="y" iterations="10" loop="17" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Critico (Tutto) Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks the drawer handle, then wait a second for the animation to finish-->
+    <action acid="50" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="drawer handle"/>
+    </action>
+    <action acid="51" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="1"/>
+    </action>
+    <!--clicks on the row-->
+    <action acid="52" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Critico (Tutto) Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+	<action acid="53" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--clicks the delete button-->
+    <action acid="54" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div/span[5]/a"/>
+    </action>
+	<action acid="55" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--clicks the OK button on the confirmation dialog-->
+    <action acid="56" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//div[@class='ui-dialog-buttonset']/span/button"/>
+    </action>
+	<action acid="57" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--verify the h2 of this page is indeed Delivery Rules-->
+    <action acid="58" break="y" iterations="10" loop="18" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--verify that the row is indeed deleted-->
+    <action acid="59" break="y" iterations="3" loop="novalue2" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="novalue" paramvalue="Critico (Tutto) Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks on the + Add Delivery Rule button-->
+    <action acid="60" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='create_notification']"/>
+    </action>
+    <!--verify that the Customer select is up-->
+    <action acid="61" break="y" iterations="10" loop="19" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_customer']/option"/>
+    </action>
+    <!--select All as the Customer-->
+    <action acid="62" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_customer']"/>
+      <actionparam paramtype="value" paramvalue="Tutto"/>
+    </action>
+    <!--check the Specify Event checkbox-->
+    <action acid="63" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="checkbox"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_eventtype']"/>
+      <actionparam paramtype="value" paramvalue="check"/>
+    </action>
+    <!--verify that the Severity select is up-->
+    <action acid="64" break="y" iterations="10" loop="20" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='severity_events']"/>
+    </action>
+    <!--select Device: Cisco Support Access Used as the specific event-->
+    <action acid="65" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='severity_events']"/>
+      <actionparam paramtype="value" paramvalue="Agente: approvazione registrazione"/>
+    </action>
+    <!--verify that the Contact select is up-->
+    <action acid="66" break="y" iterations="10" loop="21" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_contact']/option"/>
+    </action>
+    <!--select Auto Var as the Contact-->
+    <action acid="67" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_contact']"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <!--make sure that at least one option under the method select is present-->
+    <action acid="68" break="y" iterations="10" loop="22" sleep="2" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div[2]/div/div/form/div[5]/select/option"/>
+    </action>
+    <!--select auto_var1@automail.aws.rcdnlab1.com as the Method-->
+    <action acid="69" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_target']"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks the save button-->
+    <action acid="70" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div[2]/div/div/form/div[6]/span/a"/>
+    </action>
+	<action acid="71" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--verify the h2 of this page is indeed Delivery Rules-->
+    <action acid="72" break="y" iterations="10" loop="23" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--verify that the delivery rule is indeed added-->
+    <action acid="73" break="y" iterations="10" loop="24" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Tutto Agente: approvazione registrazione Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <!--clicks on the row-->
+    <action acid="74" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="Tutto Agente: approvazione registrazione Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+	<action acid="75" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--clicks the delete button-->
+    <action acid="76" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div/span[5]/a"/>
+    </action>
+	<action acid="77" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--clicks the OK button on the confirmation dialog-->
+    <action acid="78" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//div[@class='ui-dialog-buttonset']/span/button"/>
+    </action>
+	<action acid="79" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="3"/>
+    </action>
+    <!--verify the h2 of this page is indeed Delivery Rules-->
+    <action acid="80" break="y" iterations="10" loop="25" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Regole di consegna"/>
+    </action>
+    <!--verify that the row is indeed deleted-->
+    <action acid="81" break="y" iterations="3" loop="novalue3" sleep="1" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="novalue" paramvalue="Tutto Agente: approvazione registrazione Auto Var auto_var3_it@automail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="82" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>

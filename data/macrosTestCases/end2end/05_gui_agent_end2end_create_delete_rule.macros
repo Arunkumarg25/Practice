@@ -1,0 +1,160 @@
+testcase(testfamily=gui, testgroup=agent, testcase=create_delete_rules, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. login to t5a as auto_var1 (agent)
+# 2. go to delivery rules page
+# 3. click on + Add Delivery Rule
+# 4. add a delivery rule with severity = Informational
+# 5. verify the delivery rule is added
+# 6. delete the delivery rule
+# 7. verifty the delivery rule is deleted
+# 8. repeat 4-7 with emergency severity level
+# 9. add 2 more delivery rules with specifiy events
+#10. verify those are aded and deleted correctly
+workflow(driver=selenium, wfid=agent_create_delete_rules, stoptype=abort, profile=webdriver, browser=firefox)
+#login as agent
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1, password=Test1234)
+
+#go to Delivery rules page
+hover(type=menu, value=Notifications)
+click(type=submenu, value=Delivery Rules)
+
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=1, iterations=10, break=y, sleep=1, stoptype=continue)
+
+#verify the row Warning is there
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Warning (All), loop=rowloop, iterations=10, break=y, sleep=1, stoptype=continue)
+#delete the default delivery rule that is already there
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Warning (All))
+
+#clicks the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/div/span[5]/a)
+
+#clicks the OK button on the confirmation dialog
+click(type=button, xpath=//div[@class='ui-dialog-buttonset']/span/button)
+
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=2, iterations=10, break=y, sleep=1, stoptype=continue)
+
+#clicks on the + Add Delivery Rule button
+click(type=button, xpath=//*[@id='create_notification'])
+
+#verify that the Customer select is up
+verify(type=element, xpath=//*[@id='add_customer'], loop=3, iterations=10, break=y, sleep=1, stoptype=continue)
+#select All as the Customer
+input(type=select, xpath=//*[@id='add_customer'], value=All)
+#verify that the Severity select is up
+verify(type=element, xpath=//*[@id='severity_events'], loop=4, iterations=10, break=y, sleep=1, stoptype=continue)
+#select Informational as the severity
+input(type=select, xpath=//*[@id='severity_events'], value=Informational)
+#verify that the Contact select is up
+verify(type=element, xpath=//*[@id='add_contact'], loop=5, iterations=10, break=y, sleep=1, stoptype=continue)
+#select Auto Var as the Contact
+input(type=select, xpath=//*[@id='add_contact'], value=Auto Var)
+#make sure that at least one option under the method select is present
+verify(type=element, xpath=/html/body/div[3]/div[2]/div/div/form/div[5]/select/option, loop=6, iterations=10, break=y, sleep=1, stoptype=continue)
+#select auto_var1@mail.aws.rcdnlab1.com as the Method
+input(type=select, xpath=//*[@id='add_target'], value=auto_var1@mail.aws.rcdnlab1.com)
+#clicks the save button
+click(type=button, xpath=/html/body/div[3]/div[2]/div/div/form/div[6]/span/a)
+
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=7, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the delivery rule is indeed added
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Informational (All) Auto Var auto_var1@mail.aws.rcdnlab1.com, loop=8, iterations=10, break=y, sleep=1, stoptype=continue)
+#clicks on the row
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Informational (All) Auto Var auto_var1@mail.aws.rcdnlab1.com)
+#clicks the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/div/span[5]/a)
+#clicks the OK button on the confirmation dialog
+click(type=button, xpath=//div[@class='ui-dialog-buttonset']/span/button)
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=9, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the row is indeed deleted
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, novalue=Informational (All) Auto Var auto_var1@mail.aws.rcdnlab1.com, loop=novalue1, iterations=3, break=y, sleep=1, stoptype=continue)
+
+#clicks on the + Add Delivery Rule button
+click(type=button, xpath=//*[@id='create_notification'])
+#verify that the Customer select is up
+verify(type=element, xpath=//*[@id='add_customer'], loop=10, iterations=10, break=y, sleep=1, stoptype=continue)
+#select All as the Customer
+input(type=select, xpath=//*[@id='add_customer'], value=All)
+#verify that the Severity select is up
+verify(type=element, xpath=//*[@id='severity_events'], loop=11, iterations=10, break=y, sleep=1, stoptype=continue)
+#select Informational as the severity
+input(type=select, xpath=//*[@id='severity_events'], value=Emergency)
+#verify that the Contact select is up
+verify(type=element, xpath=//*[@id='add_contact'], loop=12, iterations=10, break=y, sleep=1, stoptype=continue)
+#select Auto Var as the Contact
+input(type=select, xpath=//*[@id='add_contact'], value=Auto Var)
+#make sure that at least one option under the method select is present
+verify(type=element, xpath=/html/body/div[3]/div[2]/div/div/form/div[5]/select/option, loop=13, iterations=10, break=y, sleep=1, stoptype=continue)
+#select auto_var1@mail.aws.rcdnlab1.com as the Method
+input(type=select, xpath=//*[@id='add_target'], value=auto_var1@mail.aws.rcdnlab1.com)
+#clicks the save button
+click(type=button, xpath=/html/body/div[3]/div[2]/div/div/form/div[6]/span/a)
+
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=14, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the delivery rule is indeed added
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com, loop=15, iterations=10, break=y, sleep=1, stoptype=continue)
+#clicks on the row
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com)
+
+#clicks the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/div/span[5]/a)
+#clicks the cancel link on the confirmation dialog
+click(type=link, xpath=/html/body/div[3]/div[3]/div/button)
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=16, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the delivery rule is still there
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com, loop=17, iterations=10, break=y, sleep=1, stoptype=continue)
+#clicks the drawer handle, then wait a second for the animation to finish
+click(type=drawer handle)
+wait(type=seconds, value=1)
+#clicks on the row
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com)
+#clicks the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/div/span[5]/a)
+#clicks the OK button on the confirmation dialog
+click(type=button, xpath=//div[@class='ui-dialog-buttonset']/span/button)
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=18, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the row is indeed deleted
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, novalue=Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com, loop=novalue2, iterations=3, break=y, sleep=1, stoptype=continue)
+
+#clicks on the + Add Delivery Rule button
+click(type=button, xpath=//*[@id='create_notification'])
+#verify that the Customer select is up
+verify(type=element, xpath=//*[@id='add_customer'], loop=19, iterations=10, break=y, sleep=1, stoptype=continue)
+#select All as the Customer
+input(type=select, xpath=//*[@id='add_customer'], value=All)
+#check the Specify Event checkbox
+click(type=checkbox, xpath=//*[@id='add_eventtype'], value=check)
+#verify that the Severity select is up
+verify(type=element, xpath=//*[@id='severity_events'], loop=20, iterations=10, break=y, sleep=1, stoptype=continue)
+#select Device: Cisco Support Access Used as the specific event
+input(type=select, xpath=//*[@id='severity_events'], value=Device: Cisco Support Access Used)
+#verify that the Contact select is up
+verify(type=element, xpath=//*[@id='add_contact'], loop=21, iterations=10, break=y, sleep=1, stoptype=continue)
+#select Auto Var as the Contact
+input(type=select, xpath=//*[@id='add_contact'], value=Auto Var)
+#make sure that at least one option under the method select is present
+verify(type=element, xpath=/html/body/div[3]/div[2]/div/div/form/div[5]/select/option, loop=22, iterations=10, break=y, sleep=1, stoptype=continue)
+#select auto_var1@mail.aws.rcdnlab1.com as the Method
+input(type=select, xpath=//*[@id='add_target'], value=auto_var1@mail.aws.rcdnlab1.com)
+#clicks the save button
+click(type=button, xpath=/html/body/div[3]/div[2]/div/div/form/div[6]/span/a)
+
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=23, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the delivery rule is indeed added
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=All Device: Cisco Support Access Used Auto Var auto_var1@mail.aws.rcdnlab1.com, loop=24, iterations=10, break=y, sleep=1, stoptype=continue)
+#clicks on the row
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=All Device: Cisco Support Access Used Auto Var auto_var1@mail.aws.rcdnlab1.com)
+#clicks the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/div/span[5]/a)
+#clicks the OK button on the confirmation dialog
+click(type=button, xpath=//div[@class='ui-dialog-buttonset']/span/button)
+#verify the h2 of this page is indeed Delivery Rules
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Rules, loop=25, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the row is indeed deleted
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, novalue=All Device: Cisco Support Access Used Auto Var auto_var1@mail.aws.rcdnlab1.com, loop=novalue3, iterations=3, break=y, sleep=1, stoptype=continue)

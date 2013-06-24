@@ -1,0 +1,290 @@
+[10/07/2011 16:02:55 ERROR]************************************************************
+[10/07/2011 16:02:55 ERROR]Open MySQL connection error
+[10/07/2011 16:02:55 ERROR]com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+[10/07/2011 16:02:55 ERROR]
+[10/07/2011 16:02:55 ERROR]The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[10/07/2011 16:02:55 ERROR]************************************************************
+[10/07/2011 16:02:55  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 16:02:55 ERROR]************************************************************
+[10/07/2011 16:02:55 ERROR]java.lang.IllegalArgumentException: InputStream cannot be null
+[10/07/2011 16:02:55 ERROR]************************************************************
+[10/07/2011 16:09:50 ERROR]************************************************************
+[10/07/2011 16:09:50 ERROR]Open MySQL connection error
+[10/07/2011 16:09:50 ERROR]com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+[10/07/2011 16:09:50 ERROR]
+[10/07/2011 16:09:50 ERROR]The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[10/07/2011 16:09:50 ERROR]************************************************************
+[10/07/2011 16:09:50  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 16:10:21  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 16:10:22  INFO]Starting Firefox...
+[10/07/2011 16:10:30  INFO]=====Workflow add1Customer start=====
+[10/07/2011 16:10:30  INFO]---Action Start: login
+[10/07/2011 16:10:30  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 16:10:30  INFO]Username: jearnold1
+[10/07/2011 16:10:30  INFO]Password: Test1234
+[10/07/2011 16:10:32  INFO]Logged in
+[10/07/2011 16:10:32  INFO]Terms & Conditions did not show up.
+[10/07/2011 16:10:32  INFO]---Action End: login
+[10/07/2011 16:10:32  INFO]---Action Start: addCustomer
+[10/07/2011 16:10:33  INFO]Adding Customer: test 
+[10/07/2011 16:10:34  INFO]Business Name: test
+[10/07/2011 16:10:34  INFO]Business Industry: (Other)
+[10/07/2011 16:10:34  INFO]No image specified, not going to add an image for this customer
+[10/07/2011 16:10:34  INFO]Stree Address: 123 Main st
+[10/07/2011 16:10:34  INFO]Business City: Richardson
+[10/07/2011 16:10:34  INFO]Business State: Texas
+[10/07/2011 16:10:34  INFO]Business Postal: 75082
+[10/07/2011 16:10:42  INFO]Business Country: USA
+[10/07/2011 16:10:42  INFO]Adding Contact...
+[10/07/2011 16:10:42  INFO]First Name: Jerry
+[10/07/2011 16:10:42  INFO]Last Name: Arnold
+[10/07/2011 16:10:42  INFO]Email: jearnold@cisco.com
+[10/07/2011 16:10:42  INFO]Alternate Email: 
+[10/07/2011 16:10:42  INFO]SMS Email: 
+[10/07/2011 16:10:42  INFO]Alternate SMS Email: 
+[10/07/2011 16:10:46  INFO]Verify: customer name correct
+[10/07/2011 16:10:46  INFO]Verify: customer industry correct
+[10/07/2011 16:10:48  INFO]Verify: Street address correct
+[10/07/2011 16:10:48  INFO]Verify: City correct
+[10/07/2011 16:10:48  INFO]Verify: State correct
+[10/07/2011 16:10:48  INFO]Verify: Zip correct
+[10/07/2011 16:10:50  INFO]Verify: Country correct
+[10/07/2011 16:10:53  INFO]---Action End: addCustomer
+[10/07/2011 16:10:53  INFO]---Action Start: editCustomer
+[10/07/2011 16:10:53  INFO]----- Customer to edit: test -----
+[10/07/2011 16:10:53  INFO]Customer name after: edited customer name
+[10/07/2011 16:10:53  INFO]Customer Image after: 
+[10/07/2011 16:10:53  INFO]Industry after: Education
+[10/07/2011 16:10:53  INFO]Street Address after: 321 Sub St.
+[10/07/2011 16:10:53  INFO]City after: Dallas
+[10/07/2011 16:10:53  INFO]State after: NY
+[10/07/2011 16:10:53  INFO]Country after: No change
+[10/07/2011 16:10:53  INFO]Timezone after: No change
+[10/07/2011 16:10:53  INFO]Timezone city after: No change
+[10/07/2011 16:10:54  INFO]Editing customer: test...
+[10/07/2011 16:10:55  INFO]Changed Customer Name to: edited customer name
+[10/07/2011 16:10:55  INFO]Changed industry to: Education
+[10/07/2011 16:10:55  INFO]No change to customer image
+[10/07/2011 16:10:55  INFO]No change to timezone
+[10/07/2011 16:10:55  INFO]No change to timezone city
+[10/07/2011 16:10:59  INFO]Verify: customer name correct
+[10/07/2011 16:10:59  INFO]Verify: customer industry correct
+[10/07/2011 16:11:01  INFO]Changed street address to: 321 Sub St.
+[10/07/2011 16:11:01  INFO]Changed city to: Dallas
+[10/07/2011 16:11:01  INFO]Changed state to: NY
+[10/07/2011 16:11:02  INFO]Changed postal code to: 75082
+[10/07/2011 16:11:02  INFO]No change to country
+[10/07/2011 16:11:10  INFO]Verify: Street address correct
+[10/07/2011 16:11:10  INFO]Verify: City correct
+[10/07/2011 16:11:10  INFO]Verify: State correct
+[10/07/2011 16:11:10  INFO]Verify: Zip correct
+[10/07/2011 16:11:12  INFO]---Action End: editCustomer
+[10/07/2011 16:11:12  INFO]---Action Start: addContact
+[10/07/2011 16:11:13  INFO]Clicked + Add Delivery Contact
+[10/07/2011 16:11:14  INFO]First Name: Bob
+[10/07/2011 16:11:14  INFO]Last Name: Smith
+[10/07/2011 16:11:14  INFO]Email: bsmith@domain.com
+[10/07/2011 16:11:14  INFO]SMS Email: smsbsmith@domain.com
+[10/07/2011 16:11:14  INFO]Alternate SMS Email: 
+[10/07/2011 16:11:14  INFO]Alternate Email: altbsmith@domain.com
+[10/07/2011 16:11:14  INFO]Saved Delivery Contact: edited customer name with email: bsmith@domain.com
+[10/07/2011 16:11:16  INFO]Verify: Found contact that was just created at row: 1
+[10/07/2011 16:11:17  INFO]---Action End: addContact
+[10/07/2011 16:11:17  INFO]---Action Start: addRule
+[10/07/2011 16:11:18  INFO]Clicked + Add Delivery Rule
+[10/07/2011 16:11:18  INFO]Selected Customer: edited customer name
+[10/07/2011 16:11:18  INFO]Selected Severity: Warning
+[10/07/2011 16:11:19  INFO]Selected Contact: Bob Smith (edited customer name)
+[10/07/2011 16:11:19  INFO]Selected Method: bsmith@domain.com
+[10/07/2011 16:11:19  INFO]Saved Delivery Rule for: edited customer name
+[10/07/2011 16:11:21  INFO]Verify: Found rule that was just created at row: 2
+[10/07/2011 16:11:21  INFO]---Action End: addRule
+[10/07/2011 16:11:21  INFO]---Action Start: removeCustomer
+[10/07/2011 16:11:22  INFO]Deleting customer: edited customer name...
+[10/07/2011 16:11:24  INFO]Deleted customer: edited customer name
+[10/07/2011 16:11:24  INFO]---Action End: removeCustomer
+[10/07/2011 16:11:24  INFO]---Action Start: goTo
+[10/07/2011 16:13:56  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 16:13:56  INFO]Starting Firefox...
+[10/07/2011 16:14:04  INFO]=====Workflow add1Customer start=====
+[10/07/2011 16:14:04  INFO]---Action Start: login
+[10/07/2011 16:14:05  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 16:14:05  INFO]Username: jearnold1
+[10/07/2011 16:14:05  INFO]Password: Test1234
+[10/07/2011 16:14:06  INFO]Logged in
+[10/07/2011 16:14:07  INFO]Terms & Conditions did not show up.
+[10/07/2011 16:14:07  INFO]---Action End: login
+[10/07/2011 16:14:07  INFO]---Action Start: addCustomer
+[10/07/2011 16:14:07  INFO]Adding Customer: test 
+[10/07/2011 16:14:08  INFO]Business Name: test
+[10/07/2011 16:14:08  INFO]Business Industry: (Other)
+[10/07/2011 16:14:08  INFO]No image specified, not going to add an image for this customer
+[10/07/2011 16:14:08  INFO]Stree Address: 123 Main st
+[10/07/2011 16:14:08  INFO]Business City: Richardson
+[10/07/2011 16:14:08  INFO]Business State: Texas
+[10/07/2011 16:14:08  INFO]Business Postal: 75082
+[10/07/2011 16:14:14  INFO]Business Country: USA
+[10/07/2011 16:14:15  INFO]Adding Contact...
+[10/07/2011 16:14:15  INFO]First Name: Jerry
+[10/07/2011 16:14:15  INFO]Last Name: Arnold
+[10/07/2011 16:14:15  INFO]Email: jearnold@cisco.com
+[10/07/2011 16:14:15  INFO]Alternate Email: 
+[10/07/2011 16:14:15  INFO]SMS Email: 
+[10/07/2011 16:14:15  INFO]Alternate SMS Email: 
+[10/07/2011 16:14:19  INFO]Verify: customer name correct
+[10/07/2011 16:14:19  INFO]Verify: customer industry correct
+[10/07/2011 16:14:21  INFO]Verify: Street address correct
+[10/07/2011 16:14:21  INFO]Verify: City correct
+[10/07/2011 16:14:21  INFO]Verify: State correct
+[10/07/2011 16:14:21  INFO]Verify: Zip correct
+[10/07/2011 16:14:22  INFO]Verify: Country correct
+[10/07/2011 16:14:25  INFO]---Action End: addCustomer
+[10/07/2011 16:14:25  INFO]---Action Start: editCustomer
+[10/07/2011 16:14:25  INFO]----- Customer to edit: test -----
+[10/07/2011 16:14:25  INFO]Customer name after: edited customer name
+[10/07/2011 16:14:25  INFO]Customer Image after: 
+[10/07/2011 16:14:25  INFO]Industry after: Education
+[10/07/2011 16:14:25  INFO]Street Address after: 321 Sub St.
+[10/07/2011 16:14:25  INFO]City after: Dallas
+[10/07/2011 16:14:25  INFO]State after: NY
+[10/07/2011 16:14:25  INFO]Country after: No change
+[10/07/2011 16:14:25  INFO]Timezone after: No change
+[10/07/2011 16:14:25  INFO]Timezone city after: No change
+[10/07/2011 16:14:25  INFO]Editing customer: test...
+[10/07/2011 16:14:27  INFO]Changed Customer Name to: edited customer name
+[10/07/2011 16:14:27  INFO]Changed industry to: Education
+[10/07/2011 16:14:27  INFO]No change to customer image
+[10/07/2011 16:14:27  INFO]No change to timezone
+[10/07/2011 16:14:27  INFO]No change to timezone city
+[10/07/2011 16:14:32  INFO]Verify: customer name correct
+[10/07/2011 16:14:32  INFO]Verify: customer industry correct
+[10/07/2011 16:14:34  INFO]Changed street address to: 321 Sub St.
+[10/07/2011 16:14:34  INFO]Changed city to: Dallas
+[10/07/2011 16:14:34  INFO]Changed state to: NY
+[10/07/2011 16:14:34  INFO]Changed postal code to: 75082
+[10/07/2011 16:14:34  INFO]No change to country
+[10/07/2011 16:14:43  INFO]Verify: Street address correct
+[10/07/2011 16:14:43  INFO]Verify: City correct
+[10/07/2011 16:14:43  INFO]Verify: State correct
+[10/07/2011 16:14:43  INFO]Verify: Zip correct
+[10/07/2011 16:14:45  INFO]---Action End: editCustomer
+[10/07/2011 16:14:45  INFO]---Action Start: addContact
+[10/07/2011 16:14:46  INFO]Clicked + Add Delivery Contact
+[10/07/2011 16:14:47  INFO]First Name: Bob
+[10/07/2011 16:14:47  INFO]Last Name: Smith
+[10/07/2011 16:14:47  INFO]Email: bsmith@domain.com
+[10/07/2011 16:14:47  INFO]SMS Email: smsbsmith@domain.com
+[10/07/2011 16:14:47  INFO]Alternate SMS Email: 
+[10/07/2011 16:14:47  INFO]Alternate Email: altbsmith@domain.com
+[10/07/2011 16:14:47  INFO]Saved Delivery Contact: edited customer name with email: bsmith@domain.com
+[10/07/2011 16:14:49  INFO]Verify: Found contact that was just created at row: 1
+[10/07/2011 16:14:50  INFO]---Action End: addContact
+[10/07/2011 16:14:50  INFO]---Action Start: addRule
+[10/07/2011 16:14:51  INFO]Clicked + Add Delivery Rule
+[10/07/2011 16:14:51  INFO]Selected Customer: edited customer name
+[10/07/2011 16:14:51  INFO]Selected Severity: Warning
+[10/07/2011 16:14:52  INFO]Selected Contact: Bob Smith (edited customer name)
+[10/07/2011 16:14:52  INFO]Selected Method: bsmith@domain.com
+[10/07/2011 16:14:52  INFO]Saved Delivery Rule for: edited customer name
+[10/07/2011 16:14:53  INFO]Verify: Found rule that was just created at row: 2
+[10/07/2011 16:14:54  INFO]---Action End: addRule
+[10/07/2011 16:14:54  INFO]---Action Start: removeCustomer
+[10/07/2011 16:14:54  INFO]Deleting customer: edited customer name...
+[10/07/2011 16:14:56  INFO]Deleted customer: edited customer name
+[10/07/2011 16:14:56  INFO]---Action End: removeCustomer
+[10/07/2011 16:14:56  INFO]---Action Start: goTo
+[10/07/2011 17:16:33 ERROR]************************************************************
+[10/07/2011 17:16:33 ERROR]Open MySQL connection error
+[10/07/2011 17:16:33 ERROR]com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+[10/07/2011 17:16:33 ERROR]
+[10/07/2011 17:16:33 ERROR]The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[10/07/2011 17:16:33 ERROR]************************************************************
+[10/07/2011 17:16:33  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 17:20:01  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 17:20:01  INFO]Starting Firefox...
+[10/07/2011 17:20:10  INFO]=====Workflow add1Customer start=====
+[10/07/2011 17:20:10  INFO]---Action Start: login
+[10/07/2011 17:20:10  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 17:20:10  INFO]Username: jearnold1
+[10/07/2011 17:20:10  INFO]Password: Test1234
+[10/07/2011 17:20:12  INFO]Logged in
+[10/07/2011 17:20:12  INFO]Terms & Conditions did not show up.
+[10/07/2011 17:20:12  INFO]---Action End: login
+[10/07/2011 17:20:12  INFO]---Action Start: goTo
+[10/07/2011 18:18:46  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 18:18:46  INFO]Starting Firefox...
+[10/07/2011 18:18:54  INFO]=====Workflow add1Customer start=====
+[10/07/2011 18:18:54  INFO]---Action Start: login
+[10/07/2011 18:18:55  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 18:18:55  INFO]Username: jearnold1
+[10/07/2011 18:18:55  INFO]Password: Test1234
+[10/07/2011 18:18:56  INFO]Logged in
+[10/07/2011 18:18:57  INFO]Terms & Conditions did not show up.
+[10/07/2011 18:18:57  INFO]---Action End: login
+[10/07/2011 18:18:57  INFO]---Action Start: goTo
+[10/07/2011 18:21:44  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 18:21:45  INFO]Starting Firefox...
+[10/07/2011 18:21:52  INFO]=====Workflow add1Customer start=====
+[10/07/2011 18:21:52  INFO]---Action Start: login
+[10/07/2011 18:21:54  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 18:21:54  INFO]Username: jearnold1
+[10/07/2011 18:21:54  INFO]Password: Test1234
+[10/07/2011 18:21:55  INFO]Logged in
+[10/07/2011 18:21:55  INFO]Terms & Conditions did not show up.
+[10/07/2011 18:21:55  INFO]---Action End: login
+[10/07/2011 18:21:55  INFO]---Action Start: goTo
+[10/07/2011 18:49:03  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 18:49:03  INFO]Starting Firefox...
+[10/07/2011 18:49:10  INFO]=====Workflow add1Customer start=====
+[10/07/2011 18:49:10  INFO]---Action Start: login
+[10/07/2011 18:49:11  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 18:49:11  INFO]Username: jearnold1
+[10/07/2011 18:49:11  INFO]Password: Test1234
+[10/07/2011 18:49:13  INFO]Logged in
+[10/07/2011 18:49:13  INFO]Terms & Conditions did not show up.
+[10/07/2011 18:49:13  INFO]---Action End: login
+[10/07/2011 18:49:13  INFO]---Action Start: goTo
+[10/07/2011 20:13:39  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 20:13:39  INFO]Starting Firefox...
+[10/07/2011 20:13:47  INFO]=====Workflow add1Customer start=====
+[10/07/2011 20:13:47  INFO]---Action Start: login
+[10/07/2011 20:13:48  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 20:13:48  INFO]Username: jearnold1
+[10/07/2011 20:13:48  INFO]Password: Test1234
+[10/07/2011 20:13:50  INFO]Logged in
+[10/07/2011 20:13:50  INFO]Terms & Conditions did not show up.
+[10/07/2011 20:13:50  INFO]---Action End: login
+[10/07/2011 20:13:50  INFO]---Action Start: goTo
+[10/07/2011 20:16:06  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 20:16:06  INFO]Starting Firefox...
+[10/07/2011 20:16:14  INFO]=====Workflow add1Customer start=====
+[10/07/2011 20:16:14  INFO]---Action Start: login
+[10/07/2011 20:16:14  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 20:16:14  INFO]Username: jearnold1
+[10/07/2011 20:16:14  INFO]Password: Test1234
+[10/07/2011 20:16:17  INFO]Logged in
+[10/07/2011 20:16:17  INFO]Terms & Conditions did not show up.
+[10/07/2011 20:16:17  INFO]---Action End: login
+[10/07/2011 20:16:17  INFO]---Action Start: goTo
+[10/07/2011 20:20:18  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 20:20:18  INFO]Starting Firefox...
+[10/07/2011 20:20:26  INFO]=====Workflow add1Customer start=====
+[10/07/2011 20:20:26  INFO]---Action Start: login
+[10/07/2011 20:20:27  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 20:20:27  INFO]Username: jearnold1
+[10/07/2011 20:20:27  INFO]Password: Test1234
+[10/07/2011 20:20:28  INFO]Logged in
+[10/07/2011 20:20:28  INFO]Terms & Conditions did not show up.
+[10/07/2011 20:20:28  INFO]---Action End: login
+[10/07/2011 20:20:28  INFO]---Action Start: goTo
+[10/07/2011 20:21:42  INFO]Opening connection to couch DB: 10.88.128.3:5984
+[10/07/2011 20:21:42  INFO]Starting Firefox...
+[10/07/2011 20:21:50  INFO]=====Workflow add1Customer start=====
+[10/07/2011 20:21:50  INFO]---Action Start: login
+[10/07/2011 20:21:51  INFO]Logging into: https://www.t5.l1.cisco.com
+[10/07/2011 20:21:51  INFO]Username: jearnold1
+[10/07/2011 20:21:51  INFO]Password: Test1234
+[10/07/2011 20:21:53  INFO]Logged in
+[10/07/2011 20:21:53  INFO]Terms & Conditions did not show up.
+[10/07/2011 20:21:53  INFO]---Action End: login
+[10/07/2011 20:21:53  INFO]---Action Start: goTo

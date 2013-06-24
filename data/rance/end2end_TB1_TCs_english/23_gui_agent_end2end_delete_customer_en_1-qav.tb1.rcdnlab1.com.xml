@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="end2end_gui" testgroup="agent" testcase="23_delete_customer_en" parallel="false" workflowpause="0" location="1-qav.tb1.rcdnlab1.com" customerid="e2e.1-qav.tb1.rcdnlab1.com">
+  <!-- 1. Login to t5a as auto_var1 (agent)
+	 2. Click on customer auto_var1_customer1
+	 3. go to page Profile
+	 4. delete the customer
+	 5. verfiy the customer is deleted-->
+  <workflow driver="selenium" wfid="agent_delete_customer" stoptype="abort" profile="webdriver" browser="firefox" rid="rantao">
+    <!--login as agent-->
+    <action acid="0" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://1-qav.tb1.rcdnlab1.com"/>
+      <actionparam paramtype="username" paramvalue="auto_var1"/>
+      <actionparam paramtype="password" paramvalue="Test1234"/>
+    </action>
+    <!--loop to verify that the customer is there-->
+    <action acid="1" stoptype="continue" loop="1" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="auto_var1_customer1"/>
+    </action>
+    <!--clicks on the agent customer row-->
+    <action acid="2" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="auto_var1_customer1"/>
+    </action>
+    <!--verify that the user is on the Dashboard page-->
+    <action acid="3" stoptype="continue" loop="2" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="//span[@class='current_center']"/>
+      <actionparam paramtype="value" paramvalue="Status"/>
+    </action>
+    <!--go to the profile page-->
+    <action acid="4" stoptype="abort">
+      <actionname>hover</actionname>
+      <actionparam paramtype="type" paramvalue="menu"/>
+      <actionparam paramtype="value" paramvalue="Profile"/>
+    </action>
+    <action acid="5" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="submenu"/>
+      <actionparam paramtype="value" paramvalue="Profile"/>
+    </action>
+    <!--verify that the user is on the profile page-->
+    <action acid="6" stoptype="continue" loop="3" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span"/>
+      <actionparam paramtype="value" paramvalue="Profile"/>
+    </action>
+    <!--click the delete button-->
+    <action acid="7" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='delete']"/>
+    </action>
+    <!--click the OK button-->
+    <action acid="8" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span/button"/>
+    </action>
+    <!--verify that the user is taken to the overview page-->
+    <action acid="9" stoptype="continue" loop="4" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span"/>
+      <actionparam paramtype="value" paramvalue="Overview"/>
+    </action>
+    <!--verify that the customer is indeed deleted-->
+    <action acid="10" stoptype="continue" loop="5" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="novalue" paramvalue="auto_var1_customer1"/>
+    </action>
+    <action acid="11" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>
+

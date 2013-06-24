@@ -1,0 +1,50 @@
+testcase(testfamily=gui, testgroup=agent, testcase=verify_log_in_page, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. go to t5a login page
+# 2. enter only username jearnold_1 (correct username)
+# 3. click on login
+# 4. verify the error message
+# 5. enter only password
+# 6. click on login
+# 7. verify the error message
+# 8. enter incorrect username and password
+# 9. click on login
+#10. verify the error message
+#11. enter correct username and incorrect password
+#12. click on login and verify error message
+#13. enter incorrect username and correct password
+#14. click on login and verify error message
+#15. verify recover it here link
+#16. verify learn more link
+#17. verify support link
+#18. enter correct username and password
+#19. verify logged in and on the overview page
+workflow(driver=selenium, wfid=loginPageVerify, stoptype=abort, profile=webdriver)
+config(path=./data/selenium_config/page_log_in.xml)
+navigate(url=https://www.t5a.l1.cisco.com)
+input(type=text field, label=Username, value=jearnold_1)
+click(type=button, value=Log In)
+verify(type=error message, value=You must enter a username and password)
+input(type=text field, label=Username, value=)
+input(type=text field, label=Password, value=abc)
+click(type=button, value=Log In)
+verify(type=error message, value=You must enter a username and password)
+input(type=text field, label=Username, value=somepersonthatdoesnotexists)
+input(type=text field, label=Password, value=wrongpassword)
+click(type=button, value=Log In)
+verify(type=error message, value=Invalid username and/or password Please try again)
+input(type=text field, label=Username, value=jearnold_1)
+input(type=text field, label=Password, value=wrong password)
+verify(type=error message, value=Invalid username and/or password Please try again)
+input(type=text field, label=Username, value=wrong username)
+input(type=text field, label=Password, value=Test1234)
+verify(type=error message, value=Invalid username and/or password Please try again)
+click(type=link, value=Recover it here)
+verify(type=page, value=http://tools.cisco.com/RPF/passwordreset.do)
+click(type=link, value=Learn More)
+verify(type=page, value=http://www.cisco.com/web/partners/sell/smb/onplus/index.html)
+click(type=link, value=Support)
+verify(type=page, value=https://supportforums.cisco.com/community/netpro/small-business/onplus)
+input(type=text field, label=Username, value=jearnold_1)
+input(type=text field, label=Password, value=Test1234)
+click(type=button, value=Log In)
+verify(type=page, value=Overview)

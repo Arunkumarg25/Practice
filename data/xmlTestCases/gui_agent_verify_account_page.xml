@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="gui" testgroup="agent" testcase="verify_account_page" parallel="false" workflowpause="0" location="1-qa.t5a.l1.cisco.com">
+  <!-- 1. Login to t5a as jearnold_1 (agent)
+	 2. go to account page
+	 3. verifies all the fields in account page did not get changed
+	 4. change all the required fields to blank
+	 5. verifies all the Required field missing messages show up
+	 6. change the eamil address to an invalid email address
+	 7. verifies the incorrect email address message show up
+	 8. change all the fields to something that is different from what we started with
+	 9. save the account information
+	10. verifies all the changes got saved correctly
+	11. change everything back to the way it was
+	12. verfies the support link
+	13. log out
+	14. verify on the login page-->
+  <workflow driver="selenium" wfid="accountPageVerify" stoptype="abort" profile="webdriver">
+    <action acid="0" stoptype="abort">
+      <actionname>config</actionname>
+      <actionparam paramtype="path" paramvalue="./data/selenium_config/page_log_in.xml"/>
+    </action>
+    <action acid="1" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://www.t5a.l1.cisco.com"/>
+      <actionparam paramtype="username" paramvalue="jearnold_1"/>
+      <actionparam paramtype="password" paramvalue="Test1234"/>
+    </action>
+    <action acid="2" stoptype="abort">
+      <actionname>goto</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Account"/>
+    </action>
+    <action acid="3" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Account"/>
+    </action>
+    <action acid="4" stoptype="abort">
+      <actionname>config</actionname>
+      <actionparam paramtype="path" paramvalue="./data/selenium_config/page_account.xml"/>
+    </action>
+    <action acid="5" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="First Name"/>
+      <actionparam paramtype="value" paramvalue="Jerry"/>
+    </action>
+    <action acid="6" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Last Name"/>
+      <actionparam paramtype="value" paramvalue="Arnold"/>
+    </action>
+    <action acid="7" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Company"/>
+      <actionparam paramtype="value" paramvalue="Jerry's Auto Testing Inc."/>
+    </action>
+    <action acid="8" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Address Line 1"/>
+      <actionparam paramtype="value" paramvalue="2200 E. George Bush Hwy"/>
+    </action>
+    <action acid="9" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Address Line 2"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="10" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="City"/>
+      <actionparam paramtype="value" paramvalue="Richardson"/>
+    </action>
+    <action acid="11" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="State/Province"/>
+      <actionparam paramtype="value" paramvalue="Texas"/>
+    </action>
+    <action acid="12" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Zip/Postal Code"/>
+      <actionparam paramtype="value" paramvalue="75080"/>
+    </action>
+    <action acid="13" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Phone Number"/>
+      <actionparam paramtype="value" paramvalue="1231231234"/>
+    </action>
+    <action acid="14" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Email Address"/>
+      <actionparam paramtype="value" paramvalue="jearnold@cisco.com"/>
+    </action>
+    <action acid="15" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Job Role"/>
+      <actionparam paramtype="value" paramvalue="Network Management"/>
+    </action>
+    <action acid="16" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Job Level"/>
+      <actionparam paramtype="value" paramvalue="Individual Contributor"/>
+    </action>
+    <action acid="17" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Timezone"/>
+      <actionparam paramtype="value" paramvalue="America"/>
+    </action>
+    <action acid="18" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Timezone City"/>
+      <actionparam paramtype="value" paramvalue="Chicago"/>
+    </action>
+    <action acid="19" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="First Name"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="20" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Last Name"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="21" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Company"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="22" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Address Line 1"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="23" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="City"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="24" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Zip/Postal Code"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="25" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Phone Number"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="26" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Email Address"/>
+      <actionparam paramtype="value" paramvalue=""/>
+    </action>
+    <action acid="27" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="Button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="28" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Account"/>
+    </action>
+    <action acid="29" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Required field missing: First Name"/>
+    </action>
+    <action acid="30" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Required field missing: Last Name"/>
+    </action>
+    <action acid="31" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Required field missing: Company"/>
+    </action>
+    <action acid="32" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Required field missing: Address Line 1"/>
+    </action>
+    <action acid="33" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Required field missing: City"/>
+    </action>
+    <action acid="34" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Required field missing: Zip/Postal Code"/>
+    </action>
+    <action acid="35" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Required field missing: Phone Number"/>
+    </action>
+    <action acid="36" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Required field missing: Email Address"/>
+    </action>
+    <action acid="37" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Email Address"/>
+      <actionparam paramtype="value" paramvalue="jearnold"/>
+    </action>
+    <action acid="38" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="39" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Account"/>
+    </action>
+    <action acid="40" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="Error Message"/>
+      <actionparam paramtype="value" paramvalue="Invalid format: Email Address"/>
+    </action>
+    <action acid="41" stoptype="abort">
+      <actionname>editaccount</actionname>
+      <actionparam paramtype="firstName*" paramvalue="Something"/>
+      <actionparam paramtype="lastName*" paramvalue="Else"/>
+      <actionparam paramtype="company*" paramvalue="Second Company"/>
+      <actionparam paramtype="jobRole" paramvalue="Journalism"/>
+      <actionparam paramtype="jobLevel" paramvalue="Management without Staff"/>
+      <actionparam paramtype="timezone" paramvalue="Australia"/>
+      <actionparam paramtype="timezoneCity" paramvalue="Hobart"/>
+      <actionparam paramtype="address1*" paramvalue="123 Main St."/>
+      <actionparam paramtype="address2" paramvalue="Apt 1234"/>
+      <actionparam paramtype="city*" paramvalue="Dallas"/>
+      <actionparam paramtype="state" paramvalue="New York"/>
+      <actionparam paramtype="zip*" paramvalue="12345"/>
+      <actionparam paramtype="phone*" paramvalue="3213214321"/>
+      <actionparam paramtype="email*" paramvalue="someone@cisco.com"/>
+      <actionparam paramtype="altEmail" paramvalue=""/>
+      <actionparam paramtype="smsEmail" paramvalue=""/>
+      <actionparam paramtype="altSMSEmail" paramvalue=""/>
+      <actionparam paramtype="lightTheme" paramvalue="no"/>
+    </action>
+    <action acid="42" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="First Name"/>
+      <actionparam paramtype="value" paramvalue="Something"/>
+    </action>
+    <action acid="43" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Last Name"/>
+      <actionparam paramtype="value" paramvalue="Else"/>
+    </action>
+    <action acid="44" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Company"/>
+      <actionparam paramtype="value" paramvalue="Second Company"/>
+    </action>
+    <action acid="45" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Job Role"/>
+      <actionparam paramtype="value" paramvalue="Journalism"/>
+    </action>
+    <action acid="46" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Job Level"/>
+      <actionparam paramtype="value" paramvalue="Management without Staff"/>
+    </action>
+    <action acid="47" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Timezone"/>
+      <actionparam paramtype="value" paramvalue="Australia"/>
+    </action>
+    <action acid="48" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Timezone City"/>
+      <actionparam paramtype="value" paramvalue="Hobart"/>
+    </action>
+    <action acid="49" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Address Line 1"/>
+      <actionparam paramtype="value" paramvalue="123 Main St."/>
+    </action>
+    <action acid="50" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Address Line 2"/>
+      <actionparam paramtype="value" paramvalue="Apt 1234"/>
+    </action>
+    <action acid="51" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="City"/>
+      <actionparam paramtype="value" paramvalue="Dallas"/>
+    </action>
+    <action acid="52" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="State/Province"/>
+      <actionparam paramtype="value" paramvalue="New York"/>
+    </action>
+    <action acid="53" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Zip/Postal Code"/>
+      <actionparam paramtype="value" paramvalue="12345"/>
+    </action>
+    <action acid="54" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Phone Number"/>
+      <actionparam paramtype="value" paramvalue="3213214321"/>
+    </action>
+    <action acid="55" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Email Address"/>
+      <actionparam paramtype="value" paramvalue="someone@cisco.com"/>
+    </action>
+    <action acid="56" stoptype="abort">
+      <actionname>editaccount</actionname>
+      <actionparam paramtype="firstName*" paramvalue="Jerry"/>
+      <actionparam paramtype="lastName*" paramvalue="Arnold"/>
+      <actionparam paramtype="company*" paramvalue="Jerry's Auto Testing Inc."/>
+      <actionparam paramtype="jobRole" paramvalue="Network Management"/>
+      <actionparam paramtype="jobLevel" paramvalue="Individual Contributor"/>
+      <actionparam paramtype="timezone" paramvalue="America"/>
+      <actionparam paramtype="timezoneCity" paramvalue="Chicago"/>
+      <actionparam paramtype="address1*" paramvalue="2200 E. George Bush Hwy"/>
+      <actionparam paramtype="address2" paramvalue=""/>
+      <actionparam paramtype="city*" paramvalue="Richardson"/>
+      <actionparam paramtype="state" paramvalue="Texas"/>
+      <actionparam paramtype="zip*" paramvalue="75080"/>
+      <actionparam paramtype="phone*" paramvalue="1231231234"/>
+      <actionparam paramtype="email*" paramvalue="jearnold@cisco.com"/>
+      <actionparam paramtype="altEmail" paramvalue=""/>
+      <actionparam paramtype="smsEmail" paramvalue=""/>
+      <actionparam paramtype="altSMSEmail" paramvalue=""/>
+      <actionparam paramtype="lightTheme" paramvalue="no"/>
+    </action>
+    <action acid="57" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="link"/>
+      <actionparam paramtype="value" paramvalue="Support"/>
+    </action>
+    <action acid="58" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="https://supportforums.cisco.com/community/netpro/small-business/onplus"/>
+    </action>
+    <action acid="59" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="link"/>
+      <actionparam paramtype="value" paramvalue="Log Out"/>
+    </action>
+    <action acid="60" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Log In"/>
+    </action>
+    <action acid="61" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>
+

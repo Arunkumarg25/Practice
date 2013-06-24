@@ -1,0 +1,99 @@
+testcase(testfamily=gui, testgroup=subagent, testcase=register_approve_delete_subagent, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. login to t5a as jearnold_1 (agent)
+# 2. go to agent overview page
+# 3. save the subagent reguster url then navigate to it
+# 4. register subagent jearnold_3
+# 5. log in with agent jearnold_1
+# 6. go to pending agents page
+# 7. approve pending sub agent jearnold_3
+# 8. log out
+# 9. log in as subagent jearnold_3
+#10. verify it goes to overview page
+#11. verify all the sub agent information
+#12. log out
+#13. log in with agent jearnold_1
+#14. go to approved agents
+#15. delete subagent jearnold_3
+#16. verify the row is deleted
+#17. log out
+#18. try to log in with subagent jearnold_3
+#19. verify that error message says username not found
+workflow(driver=selenium, wfid=register_approve_subagent, stoptype=abort, profile=webdriver)
+config(path=./data/selenium_config/page_log_in.xml)
+login(url=https://www.t5a.l1.cisco.com, username=jearnold_1, password=Test1234)
+verify(type=page, value=Overview)
+hover(type=menu, value=Agents)
+click(type=submenu, value=Agent Overview)
+#get the invite url from Agent Overview page
+save(savevar=sub_register_url, xpath=//span[@id='theURL'])
+navigate(loadvar=sub_register_url, timeout=30)
+config(path=./data/selenium_config/page_register.xml)
+input(type=text field, label=Cisco.com User ID, value=jearnold_3)
+input(type=text field, label=Cisco.com Password, value=Test1234)
+input(type=text field, label=First Name, value=Sub)
+input(type=text field, label=Last Name, value=Agent)
+input(type=text field, label=Company, value=Sub Agent Co.)
+input(type=select, label=Job Role, value=Administrator)
+input(type=select, label=Job Level, value=Vice President)
+input(type=text field, label=Address Line 1, value=123 address st.)
+input(type=text field, label=City, value=Plano)
+input(type=text field, label=Zip/Postal Code, value=12345)
+input(type=text field, label=Phone Number, value=1231231234)
+input(type=text field, label=Email Address, value=psp.jearnold3@gmail.com)
+click(type=checkbox, label=Cisco Privacy Statement, value=check)
+click(type=button, value=Submit)
+verify(type=page, value=https://1-qa.t5a.l1.cisco.com/register_complete.html)
+verify(type=text, value=Registration Complete)
+config(path=./data/selenium_config/page_log_in.xml)
+login(url=https://www.t5a.l1.cisco.com, username=jearnold_1, password=Test1234)
+hover(type=menu, value=Agents)
+click(type=submenu, value=Pending Agents)
+config(path=./data/selenium_config/page_pending_agents.xml)
+wait(type=seconds, value=1)
+verify(type=row, value=jearnold_3)
+click(type=row, value=jearnold_3)
+click(type=button, value=Approve)
+click(type=link, value=Log Out)
+#sleep 10 seconds after the sub agent is approved
+wait(type=seconds, value=10)
+config(path=./data/selenium_config/page_log_in.xml)
+login(url=https://www.t5a.l1.cisco.com, username=jearnold_3, password=Test1234)
+verify(type=page, value=Overview)
+config(path=./data/selenium_config/page_overview.xml)
+click(type=link, value=Account)
+verify(type=page, value=Account)
+#verify sub agent information
+config(path=./data/selenium_config/page_account.xml)
+verify(type=text field, label=First Name, value=Sub)
+verify(type=text field, label=Last Name, value=Agent)
+verify(type=text field, label=Company, value=Sub Agent Co.)
+verify(type=text field, label=Address Line 1, value=123 address st.)
+verify(type=text field, label=City, value=Plano)
+verify(type=text field, label=Zip/Postal Code, value=12345)
+verify(type=text field, label=Phone Number, value=1231231234)
+verify(type=text field, label=Email Address, value=psp.jearnold3@gmail.com)
+verify(type=select, label=Job Role, value=Administrator)
+verify(type=select, label=Job Level, value=Vice President)
+click(type=link, value=Log Out)
+config(path=./data/selenium_config/page_log_in.xml)
+login(url=https://www.t5a.l1.cisco.com, username=jearnold_1, password=Test1234)
+verify(type=page, value=Overview)
+hover(type=menu, value=Agents)
+click(type=submenu, value=Approved Agents)
+verify(type=page, value=Approved Agents)
+wait(type=seconds, value=1)
+config(path=./data/selenium_config/page_approved_agents.xml)
+verify(type=row, value=jearnold_3)
+click(type=row, value=jearnold_3)
+click(type=button, value=Delete)
+click(type=button, value=OK)
+verify(type=row, novalue=jearnold_3)
+click(type=link, value=Log Out)
+verify(type=page, value=Login)
+config(path=./data/selenium_config/page_log_in.xml)
+input(type=text field, label=Username, value=jearnold_3)
+input(type=text field, label=Password, value=Test1234)
+click(type=button, value=Log In)
+#sleep 5 seconds to wait for the message to show up
+wait(type=seconds, value=5)
+verify(type=error message, value=Invalid username and/or password Please try again)

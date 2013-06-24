@@ -1,0 +1,45 @@
+testcase(testfamily=gui, testgroup=agent, testcase=end2end_delete_contact, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. Login to t5a as auto_var1 (agent)
+# 2. Go to delivery contacts page
+# 3. verify that Customer1 Contact1 is there
+# 4. delete the customer contact
+# 5. verify that the contact is deleted
+# 6. delete the global contact
+# 7. verify that the contact is deleted
+workflow(driver=selenium, wfid=agent_delete_contact, stoptype=abort, profile=webdriver, browser=firefox)
+#login as agent
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1, password=Test1234)
+#go to delivery contacts page
+hover(type=menu, value=Notifications)
+click(type=submenu, value=Delivery Contacts)
+#verify that the h2 of the page is Delivery Contacts
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Contacts, loop=1, break=y, iterations=10, sleep=1, stoptype=continue)
+#verify that there is a customer contact for the agent
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr,  value=Customer1 Contact1 auto_var1_customer1@mail.a... auto_var1_customer1, loop=2, break=y, iterations=10, sleep=1, stoptype=continue)
+#click on the row to be deleted
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Customer1 Contact1 auto_var1_customer1@mail.a... auto_var1_customer1)
+#sleep 1 second for the animation to complete
+wait(type=seconds, value=1)
+#click the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/div[2]/span[3]/a)
+#click on the OK button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify that the h2 of the page is Delivery Contacts
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Contacts, loop=3, break=y, iterations=10, sleep=1, stoptype=continue)
+
+#verify that the row is indeed deleted
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, novalue=Customer1 Contact1 auto_var1_customer1@mail.a... auto_var1_customer1, loop=4, break=y, iterations=10, sleep=1, stoptype=continue)
+#verify that the agent global contact row is there
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Agent Contact auto_var1@mail.aws.rcdnlab..., loop=5, break=y, iterations=10, sleep=1, stoptype=continue)
+#click on the row
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Agent Contact auto_var1@mail.aws.rcdnlab...)
+#sleep 1 second for the animation to complete
+wait(type=seconds, value=1)
+#click on the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/div[2]/span[3]/a)
+#click on the ok button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify that the h2 of the page is Delivery Contacts
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Contacts, loop=6, break=y, iterations=10, sleep=1, stoptype=continue)
+#verify that the row is indeed deleted
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, novalue=Agent Contact auto_var1@mail.aws.rcdnlab..., loop=4, break=y, iterations=10, sleep=1, stoptype=continue)

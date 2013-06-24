@@ -1,0 +1,288 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="end2end_gui" testgroup="agent" testcase="03_create_customer_fr" parallel="false" workflowpause="0" location="1-qa.t5a.l1.cisco.com" customerid='e2e.1-qa.t5a.l1.cisco.com'>
+
+  <workflow driver="selenium" wfid="agent_create_customer" stoptype="abort" profile="french" browser="firefox" rid="rantao">
+    <!--log in as agent, canned login test cases verifies that user end up on overview page-->
+    <action acid="0" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://1-qa.t5a.l1.cisco.com"/>
+      <actionparam paramtype="username" paramvalue="auto_var3_fr"/>
+      <actionparam paramtype="password" paramvalue="Test1234"/>
+    </action>
+    <!--clicks on + Add Customer button-->
+    <action acid="1" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='add_customer']"/>
+    </action>
+    <!--enters auto_var3_customer1_fr in Customer Name field-->
+    <action acid="2" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='ca_business_name']"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_customer1_fr"/>
+    </action>
+    <!--clicks on next button-->
+    <action acid="3" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[2]/button"/>
+    </action>
+    <!--clicks on next button again-->
+    <action acid="4" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[2]/button"/>
+    </action>
+    <!--verify that Missing error message is displayed-->
+    <action acid="5" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[4]/span"/>
+      <actionparam paramtype="value" paramvalue="Manquant"/>
+    </action>
+    <!--clicks the back button-->
+    <action acid="6" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span/button"/>
+    </action>
+    <!--clicks the back button again-->
+    <action acid="7" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span/button"/>
+    </action>
+    <!--selects Professional services for Industry-->
+    <action acid="8" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[3]/div/select"/>
+      <actionparam paramtype="value" paramvalue="Services aux entreprises"/>
+    </action>
+    <!--enters 123 street st. for the Street Address field-->
+    <action acid="9" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[3]/div/input[2]"/>
+      <actionparam paramtype="value" paramvalue="123 street st."/>
+    </action>
+    <!--enters Random Town for the city field-->
+    <action acid="10" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[3]/div[2]/input"/>
+      <actionparam paramtype="value" paramvalue="Random Town"/>
+    </action>
+    <!--enters CA for the state/province field-->
+    <action acid="11" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[3]/div[2]/input[2]"/>
+      <actionparam paramtype="value" paramvalue="CA"/>
+    </action>
+    <!--enters 12345 for Zip/Postal Code field-->
+    <action acid="12" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[3]/div[2]/input[3]"/>
+      <actionparam paramtype="value" paramvalue="12345"/>
+    </action>
+    <!--selects Togo as the Country-->
+    <action acid="13" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[3]/div[2]/select"/>
+      <actionparam paramtype="value" paramvalue="Togo"/>
+    </action>
+    <!--clicks on next button-->
+    <action acid="14" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[2]/button"/>
+    </action>
+    <!--enters Var1 in the First Name field-->
+    <action acid="15" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[4]/div/div/input"/>
+      <actionparam paramtype="value" paramvalue="Var1"/>
+    </action>
+    <!--enters Customer1 in the Last Name field-->
+    <action acid="16" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[4]/div/div/input[2]"/>
+      <actionparam paramtype="value" paramvalue="Customer1"/>
+    </action>
+    <!--enters auto_var3_subagent1_fr in the Email Address field (invalid email)-->
+    <action acid="17" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/form/div/div/div[4]/div/div/input[3]"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_subagent1_fr"/>
+    </action>
+    <!--clicks on next button again-->
+    <action acid="18" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[2]/button"/>
+    </action>
+    <!--verify the Invalid format error message shows up-->
+    <action acid="19" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[4]/span"/>
+      <actionparam paramtype="value" paramvalue="Format non valide"/>
+    </action>
+    <!--clicks the back button-->
+    <action acid="20" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span/button"/>
+    </action>
+    <!--uncheck the Add a Contact check box-->
+    <action acid="21" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="checkbox"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='optional_contact_check']"/>
+      <actionparam paramtype="value" paramvalue="uncheck"/>
+    </action>
+    <!--clicks on next button-->
+    <action acid="22" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[2]/button"/>
+    </action>
+    <!--clicks the Save button-->
+    <action acid="23" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[3]/button"/>
+    </action>
+    <!--verify the that it goes to the status page in 30 seconds-->
+    <action acid="24" stoptype="continue" loop="1" iterations="30" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span"/>
+      <actionparam paramtype="value" paramvalue="État"/>
+    </action>
+    <!--hovers over Profile menu-->
+    <action acid="25" stoptype="abort">
+      <actionname>hover</actionname>
+      <actionparam paramtype="type" paramvalue="frenchmenu"/>
+      <actionparam paramtype="value" paramvalue="Profil"/>
+    </action>
+    <!--clicks on submenu Profile-->
+    <action acid="26" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="submenu"/>
+      <actionparam paramtype="value" paramvalue="Profil"/>
+    </action>
+    <!--verify that the h2 says Profile-->
+    <action acid="27" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span"/>
+      <actionparam paramtype="value" paramvalue="Profil"/>
+    </action>
+    <!--verify the Customer name is indeed what we wanted to add-->
+    <action acid="28" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div/div[2]/input"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_customer1_fr"/>
+    </action>
+    <!--verify the Industry is indeed what we selected when adding this customer-->
+    <action acid="29" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div/div[2]/select"/>
+      <actionparam paramtype="value" paramvalue=" Services aux entreprises "/>
+    </action>
+    <!--enter 123123 in the Device password field-->
+    <action acid="30" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div/div[2]/input[3]"/>
+      <actionparam paramtype="value" paramvalue="123123"/>
+    </action>
+    <!--clicks the save button-->
+    <action acid="31" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div/div[5]/span/button"/>
+    </action>
+    <!--verify that we are back at the profile page after save-->
+    <action acid="32" stoptype="continue" loop="2" iterations="30" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span"/>
+      <actionparam paramtype="value" paramvalue="Profil"/>
+    </action>
+    <!--verify that the device password indeed change to 123123-->
+    <action acid="33" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div/div[2]/input[3]"/>
+      <actionparam paramtype="value" paramvalue="123123"/>
+    </action>
+    <action acid="34" stoptype="abort">
+      <actionname>hover</actionname>
+      <actionparam paramtype="type" paramvalue="frenchmenu"/>
+      <actionparam paramtype="value" paramvalue="Profil"/>
+    </action>
+    <action acid="35" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="submenu"/>
+      <actionparam paramtype="value" paramvalue="Adresse"/>
+    </action>
+    <!--verify that the h2 of this page says Address (most likely on address page)-->
+    <action acid="36" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span"/>
+      <actionparam paramtype="value" paramvalue="Adresse"/>
+    </action>
+    <!--verify street address field-->
+    <action acid="37" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div[2]/input"/>
+      <actionparam paramtype="value" paramvalue="123 street st."/>
+    </action>
+    <!--verify city field-->
+    <action acid="38" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div[2]/input[2]"/>
+      <actionparam paramtype="value" paramvalue="Random Town"/>
+    </action>
+    <!--verify State/Province field-->
+    <action acid="39" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div[2]/input[3]"/>
+      <actionparam paramtype="value" paramvalue="CA"/>
+    </action>
+    <!--verify Zip/Postal Code field-->
+    <action acid="40" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div[2]/input[4]"/>
+      <actionparam paramtype="value" paramvalue="12345"/>
+    </action>
+    <!--verify the Country select-->
+    <action acid="41" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div[2]/select"/>
+      <actionparam paramtype="value" paramvalue="Togo"/>
+    </action>
+    <action acid="42" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>
+

@@ -1,0 +1,41 @@
+testcase(testfamily=gui, testgroup=subagent, testcase=end2end_delete_subagent, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. login to t5a as auto_var1 (agent)
+# 2. go to approved agents page
+# 3. click on auto_var1_subagent1 (subagent)
+# 4. click on delete
+# 5. Click on OK
+# 6. verify that the subagent is deleted
+# 7. try to login with subagnet, make sure that invalud username message show up
+workflow(driver=selenium, wfid=delete_subagent, stoptype=abort, profile=webdriver, browser=firefox)
+#login as agent and verify on the overview page
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1, password=Test1234)
+#go to Approved Agents page
+hover(type=menu, value=Agents)
+click(type=submenu, value=Approved Agents)
+#verify that the h2 of page is Approved Agents
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Approved Agents, loop=1, break=y, iterations=10, sleep=1, stoptype=continue)
+#verify that the subagent is in the approved agents list
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=auto_var1_subagent1, loop=2, break=y, iterations=10, sleep=1, stoptype=continue)
+#click on the subagent row
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=auto_var1_subagent1)
+#wait 1 second for the animation
+wait(type=seconds, value=1)
+#click on the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/span/a)
+#click on the OK button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify that the h2 of the page is Approved Agents
+verify(type=page, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Approved Agents, loop=3, break=y, iterations=10, sleep=1, stoptype=continue)
+#verify that the subagent row is not there anymore
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, novalue=auto_var1_subagent1, loop=4, break=y, iterations=10, sleep=1, stoptype=continue)
+#click on the log out link
+click(type=link, xpath=/html/body/div/div/ul/li[5]/a)
+#verify that the h2 of page is login
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2, value=Log In, loop=5, break=y, iterations=10, sleep=1, stoptype=continue)
+#enter the subagent's username and password
+input(type=text field, xpath=//*[@id='accountid'], value=auto_var1_subagent1)
+input(type=text field, xpath=//*[@id='password'], value=Test1234)
+#click on the login button
+click(type=button, xpath=//*[@id='loginbutton'])
+#verify that we get the Invalud username/password message
+verify(type=text, xpath =/html/body/div/div[2]/div/form/table/tbody/tr/td/div,  value=Invalid username and/or password Please try again, loop=6, break=y, iterations=10, sleep=1, stoptype=continue)

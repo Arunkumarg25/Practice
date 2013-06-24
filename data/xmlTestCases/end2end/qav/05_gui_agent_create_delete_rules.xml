@@ -1,0 +1,873 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="gui" testgroup="agent" testcase="create_delete_rules" parallel="false" workflowpause="0" location="1-qav.tb1.rcdnlab1.com">
+  <!-- 1. login to t5a as auto_var1 (agent)
+	 2. go to delivery rules page
+	 3. click on + Add Delivery Rule
+	 4. add a delivery rule with severity = Informational
+	 5. verify the delivery rule is added
+	 6. delete the delivery rule
+	 7. verifty the delivery rule is deleted
+	 8. repeat 4-7 with all the severity levels
+	 9. add 2 more delivery rules with specifiy events
+	10. verify those are aded and deleted correctly-->
+	<workflow driver="xmlapi" wfid="register_agent" stoptype="abort">
+	 <action acid="1" stoptype="abort" timeout="30">
+        <actionname>proxy</actionname>
+        <actionparam paramtype="argument" paramvalue="1-qav.tb1.rcdnlab1.com"/>
+    </action>
+    <action acid="2" stoptype="abort" timeout="30">
+        <actionname>source</actionname>
+        <actionparam paramtype="argument" paramvalue="/tmp/proxy.env"/>
+    </action>
+	</workflow>
+  <workflow driver="selenium" wfid="create_delete_rules" stoptype="abort" profile="webdriver">
+    <action acid="0" stoptype="abort">
+      <actionname>config</actionname>
+      <actionparam paramtype="path" paramvalue="./data/selenium_config/page_log_in.xml"/>
+    </action>
+    <action acid="1" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://www.tb1.rcdnlab1.com"/>
+      <actionparam paramtype="username" paramvalue="auto_var1"/>
+      <actionparam paramtype="password" paramvalue="Test1234"/>
+    </action>
+    <action acid="2" stoptype="abort">
+      <actionname>hover</actionname>
+      <actionparam paramtype="type" paramvalue="menu"/>
+      <actionparam paramtype="value" paramvalue="Notifications"/>
+    </action>
+    <action acid="3" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="submenu"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="4" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="5" stoptype="abort">
+      <actionname>config</actionname>
+      <actionparam paramtype="path" paramvalue="./data/selenium_config/page_delivery_rules.xml"/>
+    </action>
+    <action acid="6" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Warning (All)"/>
+    </action>
+    <action acid="7" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="8" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="9" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="10" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="11" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="12" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="13" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Severity"/>
+      <actionparam paramtype="value" paramvalue="Informational"/>
+    </action>
+    <action acid="14" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="15" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="16" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="17" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="18" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="19" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Informational (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="20" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Informational (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="21" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="22" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="23" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="24" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="Informational (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="25" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="26" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="27" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="28" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Severity"/>
+      <actionparam paramtype="value" paramvalue="Notice"/>
+    </action>
+    <action acid="29" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="30" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="31" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="32" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="33" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="34" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Notice (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="35" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Notice (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="36" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="37" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="38" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="39" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="Notice (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="40" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="41" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="42" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="43" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Severity"/>
+      <actionparam paramtype="value" paramvalue="Warning"/>
+    </action>
+    <action acid="44" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="45" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="46" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="47" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="48" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="49" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Warning (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="50" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Warning (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="51" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="52" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="53" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="54" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="Warning (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="55" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="56" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="57" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="58" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Severity"/>
+      <actionparam paramtype="value" paramvalue="Error"/>
+    </action>
+    <action acid="59" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="60" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="61" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="62" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="63" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="64" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Error (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="65" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Error (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="66" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="67" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="68" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="69" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="Error (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="70" stoptype="continue">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="71" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="72" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="73" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Severity"/>
+      <actionparam paramtype="value" paramvalue="Critical"/>
+    </action>
+    <action acid="74" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="75" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="76" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="77" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="78" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="79" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Critical (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="80" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Critical (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="81" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="82" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="83" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="84" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="Critical (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="85" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="86" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="87" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="88" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Severity"/>
+      <actionparam paramtype="value" paramvalue="Alert"/>
+    </action>
+    <action acid="89" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="90" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="91" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="92" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="93" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="94" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Alert (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="95" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Alert (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="96" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="97" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="98" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="99" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="Alert (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="100" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="101" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="102" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="103" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Severity"/>
+      <actionparam paramtype="value" paramvalue="Emergency"/>
+    </action>
+    <action acid="104" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="105" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="106" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="107" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="108" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="109" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="110" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="111" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="112" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="link"/>
+      <actionparam paramtype="value" paramvalue="Cancel"/>
+    </action>
+    <action acid="113" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="114" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="115" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="drawer handle"/>
+    </action>
+    <action acid="116" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="1"/>
+    </action>
+    <action acid="117" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="118" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="119" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="120" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="121" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="Emergency (All) Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="122" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="123" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="124" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="125" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="checkbox"/>
+      <actionparam paramtype="label" paramvalue="Specify Event"/>
+      <actionparam paramtype="value" paramvalue="check"/>
+    </action>
+    <action acid="126" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Event Type"/>
+      <actionparam paramtype="value" paramvalue="Device: Cisco Support Access Used"/>
+    </action>
+    <action acid="127" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="128" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="129" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="130" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="131" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="132" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="All Device: Cisco Support Access Used Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="133" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="All Device: Cisco Support Access Used Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="134" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="135" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="136" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="137" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="All Device: Cisco Support Access Used Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="138" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Rule"/>
+    </action>
+    <action acid="139" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="140" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="All"/>
+    </action>
+    <action acid="141" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="checkbox"/>
+      <actionparam paramtype="label" paramvalue="Specify Event"/>
+      <actionparam paramtype="value" paramvalue="check"/>
+    </action>
+    <action acid="142" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Event Type"/>
+      <actionparam paramtype="value" paramvalue="Device: Configuration backup"/>
+    </action>
+    <action acid="143" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Contact"/>
+      <actionparam paramtype="value" paramvalue="Auto Var"/>
+    </action>
+    <action acid="144" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="145" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Method"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="146" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="147" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="148" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="All Device: Configuration backup Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="149" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="All Device: Configuration backup Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="150" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Delete"/>
+    </action>
+    <action acid="151" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="OK"/>
+    </action>
+    <action acid="152" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Rules"/>
+    </action>
+    <action acid="153" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="novalue" paramvalue="All Device: Configuration backup Auto Var auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="154" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>
+
+   

@@ -1,0 +1,69 @@
+testcase(testfamily=gui, testgroup=subagent, testcase=end2end_create_contact, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. Login to t5a as auto_var1_subagent1 (subagent)
+# 2. Go to delivery contacts page
+# 3. Click on add delivery contact
+# 4. verify missing and invalid messages
+# 5. add a delivery contact for the subagent customer
+# 6. verify that the delivery contact is added
+# 7. add a delivery contact where the customer is None
+# 8. verify that the delivery contact is added
+workflow(driver=selenium, wfid=subagent_create_contact, stoptype=abort, profile=webdriver, browser=firefox)
+#login as sub agent and verify on the overview page
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1_subagent1, password=Test1234)
+#go to the Delivery Contacts page
+hover(type=menu, value=Notifications)
+click(type=submenu, value=Delivery Contacts)
+
+#verify that the h2 for the page is Delivery Contacts
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Contacts)
+
+
+#click on the + Add Delivery Contact
+click(type=button, xpath=//*[@id='add_contact'])
+#wait for the First Name text field to show up
+verify(type=element, xpath=//*[@id='add_contact'], loop=1, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the Preferred Language select is there
+verify(type=element, xpath=//*[@id='customerlanguage_select'], stoptype=continue)
+#clicks the save button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify the error message says missing
+verify(type=text, xpath=/html/body/div[2]/div[2]/div/div/div/div[5]/span[2], value=Missing, stoptype=continue)
+
+
+#enters Subagent1 as the first name
+input(type=text field, xpath=//*[@id='firstname'], value=Subagent1)
+#enters Sub-lastname as the Last Name
+input(type=text field, xpath=//*[@id='lastname'], value=Sub-lastname)
+#enters auto_var1_customer1 as the Eamil Address
+input(type=text field, xpath=//*[@id='workemail'], value=auto_var1_subagent1_customer1)
+#clicks the save button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify the error message says Invalid
+verify(type=text, xpath=/html/body/div[2]/div[2]/div/div/div/div[5]/span[3], value=Invalid, loop=2, iterations=3, break=y, sleep=1, stoptype=continue)
+#inputs a valid email address this time
+input(type=text field, xpath=//*[@id='workemail'], value=auto_var1_subagent1_customer1@mail.aws.rcdnlab1.com)
+#select auto_var1_customer1 as the customer
+input(type=select, xpath=//*[@id='customername_select'], value=auto_var1_subagent1_customer1)
+#clicks the save button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify that the h2 for the page is Delivery Contacts
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Contacts, loop=3, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the customer contact is actually added
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Subagent1 Sub-lastname auto_var1_subagent1_custom... auto_var1_subagent1_custom..., stoptype=continue, loop=4, iterations=10, break=y, sleep=1)
+
+
+#add global contact
+#click on the + Add Delivery Contact
+click(type=button, xpath=//*[@id='add_contact'])
+#wait for the First Name text field to show up
+verify(type=element, xpath=//*[@id='add_contact'], loop=5, iterations=5, break=y, sleep=1, stoptype=continue)
+#enter information for global contact
+input(type=text field, xpath=//*[@id='firstname'], value=Subagent)
+input(type=text field, xpath=//*[@id='lastname'], value=GlobalContactLastName)
+input(type=text field, xpath=//*[@id='workemail'], value=auto_var1_subagent1@mail.aws.rcdnlab1.com)
+input(type=select, xpath=//*[@id='customername_select'], value=None)
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify that the h2 for the page is Delivery Contacts
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span[2], value=Delivery Contacts, loop=6, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the global contact is added
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=Subagent GlobalContactLastName auto_var1_subagent1@mail.a..., loop=7, iterations=10, break=y, sleep=1, stoptype=continue)

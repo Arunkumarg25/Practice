@@ -1,0 +1,11 @@
+Brand,BrandLogin,BrandPassword,AgentID,AgentPassword,FirstName,LastName,Company,JobRole,JobLevel,Timezone,TimezoneCity,Address1,Address2,City,State,Zip,Email,EmailDomain,Phone
+https://1-qa.t4.l1.cisco.com,1-qa.t4.l1.cisco.com,123test,AutomationDemo,Test1234,Automation,Demo,Cisco PSP,Account Manager,Administrator, Etc,UCT,2200 E. George Bush Hwy.,,Richardson,TX,75080,autodemo,@rcdn4test-301.cisco.com,7901000001
+,,,var2,Test1234,Maria,Adela,Burger King,Administrator,CEO / Managing Director, Etc,GMT-14,100 N Highway 175,,Seagoville,TX,75159,var2,@www.qa7.l1.cisco.com,7901000002
+,,,var3,Test1234,Casey,Affleck,Carl's Jr.,Business Development,CFO / Finance Director, Etc,GMT-13,1000 Commerce St,,Dallas,TX,75202,var3,@www.qa7.l1.cisco.com,7901000003
+,,,var4,Test1234,August,Affleck,Charley's Grilled Subs,Consultant/Contractor,CIO / IT Director, Etc,GMT-12,1001 Highway 287 N,,Mansfield,TX,76063,var4,@www.qa7.l1.cisco.com,7901000004
+,,,var5,Test1234,Ben,Affleck,Chili's,Customer Service,CXO / Executive, Etc,GMT-11,1001 W Stevens St,,Van Alstyne,TX,75495,var5,@www.qa7.l1.cisco.com,7901000005
+,,,var6,Test1234,Seraphina,Affleck,Chipotle Mexican Grill,E-Commerce,Director / Senior Manager, Etc,GMT-10,101 E State Highway 114,,Southlake,TX,76092,var6,@www.qa7.l1.cisco.com,7901000006
+,,,var7,Test1234,Rose,Affleck,Corner Bakery Cafe,Engineering,Individual Contributor, Etc,GMT-9,101 L R Campbell Rd,,Italy,TX,76651,var7,@www.qa7.l1.cisco.com,7901000007
+,,,var8,Test1234,Rocko,Akira,D?lifrance,Executive Management,Management with Staff, Etc,GMT-8,10124 Edmonds Way,,Edmonds,WA,98020,var8,@www.qa7.l1.cisco.com,7901000008
+,,,var9,Test1234,Jack,Albertson,Denny's,Finance/Accounting,Management without Staff, Etc,GMT-7,10125  SE 256th St,,Kent,WA,98030,var9,@www.qa7.l1.cisco.com,7901000009
+,,,var10,Test1234,Cedric,Albertson,Dome,HR/Recruitment,Vice President, Etc,GMT-6,102 E Us Highway 80,,Forney,TX,75126,var10,@www.qa7.l1.cisco.com,7901000010

@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="gui" testgroup="agent" testcase="end2end_create_contact" parallel="false" workflowpause="0" location="1-qav.tb1.rcdnlab1.com">
+  <!-- 1. Login to t5a as auto_var1 (agent)
+	 2. Go to delivery contacts page
+	 3. Click on add delivery contact
+	 4. verify missing and invalid messages
+	 5. add a delivery contact
+	 6. verify that the delivery contact is added-->
+	 <workflow driver="xmlapi" wfid="register_agent" stoptype="abort">
+	 <action acid="1" stoptype="abort" timeout="30">
+        <actionname>proxy</actionname>
+        <actionparam paramtype="argument" paramvalue="1-qav.tb1.rcdnlab1.com"/>
+    </action>
+    <action acid="2" stoptype="abort" timeout="30">
+        <actionname>source</actionname>
+        <actionparam paramtype="argument" paramvalue="/tmp/proxy.env"/>
+    </action>
+	</workflow>
+  <workflow driver="selenium" wfid="agent_create_contact" stoptype="abort" profile="webdriver">
+    <action acid="0" stoptype="abort">
+      <actionname>config</actionname>
+      <actionparam paramtype="path" paramvalue="./data/selenium_config/page_log_in.xml"/>
+    </action>
+    <action acid="1" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://www.tb1.rcdnlab1.com"/>
+      <actionparam paramtype="username" paramvalue="auto_var1"/>
+      <actionparam paramtype="password" paramvalue="Test1234"/>
+    </action>
+    <action acid="2" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Overview"/>
+    </action>
+    <action acid="3" stoptype="abort">
+      <actionname>hover</actionname>
+      <actionparam paramtype="type" paramvalue="menu"/>
+      <actionparam paramtype="value" paramvalue="Notifications"/>
+    </action>
+    <action acid="4" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="submenu"/>
+      <actionparam paramtype="value" paramvalue="Delivery Contacts"/>
+    </action>
+    <action acid="5" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Contacts"/>
+    </action>
+    <action acid="6" stoptype="abort">
+      <actionname>config</actionname>
+      <actionparam paramtype="path" paramvalue="./data/selenium_config/page_delivery_contacts.xml"/>
+    </action>
+    <action acid="7" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Contact"/>
+    </action>
+    <action acid="8" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="label" paramvalue="First Name"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="9" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="label" paramvalue="Preferred Language"/>
+    </action>
+    <action acid="10" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="11" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Missing message"/>
+      <actionparam paramtype="value" paramvalue="Missing"/>
+    </action>
+    <action acid="12" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="First Name"/>
+      <actionparam paramtype="value" paramvalue="Customer1"/>
+    </action>
+    <action acid="13" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Last Name"/>
+      <actionparam paramtype="value" paramvalue="Contact1"/>
+    </action>
+    <action acid="14" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Email Address"/>
+      <actionparam paramtype="value" paramvalue="auto_var1_customer1"/>
+    </action>
+    <action acid="15" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="16" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="label" paramvalue="Invalid message"/>
+      <actionparam paramtype="value" paramvalue="Invalid"/>
+    </action>
+    <action acid="17" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Email Address"/>
+      <actionparam paramtype="value" paramvalue="auto_var1_customer1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="18" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="auto_var1_customer1"/>
+    </action>
+    <action acid="19" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="20" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Contacts"/>
+    </action>
+    <action acid="21" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Customer1 Contact1 auto_var1_customer1@mail.a... auto_var1_customer1"/>
+    </action>
+    <action acid="22" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="+ Add Delivery Contact"/>
+    </action>
+    <action acid="23" stoptype="continue">
+      <actionname>waitfor</actionname>
+      <actionparam paramtype="type" paramvalue="element"/>
+      <actionparam paramtype="label" paramvalue="First Name"/>
+      <actionparam paramtype="time" paramvalue="5"/>
+    </action>
+    <action acid="24" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="First Name"/>
+      <actionparam paramtype="value" paramvalue="Agent"/>
+    </action>
+    <action acid="25" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Last Name"/>
+      <actionparam paramtype="value" paramvalue="Contact"/>
+    </action>
+    <action acid="26" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="label" paramvalue="Email Address"/>
+      <actionparam paramtype="value" paramvalue="auto_var1@mail.aws.rcdnlab1.com"/>
+    </action>
+    <action acid="27" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="label" paramvalue="Customer"/>
+      <actionparam paramtype="value" paramvalue="None"/>
+    </action>
+    <action acid="28" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="Save"/>
+    </action>
+    <action acid="29" stoptype="abort">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="page"/>
+      <actionparam paramtype="value" paramvalue="Delivery Contacts"/>
+    </action>
+    <action acid="30" stoptype="continue">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="value" paramvalue="Agent Contact auto_var1@mail.aws.rcdnlab..."/>
+    </action>
+    <action acid="31" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>
+
+   

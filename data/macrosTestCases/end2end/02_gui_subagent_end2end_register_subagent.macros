@@ -1,0 +1,76 @@
+testcase(testfamily=gui, testgroup=subagent, testcase=end2end_register_subagent, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. login to t5a as auto_var1 (agent)
+# 2. go to agent overview page
+# 3. save the subagent reguster url then navigate to it
+# 4. register subagent auto_var1_subagent1
+# 5. log in with agent auto_var1
+# 6. go to pending agents page
+# 7. approve pending sub agent auto_var1_subagent1
+# 8. log out
+# 9. log in as subagent auto_var1
+#10. verify it goes to overview page
+#11. verify all the sub agent information
+#12. log out
+workflow(driver=selenium, wfid=register_subagent, stoptype=abort, profile=webdriver, browser=firefox)
+#log in as agent using canned login testcase, this test case verifies that user end up on overview page
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1, password=Test1234)
+hover(type=menu, value=Agents)
+click(type=submenu, value=Agent Overview)
+#get the invite url from Agent Overview page
+save(savevar=sub_register_url, xpath=//span[@id='theURL'])
+navigate(loadvar=sub_register_url, timeout=30)
+input(type=text field, xpath=//*[@id='user_id'], value=auto_var1_subagent1)
+input(type=text field, xpath=//*[@id='password'], value=Test1234)
+input(type=text field, xpath=//*[@id='firstname'], value=Sub)
+input(type=text field, xpath=//*[@id='lastname'], value=Agent)
+input(type=text field, xpath=//*[@id='company'], value=Sub Agent Co.)
+input(type=select, xpath=/html/body/div/div[2]/div/form/div[7]/div[3]/select, value=Administrator)
+input(type=select, xpath=/html/body/div/div[2]/div/form/div[7]/div[3]/select[2], value=Vice President)
+input(type=text field, xpath=//*[@id='streetaddress1'], value=123 address st.)
+input(type=text field, xpath=//*[@id='city'], value=Plano)
+input(type=text field, xpath=//*[@id='postalcode'], value=12345)
+input(type=text field, xpath=//*[@id='phone_number'], value=1231231234)
+input(type=text field, xpath=//*[@id='email'], value=auto_var1_subagent1@mail.aws.rcdnlab1.com)
+click(type=checkbox, xpath=//*[@id='privacy'], value=check)
+click(type=button, xpath=/html/body/div/div[2]/div/form/div[14]/span/button)
+
+verify(type=page, value=register_complete.html, stoptype=continue)
+verify(type=text, value=Registration Complete, stoptype=continue)
+
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1, password=Test1234)
+hover(type=menu, value=Agents)
+click(type=submenu, value=Pending Agents)
+wait(type=seconds, value=1)
+
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=auto_var1_subagent1, stoptype=continue, loop=2, iterations=10, sleep=1)
+
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=auto_var1_subagent1)
+#click the approve button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/span/a)
+#clicks log out to log out agent
+click(type=link, xpath=/html/body/div/div/ul/li[5]/a)
+
+#sleep 20 seconds after the sub agent is approved
+wait(type=seconds, value=20)
+
+#login as the subagent
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1_subagent1, password=Test1234)
+
+#clicks the Account link to verify registered sub agent information
+click(type=link, xpath=/html/body/div/div/ul/li[2]/a)
+
+verify(type=text, xpath=/html/body/div/div[2]/div/h2, value=Sub Agent Co. / My Account, stoptype=continue, loop=4, iterations=30, sleep=1)
+
+#verify sub agent information
+verify(type=text field, xpath=//*[@id='firstname'], value=Sub, stoptype=continue)
+verify(type=text field, xpath=//*[@id='lastname'], value=Agent, stoptype=continue)
+verify(type=text field, xpath=//*[@id='company'], value=Sub Agent Co., stoptype=continue)
+verify(type=text field, xpath=//*[@id='streetaddress1'], value=123 address st., stoptype=continue)
+verify(type=text field, xpath=//*[@id='city'], value=Plano, stoptype=continue)
+verify(type=text field, xpath=//*[@id='postalcode'], value=12345, stoptype=continue)
+verify(type=text field, xpath=//*[@id='phone_number'], value=1231231234, stoptype=continue)
+verify(type=text field, xpath=//*[@id='email'], value=auto_var1_subagent1@mail.aws.rcdnlab1.com, stoptype=continue)
+verify(type=select, xpath=/html/body/div/div[2]/div/form/div[3]/div[3]/select, value=Administrator, stoptype=continue)
+verify(type=select, xpath=/html/body/div/div[2]/div/form/div[3]/div[3]/select[2], value=Vice President, stoptype=continue)
+#clicks the log out link
+click(type=link, xpath=/html/body/div/div/ul/li[5]/a)

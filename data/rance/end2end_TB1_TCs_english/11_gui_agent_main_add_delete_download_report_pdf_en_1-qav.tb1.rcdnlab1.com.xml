@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase testfamily="end2end_gui" testgroup="agent" testcase="11_add_delete_report_pdf_en" parallel="false" workflowpause="0" location="1-qav.tb1.rcdnlab1.com" customerid="e2e.1-qav.tb1.rcdnlab1.com">
+<workflow driver="selenium" wfid="add_delete_report" stoptype="abort" profile="webdriver" browser="firefox" rid="rantao">
+<!--
+	1. Log in;
+	2. Navigate to the Report Page;
+	3. Click "Create Report";
+	4. Select "Customer List";
+	5. Select "PDF";
+	6. Select "English"
+	7. Input Test123!@# into the text field of "Cover Page Notes"; 
+	8. Click "Next";
+	9. Click "Next" again and do not select any options;
+	10. Select "Now" and Click "Save";
+	11. Click "Save";
+	12. Click "Close";
+	13. Wait for 30 seconds;
+	14. Redirect to the report page;
+	15. Verify whether the report has been generated and verify all the info including notes are correct. 
+	16. Verify preview page;
+	17. Close preview page and open drawer;
+	18. Download the file and verify both name and size;
+	19. Click the report that was just generated;
+	20. Click "Delete";
+	21. Click "OK";
+	22. Redirect to the report page;
+	23. Verify whether the report has been deleted.
+  -->  
+
+  <action acid="1" stoptype="abort" timeout="10">
+  <actionname>navigate</actionname> 
+  <actionparam paramtype="url" paramvalue="https://www.tb1.rcdnlab1.com" /> 
+  </action>
+ <!-- Log in input --> 
+ <action acid="2" stoptype="abort" timeout="3">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="text field" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='accountid']" /> 
+  <actionparam paramtype="value" paramvalue="auto_var1" /> 
+  </action>
+ <action acid="3" stoptype="abort" timeout="3">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="text field" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='password']" /> 
+  <actionparam paramtype="value" paramvalue="Test1234" /> 
+  </action>
+ <action acid="4" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='loginbutton']" /> 
+  </action>
+ <action acid="5" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="3" /> 
+  </action> 
+ 
+ <!--Navigate to the report page-->
+ <action acid="6" stoptype="abort" timeout="30">
+  <actionname>hover</actionname> 
+  <actionparam paramtype="type" paramvalue="menu" /> 
+  <actionparam paramtype="value" paramvalue="Reports" />  
+  </action>
+  <action acid="7" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="submenu" /> 
+  <actionparam paramtype="value" paramvalue="Report Listing" />  
+  </action>
+  
+ <!--Click create report-->
+<action acid="8" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='report_create']" />  
+  </action>
+  <action acid="9" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="10" />  
+  </action>
+   
+  <!--Report--> 
+  <action acid="10" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/div/div/div/div/select/option" />  
+  </action> 
+      
+  <!--Report format-->
+  <action acid="11" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/div/div/div/div[3]/select/option" />  
+  </action>  
+  
+  <!--Prefered Language-->
+  <action acid="12" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/div/div/div/div[4]/select/option" />
+  </action> 
+  
+  <!--Input Notes-->
+  <action acid="13" stoptype="abort" timeout="30">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="text field" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='report_notes']" />  
+  <actionparam paramtype="value" paramvalue="123abcABC" />
+  </action>   
+   
+  <!--Next-->
+  <action acid="14" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[2]/button" />  
+  </action>  
+  
+  <!--Next without any options-->
+  <action acid="18" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[2]/button" />  
+  </action> 
+
+  <!--Create report Now-->
+  <action acid="19" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[2]/div/div/div[3]/div/select/option" />  
+  </action> 
+
+  <!--Create save-->
+  <action acid="20" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span[3]/button" />  
+  </action>   
+  <action acid="21" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="3" />  
+  </action>
+  
+  <!--Create close-->
+  <action acid="22" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/button" />  
+  </action> 
+  
+  <action acid="23" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="30" />  
+  </action>
+  
+<!--Navigate to the report page-->
+ <action acid="24" stoptype="abort" timeout="30">
+  <actionname>hover</actionname> 
+  <actionparam paramtype="type" paramvalue="menu" /> 
+  <actionparam paramtype="value" paramvalue="Reports" />  
+  </action>
+  <action acid="25" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="submenu" /> 
+  <actionparam paramtype="value" paramvalue="Report Listing" />  
+  </action>
+  
+  <!--Verify whether the report has been added successfully-->  
+  <action acid="26" stoptype="abort" timeout="30">
+  <actionname>verify</actionname> 
+  <actionparam paramtype="type" paramvalue="text" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr/td[3]" />
+  <actionparam paramtype="value" paramvalue="123abcABC" />   
+  </action>
+   
+  <action acid="27" stoptype="abort" timeout="30">
+  <actionname>verify</actionname> 
+  <actionparam paramtype="type" paramvalue="text" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr/td[5]" />
+  <actionparam paramtype="value" paramvalue="PDF" />   
+  </action>
+
+  <action acid="28" stoptype="abort" timeout="30">
+  <actionname>verify</actionname> 
+  <actionparam paramtype="type" paramvalue="text" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr/td[6]" />
+  <actionparam paramtype="value" paramvalue="English" />   
+  </action>
+  
+  <!--Verify the preview-->
+  <action acid="29" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr" />  
+  </action>
+  <action acid="30" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="2" />  
+  </action>
+    
+  <action acid="31" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div/span/a" />  
+  </action>
+  <action acid="32" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="2" />  
+  </action>
+  
+  <!--Verify the notes on the preview page-->
+  <action acid="33" stoptype="abort" timeout="30">
+  <actionname>verify</actionname> 
+  <actionparam paramtype="type" paramvalue="text" /> 
+  <actionparam paramtype="xpath" paramvalue="//*[@id='notes_preview']" />
+  <actionparam paramtype="value" paramvalue="123abcABC" />   
+  </action>
+  
+  <!--Exit the preview page-->
+  <action acid="34" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div/a" />  
+  </action>
+  <action acid="35" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="1" />  
+  </action>
+  
+  <!--Open drawer-->
+  <action acid="36" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr" />  
+  </action>
+  <action acid="37" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="2" />  
+  </action>
+  <!--Download file first-->
+  <action acid="38" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div/span[2]/a" />  
+  </action>
+  <action acid="39" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="10" />  
+  </action>
+  <!--Verify the downloaded file name and size-->
+  <action acid="40" stoptype="abort" timeout="30">
+  <actionname>verify</actionname> 
+  <actionparam paramtype="type" paramvalue="filename" />   
+  <actionparam paramtype="value" paramvalue="RPT_CUSTOMER_LIST.pdf" />   
+  </action>
+  <action acid="41" stoptype="abort" timeout="30">
+  <actionname>verify</actionname> 
+  <actionparam paramtype="type" paramvalue="filesize" />   
+  <actionparam paramtype="value" paramvalue="RPT_CUSTOMER_LIST.pdf" />   
+  </action> 
+
+  <action acid="42" stoptype="abort" timeout="30">
+  <actionname>managefile</actionname> 
+  <actionparam paramtype="type" paramvalue="savefile" />   
+  <actionparam paramtype="value" paramvalue="RPT_CUSTOMER_LIST.pdf" />   
+  </action> 
+  <action acid="43" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="20" />  
+  </action>
+<!--Delete the previous downloaded file-->
+  <action acid="44" stoptype="abort" timeout="30">
+  <actionname>managefile</actionname> 
+  <actionparam paramtype="type" paramvalue="delete" />   
+  <actionparam paramtype="value" paramvalue="RPT_CUSTOMER_LIST.pdf" />   
+  </action> 
+ <action acid="45" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="5" />  
+  </action>  
+
+  <!--Delete the report-->  
+  <action acid="46" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr" />  
+  </action>
+  <action acid="47" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="2" />  
+  </action>
+  
+  <!--Click the Delete-->
+  <action acid="48" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/div/span[3]/a" />  
+  </action>
+  <action acid="49" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="2" />  
+  </action>
+  
+  <!--Click the OK-->
+  <action acid="50" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div[3]/div/span/button" />  
+  </action>  
+  <action acid="51" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="2" />  
+  </action>
+
+  <!--Verify whether it is back to report page-->
+  <action acid="52" stoptype="abort" timeout="30">
+  <actionname>verify</actionname> 
+  <actionparam paramtype="type" paramvalue="text" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span" />
+  <actionparam paramtype="value" paramvalue="Reports" />   
+  </action>    
+</workflow>
+
+ <workflow driver="xmlapi" stoptype="abort" wfid="add_delete_report_pdf_wf2" >
+          <action acid="1" stoptype="continue" timeout="5">
+             <actionname>verify</actionname>
+             <actionparam paramtype="type" paramvalue="regex"/>
+             <actionparam paramtype="loadvar" paramvalue="attachmentlink"/>
+          </action>
+             <action acid="2" stoptype="abort" timeout="30">
+             <actionname>curl</actionname>
+             <actionparam paramtype="argument" paramvalue="{attachmentlink}"/>
+             <actionparam paramtype="argument" paramvalue=" > /tmp/test.pdf"/>
+          </action>
+          <action acid="3" stoptype="abort" timeout="5">
+             <actionname>ls</actionname>
+             <actionparam paramtype="argument" paramvalue="-al"/>
+             <actionparam paramtype="argument" paramvalue="/tmp/*.pdf"/>
+           </action>
+
+           <action acid="4" stoptype="abort" timeout="5">
+             <actionname>pdfgrep</actionname>
+             <actionparam paramtype="argument" paramvalue="-i"/>
+             <actionparam paramtype="argument" paramvalue="'Customer Report'"/>
+             <actionparam paramtype="argument" paramvalue="/tmp/test.pdf"/>
+           </action>
+           <action acid="5" stoptype="abort" timeout="5">
+             <actionname>verify</actionname>
+             <actionparam paramtype="type" paramvalue="regex"/>
+             <actionparam paramtype="value" paramvalue="Customer\s*Report"/>
+           </action>
+    </workflow>
+
+</testcase>

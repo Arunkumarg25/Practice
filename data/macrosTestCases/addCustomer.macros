@@ -1,0 +1,76 @@
+testcase(testfamily=gui, testgroup=agent, testcase=verify_add_delete_customer, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. Login to t5a as jearnold_1 (agent)
+# 2. clicks on + Add Customer to start adding a customer
+# 3. leave required fields blank
+# 4. clicks Next two times to get the page with Missing message
+# 5. verifies the message Missing shows up
+# 6. Click back to start adding real information
+# 7. input an invalid email address
+# 8. verifies the message Invalid format shows up
+# 9. go back to uncheck add contact checkbox
+#10. add the customer
+#11. go to profile page
+#12. verifies the customer's information is correct
+#13. change the device password to 123123, and verifiy
+#14. go to address page
+#15. verifies the information in address page is correct
+#16. delete the customer
+#17. verfiy the customer is deleted
+workflow(driver=selenium, wfid=verifyAddDeleteCustomer, stoptype=abort, profile=webdriver)
+config(path=./data/selenium_config/page_log_in.xml)
+login(url=https://www.t5a.l1.cisco.com, username=jearnold_1, password=Test1234)
+verify(type=page, value=Overview)
+config(path=./data/selenium_config/page_overview.xml)
+click(type=button, value=+ Add Customer)
+input(type=text field, label=Customer Name, value=test customer)
+click(type=button, value=Next)
+click(type=button, value=Next)
+verify(type=error message, value=Missing)
+click(type=button, value=Back)
+click(type=button, value=Back)
+input(type=select, label=Industry, value=Professional services)
+input(type=text field, label=Street Address, value=123 street st.)
+input(type=text field, label=City, value=Random Town)
+input(type=text field, label=State/Province, value=CA)
+input(type=text field, label=Zip/Postal Code, value=12345)
+input(type=select, label=Country, value=Togo)
+click(type=button, value=Next)
+input(type=text field, label=First Name, value=Jerry)
+input(type=text field, label=Last Name, value=Arnold)
+input(type=text field, label=Email Address, value=jearnold)
+click(type=button, value=Next)
+verify(type=error message, value=Invalid format)
+click(type=button, value=Back)
+click(type=checkbox, label=Add a Contact, value=uncheck)
+click(type=button, value=Next)
+click(type=button, value=Save)
+waitfor(type=status message, value=Adding Customer, time=10)
+waitfor(type=page, value=Status, time=15)
+verify(type=page, value=Status)
+hover(type=menu, value=Profile)
+click(type=submenu, value=Profile)
+verify(type=page, value=Profile)
+config(path=./data/selenium_config/page_profile.xml)
+verify(type=text field, label=Customer Name, value=test customer)
+verify(type=select, label=Industry, value=Professional services)
+input(type=text field, label=Password, value=123123)
+click(type=button, value=Save)
+verify(type=page, value=Profile)
+verify(type=text field, label=Password, value=123123)
+hover(type=menu, value=Profile)
+click(type=submenu, value=Address)
+verify(type=page, value=Address)
+config(path=./data/selenium_config/page_address.xml)
+verify(type=text field, label=Street Address, value=123 street st.)
+verify(type=text field, label=City, value=Random Town)
+verify(type=text field, label=State/Province, value=CA)
+verify(type=text field, label=Zip/Postal Code, value=12345)
+verify(type=select, label=Country, value=Togo)
+hover(type=menu, value=Profile)
+click(type=submenu, value=Profile)
+verify(type=page, value=Profile)
+config(path=./data/selenium_config/page_profile.xml)
+click(type=button, value=Delete)
+click(type=button, value=OK)
+verify(type=page, value=Overview)
+verify(type=row, novalue=test customer)

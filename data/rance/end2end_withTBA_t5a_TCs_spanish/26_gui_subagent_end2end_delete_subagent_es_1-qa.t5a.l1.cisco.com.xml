@@ -1,0 +1,127 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="end2end_gui" testgroup="subagent" testcase="26_delete_subagent_es" parallel="false" workflowpause="0" location="1-qa.t5a.l1.cisco.com" customerid="e2e.1-qa.t5a.l1.cisco.com">
+  <!-- 1. login to t5a as auto_var1 (agent)
+	 2. go to approved agents page
+	 3. click on auto_var1_subagent1 (subagent)
+	 4. click on delete
+	 5. Click on OK
+	 6. verify that the subagent is deleted
+	 7. try to login with subagnet, make sure that invalud username message show up-->
+  <workflow driver="selenium" wfid="delete_subagent" stoptype="abort" profile="spanish" browser="firefox" rid="rantao">
+    <!--login as agent and verify on the overview page-->
+    <action acid="0" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://1-qa.t5a.l1.cisco.com"/>
+      <actionparam paramtype="username" paramvalue="auto_var3_es"/>
+      <actionparam paramtype="password" paramvalue="Test1234"/>
+    </action>
+    <!--go to Approved Agents page-->
+    <action acid="1" stoptype="abort">
+      <actionname>hover</actionname>
+      <actionparam paramtype="type" paramvalue="spanishmenu"/>
+      <actionparam paramtype="value" paramvalue="Agentes"/>
+    </action>
+    <action acid="2" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="submenu"/>
+      <actionparam paramtype="value" paramvalue="Agentes aprobados"/>
+    </action>
+    <!--verify that the h2 of page is Approved Agents-->
+    <action acid="3" stoptype="continue" loop="1" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Agentes aprobados"/>
+    </action>
+    <!--verify that the subagent is in the approved agents list-->
+    <action acid="4" stoptype="continue" loop="2" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_subagent1_es"/>
+    </action>
+    <!--click on the subagent row-->
+    <action acid="5" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_subagent1_es"/>
+    </action>
+    <!--wait 1 second for the animation-->
+    <action acid="6" stoptype="abort">
+      <actionname>wait</actionname>
+      <actionparam paramtype="type" paramvalue="seconds"/>
+      <actionparam paramtype="value" paramvalue="1"/>
+    </action>
+    <!--click on the delete button-->
+    <action acid="7" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[3]/div/span/a"/>
+    </action>
+    <!--click on the OK button-->
+    <action acid="8" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div[2]/div[3]/div/span/button"/>
+    </action>
+    <!--verify that the h2 of the page is Approved Agents-->
+    <action acid="9" stoptype="continue" loop="3" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2/span[2]"/>
+      <actionparam paramtype="value" paramvalue="Agentes aprobados"/>
+    </action>
+    <!--verify that the subagent row is not there anymore-->
+    <action acid="10" stoptype="continue" loop="4" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+      <actionparam paramtype="novalue" paramvalue="auto_var3_subagent1_es"/>
+    </action>
+    <!--click on the log out link-->
+    <action acid="11" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="link"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div/ul/li[5]/a"/>
+    </action>
+    <!--verify that the h2 of page is login-->
+    <action acid="12" stoptype="continue" loop="5" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div/h2"/>
+      <actionparam paramtype="value" paramvalue="Iniciar sesión"/>
+    </action>
+    <!--enter the subagent's username and password-->
+    <action acid="13" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='accountid']"/>
+      <actionparam paramtype="value" paramvalue="auto_var3_subagent1_es"/>
+    </action>
+    <action acid="14" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="text field"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='password']"/>
+      <actionparam paramtype="value" paramvalue="Test1234"/>
+    </action>
+    <!--click on the login button-->
+    <action acid="15" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='loginbutton']"/>
+    </action>
+    <!--verify that we get the Invalud username/password message-->
+    <action acid="16" stoptype="continue" loop="6" iterations="10" break="y" sleep="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/form/table/tbody/tr/td/div"/>
+      <actionparam paramtype="value" paramvalue="Contraseña o nombre de usuario no válidos"/>
+    </action>
+    <action acid="17" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>
+

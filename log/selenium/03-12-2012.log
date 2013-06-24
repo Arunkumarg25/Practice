@@ -1,0 +1,85 @@
+[03/12/2012 16:34:38  INFO]Starting Firefox...
+[03/12/2012 16:34:39  INFO]Using profile: webdriver
+[03/12/2012 16:35:03  INFO]=====Workflow add_delete_report start=====
+[03/12/2012 16:35:03  INFO]--- 1 Action Start: navigate
+[03/12/2012 16:35:03  INFO]Navigated to: https://www.t5.l1.cisco.com
+[03/12/2012 16:35:03  INFO]--- 2 Action Start: input
+[03/12/2012 16:35:05  INFO]Typed: jearnold1 in //*[@id='accountid'] text field by given xpath method
+[03/12/2012 16:35:05  INFO]--- 3 Action Start: input
+[03/12/2012 16:35:05  INFO]Typed: Test1234 in //*[@id='password'] text field by given xpath method
+[03/12/2012 16:35:05  INFO]--- 4 Action Start: click
+[03/12/2012 16:35:07  INFO]Clicked on button: //*[@id='loginbutton'], by given xpath method
+[03/12/2012 16:35:07  INFO]--- 5 Action Start: wait
+[03/12/2012 16:35:07  INFO]Sleeping for: 1 seconds
+[03/12/2012 16:35:08  INFO]--- 2 Action Start: navigate
+[03/12/2012 16:35:10  INFO]Navigated to: https://3413.t5.l1.cisco.com/reports.html
+[03/12/2012 16:35:10  INFO]--- 3 Action Start: click
+[03/12/2012 16:35:10  INFO]Clicked on: //*[@id='report_create'] link, by given xpath method
+[03/12/2012 16:35:10  INFO]--- 4 Action Start: wait
+[03/12/2012 16:35:10  INFO]Sleeping for: 3 seconds
+[03/12/2012 16:35:13  INFO]--- 5 Action Start: click
+[03/12/2012 16:35:13  INFO]Clicked on: /html/body/div[2]/div[2]/div/div/div/div/select/option link, by given xpath method
+[03/12/2012 16:35:13  INFO]--- 6 Action Start: click
+[03/12/2012 16:35:13  INFO]Clicked on: /html/body/div[2]/div[2]/div/div/div/div[3]/select/option link, by given xpath method
+[03/12/2012 16:35:13  INFO]--- 7 Action Start: click
+[03/12/2012 16:35:13  INFO]Clicked on: /html/body/div[2]/div[2]/div/div/div/div[4]/select/option link, by given xpath method
+[03/12/2012 16:35:13  INFO]--- 8 Action Start: input
+[03/12/2012 16:35:14  INFO]Typed: 123abcABC in //*[@id='report_notes'] text field by given xpath method
+[03/12/2012 16:35:14  INFO]--- 9 Action Start: click
+[03/12/2012 16:35:17  INFO]Clicked on button: /html/body/div[2]/div[3]/div/span[2]/button, by given xpath method
+[03/12/2012 16:35:17  INFO]--- 10 Action Start: click
+[03/12/2012 16:35:19  INFO]Clicked on button: /html/body/div[2]/div[3]/div/span[2]/button, by given xpath method
+[03/12/2012 16:35:19  INFO]--- 11 Action Start: click
+[03/12/2012 16:35:21  INFO]Clicked on button: /html/body/div[2]/div[2]/div/div/div[3]/div/select/option, by given xpath method
+[03/12/2012 16:35:21  INFO]--- 12 Action Start: click
+[03/12/2012 16:35:24  INFO]Clicked on button: /html/body/div[2]/div[3]/div/span[3]/button, by given xpath method
+[03/12/2012 16:35:24  INFO]--- 13 Action Start: wait
+[03/12/2012 16:35:24  INFO]Sleeping for: 3 seconds
+[03/12/2012 16:35:27  INFO]--- 14 Action Start: click
+[03/12/2012 16:35:29  INFO]Clicked on button: /html/body/div[2]/div[3]/div/button, by given xpath method
+[03/12/2012 16:35:29  INFO]--- 15 Action Start: wait
+[03/12/2012 16:35:29  INFO]Sleeping for: 15 seconds
+[03/12/2012 16:35:44  INFO]--- 16 Action Start: navigate
+[03/12/2012 16:35:44  INFO]Navigated to: https://3413.t5.l1.cisco.com/reports.html
+[03/12/2012 16:35:44  INFO]--- 17 Action Start: verify
+[03/12/2012 16:35:45  INFO]Found text: 123abcABC
+[03/12/2012 16:35:45  INFO]Regex passed
+[03/12/2012 16:35:45  INFO]--- 18 Action Start: verify
+[03/12/2012 16:35:45  INFO]Found text: PDF
+[03/12/2012 16:35:45  INFO]Regex passed
+[03/12/2012 16:35:45  INFO]--- 19 Action Start: verify
+[03/12/2012 16:35:45  INFO]Found text: English
+[03/12/2012 16:35:45  INFO]Regex passed
+[03/12/2012 16:35:45  INFO]--- 21 Action Start: click
+[03/12/2012 16:35:45  INFO]Clicked on: /html/body/div/div[2]/div/div[2]/table/tbody/tr link, by given xpath method
+[03/12/2012 16:35:45  INFO]--- 22 Action Start: wait
+[03/12/2012 16:35:45  INFO]Sleeping for: 2 seconds
+[03/12/2012 16:35:47  INFO]--- 23 Action Start: click
+[03/12/2012 16:35:48  INFO]Clicked on: /html/body/div/div[2]/div[3]/div/div/span/a link, by given xpath method
+[03/12/2012 16:35:48  INFO]--- 24 Action Start: wait
+[03/12/2012 16:35:48  INFO]Sleeping for: 2 seconds
+[03/12/2012 16:35:50  INFO]--- 25 Action Start: verify
+[03/12/2012 16:35:50  INFO]Found text: 123abcABC
+[03/12/2012 16:35:50  INFO]Regex passed
+[03/12/2012 16:35:50  INFO]--- 26 Action Start: click
+[03/12/2012 16:35:50  INFO]Clicked on: /html/body/div[2]/div/a link, by given xpath method
+[03/12/2012 16:35:50  INFO]--- 27 Action Start: wait
+[03/12/2012 16:35:50  INFO]Sleeping for: 1 seconds
+[03/12/2012 16:35:51  INFO]--- 28 Action Start: click
+[03/12/2012 16:35:51  INFO]Clicked on: /html/body/div/div[2]/div/div[2]/table/tbody/tr link, by given xpath method
+[03/12/2012 16:35:51  INFO]--- 29 Action Start: wait
+[03/12/2012 16:35:51  INFO]Sleeping for: 2 seconds
+[03/12/2012 16:35:53  INFO]--- 30 Action Start: click
+[03/12/2012 16:35:53  INFO]Clicked on: /html/body/div/div[2]/div[3]/div/div/span[3]/a link, by given xpath method
+[03/12/2012 16:35:53  INFO]--- 31 Action Start: wait
+[03/12/2012 16:35:53  INFO]Sleeping for: 1 seconds
+[03/12/2012 16:35:54  INFO]--- 32 Action Start: click
+[03/12/2012 16:35:57  INFO]Clicked on button: /html/body/div[3]/div[3]/div/span/button, by given xpath method
+[03/12/2012 16:35:57  INFO]--- 33 Action Start: wait
+[03/12/2012 16:35:57  INFO]Sleeping for: 1 seconds
+[03/12/2012 16:35:58  INFO]--- 34 Action Start: verify
+[03/12/2012 16:35:58  INFO]Found text: Reports
+[03/12/2012 16:35:58  INFO]Regex passed
+[03/12/2012 16:35:58  INFO]=====Workflow add_delete_report end=====
+[03/12/2012 16:35:58  INFO]Result: Pass
+[03/12/2012 16:35:58  INFO]Time: 0 hours, 1 minutes, 19 seconds.

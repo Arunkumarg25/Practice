@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testcase testfamily="end2end_tba" testgroup="agent" testcase="05_tba_activation_en" parallel="false" workflowpause="0" location="1-qa.t5a.l1.cisco.com" customerid='e2e.1-qa.t5a.l1.cisco.com'>
+  <!-- 1. Login to tb1 as rantao55@yahoo.com (agent)
+	 2. Clicks one customer
+	 3. Click activate now button
+	 4. Switch to another window/tab
+	 5. Select the TBA by using its mac address
+	 6. Click the Activate button to proceed to onplus network agent
+	 7. Click Activate Button
+	 8. Click the ok on the prompt window
+	 9. Verify the activation is finished
+	 
+	 This TC needs a static mac address/IP for TBA.
+	 -->
+  <workflow driver="selenium" wfid="tba_activation" stoptype="abort" profile="webdriver" browser="firefox" rid="tba">
+    <!--log in as agent, canned login test cases verifies that user end up on overview page-->
+    <action acid="0" stoptype="abort">
+      <actionname>login</actionname>
+      <actionparam paramtype="url" paramvalue="https://1-qa.t5a.l1.cisco.com"/>
+      <actionparam paramtype="username" paramvalue="auto_var1"/>
+      <actionparam paramtype="password" paramvalue="Test1234"/>
+    </action>
+	<action acid="1" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="2" />  
+  </action>
+    <!--clicks on the customer-->
+    <action acid="2" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="row"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div/div[2]/table/tbody/tr"/>
+	  <actionparam paramtype="value" paramvalue="auto_var1_customer1" />
+    </action>
+	<action acid="3" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="3" />  
+  </action>
+    <!--clicks on Activate Now button-->
+    <action acid="4" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/div/div[2]/div[2]/div/form/div[3]/div[2]/div/span/button"/>
+    </action>
+	<action acid="5" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="3" />  
+  </action>
+    <!--Switch to another window/tab -->
+    <action acid="6" stoptype="abort">
+      <actionname>managewindow</actionname>
+      <actionparam paramtype="type" paramvalue="switch"/>
+      <actionparam paramtype="title" paramvalue="Activate OnPlus Network Agent"/>
+    </action>
+	<action acid="7" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="10" />  
+  </action>
+   <!--Select the tba's mac address-->
+	<action acid="8" stoptype="abort">
+      <actionname>input</actionname>
+      <actionparam paramtype="type" paramvalue="select"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='macselect']"/>
+      <actionparam paramtype="value" paramvalue="64:00:f1:20:e7:b8"/>
+    </action>
+	<action acid="9" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="5" />  
+  </action>
+    <!--clicks the activate button to proceed to onplus network agent-->
+    <action acid="10" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="//*[@id='mactivate']"/>
+    </action>
+	<action acid="11" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="5" />  
+  </action>	
+    <!--clicks the button -->
+    <action acid="12" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/form/table/tbody/tr/td[3]/input"/>
+    </action>
+	<action acid="13" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="3" />  
+  </action>
+	
+	<!--clicks the button -->
+    <action acid="14" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/form/table/tbody/tr[4]/td/input"/>
+    </action>
+	<action acid="15" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="3" />  
+  </action>
+	<!--Click OK-->
+	<action acid="16" stoptype="abort">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="ok"/>
+    </action>
+	
+	<action acid="17" stoptype="continue" timeout="30" loop='1' break='y' iterations='5' sleep='5'>
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="minutes" /> 
+  <actionparam paramtype="value" paramvalue="5" />  
+  </action>	
+    <!--verify the finish message shows up-->
+    <action acid="18" stoptype="continue" loop='1'>
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="xpath" paramvalue="/html/body/form/table/tbody/tr[2]/td/table/tbody/tr[2]/td/span"/>
+      <actionparam paramtype="value" paramvalue=" 				This system has been installed and activated 			"/>
+    </action>
+	
+    <action acid="10" stoptype="abort">
+      <actionname>submitTCResult</actionname>
+      <actionparam paramtype="Boolean" paramvalue="Boolean"/>
+    </action>
+  </workflow>
+</testcase>
+

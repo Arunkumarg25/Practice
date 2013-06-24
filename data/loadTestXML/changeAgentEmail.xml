@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow driver="selenium" wfID="changeAgentEmail" stoptype="abort" profile="webdriver">
+ <action acID="1" stoptype="abort" timeout="">
+  <actionName>login</actionName>
+  <actionParam paramType="url" paramValue="https://www.tb1.rcdnlab1.com" />
+  <actionParam paramType="username" paramValue="var5000" />
+  <actionParam paramType="password" paramValue="Test1234" />
+  <actionParam paramType="type" paramValue="Agent" />
+ </action>
+  <action acID="2" stoptype="abort" timeout="">
+ 	<actionName>goTo</actionName>
+ 	<actionParam paramType="type" paramValue="page" />
+ 	<actionParam paramType="value" paramValue="Account" />
+ </action>
+ <action acID="3" stoptype="abort" timeout="">
+ 	<actionName>editAccount</actionName>
+ 	<actionParam paramType="firstName*" paramValue="===" />
+ 	<actionParam paramType="lastName*" paramValue="===" />
+ 	<actionParam paramType="company*" paramValue="===" />
+ 	<actionParam paramType="jobRole" paramValue="===" />
+ 	<actionParam paramType="jobLevel" paramValue="===" />
+ 	<actionParam paramType="timezone" paramValue="===" />
+ 	<actionParam paramType="timezoneCity" paramValue="===" />
+ 	<actionParam paramType="address1*" paramValue="===" />
+ 	<actionParam paramType="address2" paramValue="===" />
+ 	<actionParam paramType="city*" paramValue="===" />
+ 	<actionParam paramType="state" paramvalue="===" />
+ 	<actionParam paramType="zip*" paramValue="===" />
+ 	<actionParam paramType="phone*" paramValue="===" />
+ 	<actionParam paramType="email*" paramValue="var5000@mail.aws.rcdnlab1.com" />
+ 	<actionParam paramType="altEmail" paramValue="===" />
+ 	<actionParam paramType="smsEmail" paramValue="===" />
+ 	<actionParam paramType="altSMSEmail" paramValue="===" />
+ 	<actionParam paramType="lightTheme" paramValue="no" />
+  </action>
+ <action acID="4" stoptype="abort" timeout="">
+  <actionName>submitTCResult</actionName>
+  <actionParam paramType="Boolean" paramValue="Boolean" />
+ </action>
+</workflow>
+

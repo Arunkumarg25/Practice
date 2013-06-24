@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow driver="selenium" wfID="addRules" stoptype="abort">
+	<action acID="1" stoptype="abort" timeout="">
+		<actionName>login</actionName>
+		<actionParam paramType="url" paramValue="https://www.t4.l1.cisco.com" />
+		<actionParam paramType="username" paramValue="var1" />
+		<actionParam paramType="password" paramValue="Test1234" />
+		<actionParam paramType="type" paramValue="Agent" />
+	</action>
+	<action acID="2" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer1" />
+		<actionParam paramType="firstName*" paramValue="a" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c1@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="3" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer2" />
+		<actionParam paramType="firstName*" paramValue="b" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c2@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="4" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer3" />
+		<actionParam paramType="firstName*" paramValue="c" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c3@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="5" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer4" />
+		<actionParam paramType="firstName*" paramValue="d" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c4@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="6" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer5" />
+		<actionParam paramType="firstName*" paramValue="e" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c5@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="7" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer6" />
+		<actionParam paramType="firstName*" paramValue="f" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c6@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="8" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer7" />
+		<actionParam paramType="firstName*" paramValue="g" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c7@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="9" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer8" />
+		<actionParam paramType="firstName*" paramValue="h" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c8@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="10" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer9" />
+		<actionParam paramType="firstName*" paramValue="i" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c9@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="11" stoptype="abort" timeout="">
+		<actionName>addRule</actionName>
+		<actionParam paramType="customer*" paramValue="var1-customer10" />
+		<actionParam paramType="firstName*" paramValue="j" />
+		<actionParam paramType="lastName*" paramValue="a" />
+		<actionParam paramType="emailAddress*" paramValue="c10@rcdn4test-301.cisco.com" />
+		<actionParam paramType="severity*" paramValue="Notice" />
+	</action>
+	<action acID="12" stoptype="abort" timeout="">
+		<actionName>submitTCResult</actionName>
+		<actionParam paramType="Boolean" paramValue="Boolean" />
+	</action>
+</workflow>
+ 

@@ -1,0 +1,34 @@
+testcase(testfamily=gui, testgroup=agent, testcase=end2end_delete_agent, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. login as admin, then go to agents tab
+# 2. Click on agent
+# 3. Click on delete
+# 4. verify that the agent does not exists anymore
+workflow(driver=selenium, wfid=delete_agent, stoptype=abort, profile=webdriver, browser=firefox)
+#login as the admin
+login(url=https://www.t5a.l1.cisco.com, username=1-qa.t5a.l1.cisco.com, password=123test)
+#go to the Agents page
+click(type=menu, value=Agents)
+#verify that the h2 of the page is Agents
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span, value=Agents, loop=1, iterations=10, break=y, sleep=1, stoptype=continue)
+#verify that the agent row is there
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=auto_var1, loop=2, iterations=10, break=y, sleep=1, stoptye=continue)
+#click on the agent row
+click(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, value=auto_var1)
+#wait 1 second for the animation to complete
+wait(type=seconds, value=1)
+#click on the delete button
+click(type=button, xpath=/html/body/div/div[2]/div[3]/div/span[4]/a)
+#click on the OK button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#verify that the agent row is gone
+verify(type=row, xpath=/html/body/div/div[2]/div/div[2]/table/tbody/tr, novalue=auto_var1, loop=3, iterations=10, break=y, sleep=1, stoptype=continue)
+#click on the logout link
+click(type=link, xpath=/html/body/div/div/ul/li[4]/a)
+#verify that the h2 of the page is login
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2, value=Log In)
+#try to login as the agent
+input(type=text field, xpath=//*[@id='accountid'], value=auto_var1)
+input(type=text field, xpath=//*[@id='password'], value=Test1234)
+click(type=button, xpath=//*[@id='loginbutton'])
+#verify that we get the Invalud username/password message
+verify(type=text, xpath =/html/body/div/div[2]/div/form/table/tbody/tr/td/div,  value=Invalid username and/or password Please try again, loop=4, break=y, iterations=10, sleep=1, stoptype=continue)

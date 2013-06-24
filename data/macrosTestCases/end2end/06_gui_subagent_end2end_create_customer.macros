@@ -1,0 +1,102 @@
+testcase(testfamily=gui, testgroup=subagent, testcase=end2end_create_customer, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. Login to t5a as auto_var1_subagent1 (subagent)
+# 2. clicks on + Add Customer to start adding a customer
+# 3. leave required fields blank
+# 4. clicks Next two times to get the page with Missing message
+# 5. verifies the message Missing shows up
+# 6. Click back to start adding real information
+# 7. input an invalid email address
+# 8. verifies the message Invalid format shows up
+# 9. go back to uncheck add contact checkbox
+#10. add the customer
+#11. go to profile page
+#12. verifies the customer's information is correct
+#13. change the device password to 123123, and verifiy
+#14. go to address page
+#15. verifies the information in address page is correct
+workflow(driver=selenium, wfid=subagent_create_customer, stoptype=abort, profile=webdriver)
+
+#log in as agent, canned login test cases verifies that user end up on overview page
+login(url=https://www.t5a.l1.cisco.com, username=auto_var1_subagent1, password=Test1234)
+
+#clicks on + Add Customer button
+click(type=button, xpath=//*[@id='add_customer'])
+#enters auto_var1_subagent1_customer1 in Customer Name field
+input(type=text field, xpath=//*[@id='ca_business_name'], value=auto_var1_subagent1_customer1)
+#clicks on next button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span[2]/button)
+#clicks on next button again
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span[2]/button)
+#verify that Missing error message is displayed
+verify(type=text, xpath=/html/body/div[2]/div[3]/div/span[4]/span, value=Missing, stoptype=continue)
+#clicks the back button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#clicks the back button again
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#selects Professional services for Industry
+input(type=select, xpath=/html/body/div[2]/div[2]/form/div/div/div[3]/div/select, value=Professional services)
+#enters 123 street st. for the Street Address field
+input(type=text field, xpath=/html/body/div[2]/div[2]/form/div/div/div[3]/div/input[2], value=123 street st.)
+#enters Random Town for the city field
+input(type=text field, xpath=/html/body/div[2]/div[2]/form/div/div/div[3]/div[2]/input, value=Random Town)
+#enters CA for the state/province field
+input(type=text field, xpath=/html/body/div[2]/div[2]/form/div/div/div[3]/div[2]/input[2], value=CA)
+#enters 12345 for Zip/Postal Code field
+input(type=text field, xpath=/html/body/div[2]/div[2]/form/div/div/div[3]/div[2]/input[3], value=12345)
+#selects Togo as the Country
+input(type=select, xpath=/html/body/div[2]/div[2]/form/div/div/div[3]/div[2]/select, value=Togo)
+#clicks on next button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span[2]/button)
+#enters Var1 in the First Name field
+input(type=text field, xpath=/html/body/div[2]/div[2]/form/div/div/div[4]/div/div/input, value=Var1)
+#enters Customer1 in the Last Name field
+input(type=text field, xpath=/html/body/div[2]/div[2]/form/div/div/div[4]/div/div/input[2], value=Customer1)
+#enters auto_var1_customer1 in the Email Address field (invalid email)
+input(type=text field, xpath=/html/body/div[2]/div[2]/form/div/div/div[4]/div/div/input[3], value=auto_var1_subagent1_customer1)
+#clicks on next button again
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span[2]/button)
+#verify the Invalid format error message shows up
+verify(type=text, xpath=/html/body/div[2]/div[3]/div/span[4]/span, value=Invalid format, stoptype=continue)
+#clicks the back button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span/button)
+#uncheck the Add a Contact check box
+click(type=checkbox, xpath=//*[@id='optional_contact_check'], value=uncheck)
+#clicks on next button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span[2]/button)
+#clicks the Save button
+click(type=button, xpath=/html/body/div[2]/div[3]/div/span[3]/button)
+
+#verify the that it goes to the status page in 30 seconds
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span, value=Status, loop=1, break=y, iterations=30, sleep=1, stoptype=continue)
+#hovers over Profile menu
+hover(type=menu, value=Profile)
+#clicks on submenu Profile
+click(type=submenu, value=Profile)
+#verify that the h2 says Profile
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span, value=Profile)
+#verify the Customer name is indeed what we wanted to add
+verify(type=text field, xpath=/html/body/div/div[2]/div[2]/div/form/div/div[2]/input, value=auto_var1_subagent1_customer1, stoptype=continue)
+#verify the Industry is indeed what we selected when adding this customer
+verify(type=select, xpath=/html/body/div/div[2]/div[2]/div/form/div/div[2]/select, value=Professional services, stoptype=continue)
+#enter 123123 in the Device password field
+input(type=text field, xpath=/html/body/div/div[2]/div[2]/div/form/div/div[2]/input[3], value=123123)
+#clicks the save button
+click(type=button, xpath=/html/body/div/div[2]/div[2]/div/form/div/div[5]/span/button)
+#verify that we are back at the profile page after save
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span, value=Profile)
+#verify that the device password indeed change to 123123
+verify(type=text field, xpath=/html/body/div/div[2]/div[2]/div/form/div/div[2]/input[3], value=123123, stoptype=continue)
+hover(type=menu, value=Profile)
+click(type=submenu, value=Address)
+#verify that the h2 of this page says Address (most likely on address page)
+verify(type=text, xpath=/html/body/div/div[2]/div/div/h2/span, value=Address)
+#verify street address field
+verify(type=text field, xpath=/html/body/div/div[2]/div[2]/div/form/div[2]/input, value=123 street st., stoptype=continue)
+#verify city field
+verify(type=text field, xpath=/html/body/div/div[2]/div[2]/div/form/div[2]/input[2], value=Random Town, stoptype=continue)
+#verify State/Province field
+verify(type=text field, xpath=/html/body/div/div[2]/div[2]/div/form/div[2]/input[3], value=CA, stoptype=continue)
+#verify Zip/Postal Code field
+verify(type=text field, xpath=/html/body/div/div[2]/div[2]/div/form/div[2]/input[4], value=12345, stoptype=continue)
+#verify the Country select
+verify(type=select, xpath=/html/body/div/div[2]/div[2]/div/form/div[2]/select, value=Togo, stoptype=continue)

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testcase testfamily="end2end_device" testgroup="backup" testcase="09_backup_en" parallel="false" location="1-qa.t5a.l1.cisco.com" workflowpause="0" customerid="e2e.1-qa.t5a.l1.cisco.com">
+<meta>{ "mac" : "58:8D:09:8B:21:99", "customer" : "auto_var1_customer1", "pidvid": "test",  "driver": "test"} </meta>
+  <workflow driver="imacros" stoptype="abort" wfid="DT1_BACKUP_CHKPrecondition_588D098B2199">
+<!--Login and Go To Topology -->
+    <action acid="1" stoptype="abort" timeout="10">
+      <actionname>navigate</actionname>
+      <actionparam paramtype="url" paramvalue="https://1-qa.t5a.l1.cisco.com"/>
+    </action>
+    <action acid="2" stoptype="abort" timeout="10">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice"/>
+    </action>
+    <action acid="3" stoptype="abort" timeout="10">
+      <actionname>input</actionname>
+      <actionparam paramtype="image" paramvalue="LoginDevice_Username"/>
+      <actionparam paramtype="text" paramvalue="auto_var1"/>
+    </action>
+    <action acid="4" stoptype="abort" timeout="10">
+      <actionname>input</actionname>
+      <actionparam paramtype="image" paramvalue="LoginDevice_Password"/>
+      <actionparam paramtype="text" paramvalue="Test1234"/>
+    </action>
+    <action acid="5" stoptype="abort" timeout="10">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_LogIn"/>
+    </action>
+    <action acid="6" stoptype="abort" timeout="10">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="Login_Overview"/>
+    </action>
+    <action acid="7" stoptype="abort" timeout="5">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="value" paramvalue="auto_var1_customer1"/>
+    </action>
+<!--Site Up Check -->
+    <action acid="8" stoptype="abort" timeout="10">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Topology_Status"/>
+    </action>
+    <action acid="9" stoptype="abort" timeout="10">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Topology_Status_ActivatedOnLine"/>
+    </action>
+<!--Device up Check -->
+    <action acid="10" stoptype="abort" timeout="10">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Topology_Dashboard"/>
+    </action>
+	<action acid="55" stoptype="abort" timeout="20">
+        <actionname>wait</actionname>
+        <actionparam paramtype="value" paramvalue="10"/>
+    </action>
+    <action acid="11" stoptype="abort" timeout="10">
+      <actionname>multiclick</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value1" paramvalue="LoginDevice_Topology_FilterCriteria"/>
+      <actionparam paramtype="value2" paramvalue="LoginDevice_Topology_FilterCriteria_Clearallsearchcriteria"/>
+      <actionparam paramtype="value3" paramvalue="LoginDevice_Topology_FilterCriteria_MACAddressContaining_checkbox"/>
+    </action>
+    <action acid="12" stoptype="abort" timeout="10">
+      <actionname>clickinput</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Topology_FilterCriteria"/>
+      <actionparam paramtype="image" paramvalue="LoginDevice_Topology_FilterCriteria_MACAddressContaining"/>
+      <actionparam paramtype="text" paramvalue="58:8D:09:8B:21:99"/>
+    </action>
+    <action acid="13" stoptype="abort" timeout="10">
+      <actionname>multiclick</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value1" paramvalue="LoginDevice_Topology_FilterCriteria"/>
+      <actionparam paramtype="value2" paramvalue="LoginDevice_Topology_FilterCriteria_MACAddressContaining_ApplySearch"/>
+    </action>
+    <action acid="14" stoptype="abort" timeout="10">
+      <actionname>multildownlup</actionname>
+      <actionparam paramtype="type" paramvalue="ACTION"/>
+      <actionparam paramtype="X1" paramvalue="200"/>
+      <actionparam paramtype="Y1" paramvalue="300"/>
+      <actionparam paramtype="X2" paramvalue="80"/>
+      <actionparam paramtype="Y2" paramvalue="300"/>
+    </action>
+    <action acid="15" stoptype="abort" timeout="10">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Topology_DeviceListing"/>
+    </action>
+    <action acid="16" stoptype="abort" timeout="10">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_DeviceListing_StateOK"/>
+    </action>
+<!-- Driver Selected Check -->
+    <action acid="17" stoptype="abort" timeout="10" loop="1" iterations ="3" sleep="2" break="Y">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Statusok"/>
+    </action>
+    <action acid="18" stoptype="abort" timeout="10" loop="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Popup"/>
+    </action>
+    <action acid="19" stoptype="abort" timeout="10">
+      <actionname>goto</actionname>
+      <actionparam paramtype="type" paramvalue="tab"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Credentials"/>
+    </action>
+    <action acid="20" stoptype="abort" timeout="5">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Credentials_DeviceDriver"/>
+    </action>
+    <action acid="20" stoptype="abort" timeout="5">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Credentials_DeviceDriver_DiscoveredDriver"/>
+    </action>
+<!-- login creds valid -->
+    <action acid="21" stoptype="abort" timeout="5">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Credentials_LoginAccess"/>
+    </action>
+    <action acid="22" stoptype="abort" timeout="10">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Credentials_LoginAccess_AllowYes"/>
+    </action>
+    <action acid="23" stoptype="abort" timeout="10">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Credentials_LoginAccess_CredentialsWorkedLastAttempt"/>
+    </action>
+    </workflow>
+
+    <workflow driver="imacros" stoptype="abort" wfid="DT2_BACKUP_IMACRO_588D098B2199">
+    <action acid="1" stoptype="abort" timeout="10">
+      <actionname>navigate</actionname>
+      <actionparam paramtype="url" paramvalue="https://1-qa.t5a.l1.cisco.com"/>
+    </action>
+    <action acid="2" stoptype="abort" timeout="10">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice"/>
+    </action>
+    <action acid="3" stoptype="abort" timeout="10">
+      <actionname>input</actionname>
+      <actionparam paramtype="image" paramvalue="LoginDevice_Username"/>
+      <actionparam paramtype="text" paramvalue="auto_var1"/>
+    </action>
+    <action acid="4" stoptype="abort" timeout="10">
+      <actionname>input</actionname>
+      <actionparam paramtype="image" paramvalue="LoginDevice_Password"/>
+      <actionparam paramtype="text" paramvalue="Test1234"/>
+    </action>
+    <action acid="5" stoptype="abort" timeout="10">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_LogIn"/>
+    </action>
+    <action acid="6" stoptype="abort" timeout="10">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="Login_Overview"/>
+    </action>
+    <action acid="7" stoptype="abort" timeout="5">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="text"/>
+      <actionparam paramtype="value" paramvalue="auto_var1_customer1"/>
+    </action>
+    <action acid="8" stoptype="abort" timeout="10">
+      <actionname>multiclick</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value1" paramvalue="LoginDevice_Topology_FilterCriteria"/>
+      <actionparam paramtype="value2" paramvalue="LoginDevice_Topology_FilterCriteria_Clearallsearchcriteria"/>
+      <actionparam paramtype="value3" paramvalue="LoginDevice_Topology_FilterCriteria_MACAddressContaining_checkbox"/>
+    </action>
+    <action acid="9" stoptype="abort" timeout="10">
+      <actionname>clickinput</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Topology_FilterCriteria"/>
+      <actionparam paramtype="image" paramvalue="LoginDevice_Topology_FilterCriteria_MACAddressContaining"/>
+      <actionparam paramtype="text" paramvalue="58:8D:09:8B:21:99"/>
+    </action>
+    <action acid="10" stoptype="abort" timeout="10">
+      <actionname>multiclick</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value1" paramvalue="LoginDevice_Topology_FilterCriteria"/>
+      <actionparam paramtype="value2" paramvalue="LoginDevice_Topology_FilterCriteria_MACAddressContaining_ApplySearch"/>
+    </action>
+    <action acid="11" stoptype="abort" timeout="10">
+      <actionname>multildownlup</actionname>
+      <actionparam paramtype="type" paramvalue="ACTION"/>
+      <actionparam paramtype="X1" paramvalue="200"/>
+      <actionparam paramtype="Y1" paramvalue="300"/>
+      <actionparam paramtype="X2" paramvalue="80"/>
+      <actionparam paramtype="Y2" paramvalue="300"/>
+    </action>
+    <action acid="12" stoptype="abort" timeout="10">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Topology_DeviceListing"/>
+    </action>
+    <action acid="13" stoptype="abort" timeout="10" loop="1" iterations ="3" sleep="2" break="Y">
+      <actionname>click</actionname>
+      <actionparam paramtype="type" paramvalue="button"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Statusok"/>
+    </action>
+    <action acid="14" stoptype="abort" timeout="10" loop="1">
+      <actionname>verify</actionname>
+      <actionparam paramtype="type" paramvalue="visual"/>
+      <actionparam paramtype="value" paramvalue="LoginDevice_Popup"/>
+    </action>
+        <action acid="15" stoptype="abort" timeout="10">
+            <actionname>goTo</actionname>
+            <actionparam paramtype="type" paramvalue="tab"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Backups"/>
+        </action>
+        <action acid="16" stoptype="abort" timeout="10">
+            <actionname>verify</actionname>
+            <actionparam paramtype="type" paramvalue="visual"/>
+            <actionparam paramtype="value" paramvalue="GoToTab_Backups"/>
+        </action>
+        <action acid="17" stoptype="abort" timeout="5">
+            <actionname>wait</actionname>
+            <actionparam paramtype="value" paramvalue="2"/>
+        </action>
+        <action acid="18" stoptype="continue" timeout="2" loop="2" iterations ="6" sleep="2" break="Y">
+            <actionname>ds</actionname>
+            <actionparam paramtype="type" paramvalue="MOVETO"/>
+            <actionparam paramtype="X" paramvalue="689"/>
+            <actionparam paramtype="Y" paramvalue="367"/>
+        </action>
+        <action acid="19" stoptype="continue" timeout="2" loop="2">
+            <actionname>ds</actionname>
+            <actionparam paramtype="type" paramvalue="MOVETO"/>
+            <actionparam paramtype="X" paramvalue="689"/>
+            <actionparam paramtype="Y" paramvalue="367"/>
+        </action>
+        <action acid="20" stoptype="continue" timeout="2" loop="2">
+            <actionname>ds</actionname>
+            <actionparam paramtype="type" paramvalue="LDOWN"/>
+            <actionparam paramtype="X" paramvalue="685"/>
+            <actionparam paramtype="Y" paramvalue="368"/>
+        </action>
+        <action acid="21" stoptype="continue" timeout="2" loop="2">
+            <actionname>ds</actionname>
+            <actionparam paramtype="type" paramvalue="LUP"/>
+            <actionparam paramtype="X" paramvalue="685"/>
+            <actionparam paramtype="Y" paramvalue="368"/>
+        </action>
+        <action acid="22" stoptype="continue" timeout="2" loop="2">
+            <actionname>click</actionname>
+            <actionparam paramtype="type" paramvalue="button"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Backups_Delete"/>
+        </action>
+        <action acid="23" stoptype="continue" timeout="2" loop="2">
+            <actionname>click</actionname>
+            <actionparam paramtype="type" paramvalue="button"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Backups_DeleteConfirm"/>
+        </action>
+        <action acid="24" stoptype="abort" timeout="2" loop="2">
+            <actionname>click</actionname>
+            <actionparam paramtype="type" paramvalue="button"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Popup_Close"/>
+        </action>
+        <action acid="25" stoptype="abort" timeout="10" loop="2">
+            <actionname>click</actionname>
+            <actionparam paramtype="type" paramvalue="button"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Statusok"/>
+        </action>
+        <action acid="26" stoptype="abort" timeout="2" loop="2">
+            <actionname>click</actionname>
+            <actionparam paramtype="type" paramvalue="button"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Backups"/>
+        </action>
+        <action acid="27" stoptype="abort" timeout="5" loop="2">
+            <actionname>verify</actionname>
+            <actionparam paramtype="type" paramvalue="visual"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Backups_NoBackupFile"/>
+        </action>
+        <action acid="28" stoptype="abort" timeout="10">
+            <actionname>click</actionname>
+            <actionparam paramtype="type" paramvalue="button"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Backups_BackupNow"/>
+        </action>
+        <action acid="29" stoptype="abort" timeout="5">
+            <actionname>writeTimeStampToDB</actionname>
+            <actionparam paramtype="savevar" paramvalue="time_stamp"/>
+            <actionparam paramtype="format" paramvalue="%Y-%m-%d %H:%M"/>
+        </action>
+        <action acid="30" stoptype="abort" timeout="10">
+            <actionname>wait</actionname>
+            <actionparam paramtype="value" paramvalue="5"/>
+        </action>
+        <action acid="31" stoptype="abort" timeout="5" loop="2" iterations ="15" sleep="10" break="Y">
+            <actionname>verify</actionname>
+            <actionparam paramtype="type" paramvalue="visual"/>
+            <actionparam paramtype="value" paramvalue="LoginDevice_Backups_HasBackupFile"/>
+        </action>
+    </workflow>
+
+    <workflow driver="xmlapi" stoptype="abort" wfid="DT3_BACKUP_XML_588D098B2199" >
+        <action acid="1" stoptype="abort" timeout="30" >
+            <actionname>GET</actionname>
+            <actionparam paramtype="login_username" paramvalue="auto_var1"/>
+            <actionparam paramtype="login_password" paramvalue="Test1234"/>
+            <actionparam paramtype="login_location" paramvalue="1-qa.t5a.l1.cisco.com"/>
+            <actionparam paramtype="op" paramvalue="run"/>
+            <actionparam paramtype="cn" paramvalue="customer"/>
+            <actionparam paramtype="appid" paramvalue="3101A069-659A-BBBB-3414-036E739F4DCD"/>
+            <actionparam paramtype="apicmd" paramvalue="GET"/>
+        </action>
+        <action acid="2" stoptype="abort" timeout="30" >
+            <actionname>verify</actionname>
+            <actionparam paramtype="type" paramvalue="xml"/>
+            <actionparam paramtype="element" paramvalue="customer/ac_name"/>
+            <actionparam paramtype="value" paramvalue="auto_var1_customer1"/>
+        </action>
+        <action acid="3" stoptype="abort" timeout="5">
+            <actionname>verify</actionname>
+            <actionparam paramtype="type" paramvalue="xml"/>
+            <actionparam paramtype="attribute" paramvalue="@ac_c"/>
+            <actionparam paramtype="savevar" paramvalue="ac_c"/>
+        </action>
+        <action acid="4" stoptype="abort" timeout="30" loop="1" iterations ="3" sleep="30" break="Y">
+            <actionname>GET</actionname>
+            <actionparam paramtype="login_username" paramvalue="auto_var1"/>
+            <actionparam paramtype="login_password" paramvalue="Test1234"/>
+            <actionparam paramtype="login_location" paramvalue="1-qa.t5a.l1.cisco.com"/>
+            <actionparam paramtype="op" paramvalue="run"/>
+            <actionparam paramtype="cn" paramvalue="events"/>
+            <actionparam paramtype="appid" paramvalue="3101A069-659A-BBBB-3414-036E739F4DCD"/>
+            <actionparam paramtype="ac_c" paramvalue="{ac_c}"/>
+            <actionparam paramtype="ac_vid" paramvalue="58:8D:09:8B:21:99"/>
+            <actionparam paramtype="apicmd" paramvalue="GET"/>
+        </action>
+        <action acid="5" stoptype="abort" timeout="30" loop="1">
+            <actionname>verify</actionname>
+            <actionparam paramtype="type" paramvalue="xml"/>
+            <actionparam paramtype="element" paramvalue="result/status"/>
+            <actionparam paramtype="value" paramvalue="0"/>
+        </action>
+        <action acid="6" stoptype="abort" timeout="30" loop="1">
+            <actionname>verify</actionname>
+            <actionparam paramtype="type" paramvalue="xml"/>
+            <actionparam paramtype="element" paramvalue="data/events/event/ac_event_message"/>
+            <actionparam paramtype="value" paramvalue="(Configuration backup completed|Backup complete)"/>
+        </action>
+        <action acid="7" stoptype="abort" timeout="30" loop="1">
+            <actionname>verify</actionname>
+            <actionparam paramtype="type" paramvalue="xml"/>
+            <actionparam paramtype="minute_setting" paramvalue="3"/>
+            <actionparam paramtype="element" paramvalue="data/events/event/ac_creation"/>
+            <actionparam paramtype="loadvar" paramvalue="time_stamp"/>
+        </action>
+    </workflow>
+</testcase>

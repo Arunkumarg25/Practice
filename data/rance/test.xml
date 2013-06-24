@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><testcase customerid="79566.8785.t5a.l1.cisco.com" location="1-qa.t5a.l1.cisco.com" parallel="false" testcase="test" testfamily="test" testgroup="test" workflowpause="0">
+
+  <!-- 1. Login to t5a as auto_var1 (agent)
+         2. Go to the customer
+         3. Install the security app
+         4. Verify the installation is successed-->
+  <workflow browser="firefox" driver="selenium" profile="webdriver" stoptype="abort" wfid="test">
+    <action acid="1" stoptype="abort" timeout="20">
+  <actionname>navigate</actionname> 
+  <actionparam paramtype="url" paramvalue="https://preview.kaseya.net/access/accessRoot.asp"/> 
+  </action>
+  <action acid="2" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds"/> 
+  <actionparam paramtype="value" paramvalue="5"/> 
+  </action> 
+  <action acid="3" stoptype="abort" timeout="30">
+      <actionname>managewindow</actionname>
+      <actionparam paramtype="type" paramvalue="switchtoframe"/>
+      <actionparam paramtype="title" paramvalue="accessFrame"/>
+    </action>
+	
+ <!-- Log in input --> 
+ <action acid="4" stoptype="abort">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="text field"/> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/form/table/tbody/tr[5]/td[2]/input"/> 
+  <actionparam paramtype="value" paramvalue="padinh@cisco.com"/> 
+  </action>
+ <action acid="5" stoptype="abort" timeout="30">
+  <actionname>input</actionname> 
+  <actionparam paramtype="type" paramvalue="text field"/> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/form/table/tbody/tr[6]/td[2]/input"/> 
+  <actionparam paramtype="value" paramvalue="Test123123"/> 
+  </action>
+ <action acid="6" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button"/> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/form/table/tbody/tr[8]/td/input"/> 
+  </action>
+ <action acid="7" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds"/> 
+  <actionparam paramtype="value" paramvalue="20"/> 
+  </action> 
+  <action acid="8" stoptype="abort" timeout="30">
+  <actionname>doubleclick</actionname> 
+  <actionparam paramtype="type" paramvalue="link"/> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[6]"/> 
+  </action>
+  <action acid="9" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds"/> 
+  <actionparam paramtype="value" paramvalue="10"/> 
+  </action>
+ 
+  <!--  
+  <action acid="6" stoptype="abort" timeout="30">
+  <actionname>doubleclick</actionname> 
+  <actionparam paramtype="type" paramvalue="link" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[6]" /> 
+  </action>
+  <action acid="4" stoptype="abort" timeout="30">
+  <actionname>click</actionname> 
+  <actionparam paramtype="type" paramvalue="button" /> 
+  <actionparam paramtype="xpath" paramvalue="/html/body/div[3]/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/div/div/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[6]" /> 
+  </action>
+  <action acid="5" stoptype="abort" timeout="30">
+  <actionname>wait</actionname> 
+  <actionparam paramtype="type" paramvalue="seconds" /> 
+  <actionparam paramtype="value" paramvalue="10" /> 
+  </action>
+  -->
+  </workflow>
+
+</testcase>

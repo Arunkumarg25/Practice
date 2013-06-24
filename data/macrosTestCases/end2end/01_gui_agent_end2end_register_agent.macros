@@ -1,0 +1,50 @@
+testcase(testfamily=gui, testgroup=agent, testcase=end2end_register_agent, parallel=false, workflowpause=0, location=1-qa.t5a.l1.cisco.com)
+# 1. go to t5a register page
+# 2. verify register a cisco.com account link
+# 3. click submit with empty form
+# 4. verify all the required field missing error messages error message
+# 5. enter all the information
+# 6. verify that the registartion complete page shows up
+workflow(driver=selenium, wfid=register_agent, stoptype=abort, profile=webdriver, browser=firefox)
+navigate(url=https://1-qa.t5a.l1.cisco.com/register.html?location_override=1)
+verify(type=text, xpath=/html/body/div/div[2]/div/h2, value=Register, stoptype=continue, loop=1, iterations=30, sleep=1)
+click(type=link, xpath=/html/body/div/div[2]/div/form/div[2]/a)
+verify(type=page, value=https://tools.cisco.com/RPF/register/register.do, stoptype=continue, loop=2, iterations=10, sleep=1)
+#click on submit button
+click(type=button, xpath=/html/body/div/div[2]/div/form/div[14]/span/button)
+#wait for the register h2 to show up
+verify(type=text, xpath=/html/body/div/div[2]/div/h2, value=Register, stoptype=continue, loop=3, iterations=30, sleep=1)
+#verify error messsages
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Email Address, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Cisco.com User ID, stoptype=continue)
+#commented out password error message verification because authentication is turned off
+#verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Cisco.com Password, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: First Name, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Last Name, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Phone Number, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Company, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Address Line 1, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: City, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Zip/Postal Code, stoptype=continue)
+verify(type=text, xpath=/html/body/div/div[2]/div/div, value=Required field missing: Privacy Statement, stoptype=continue)
+navigate(url=https://1-qa.t5a.l1.cisco.com/register.html?location_override=1)
+input(type=text field, xpath=//*[@id='user_id'], value=auto_var1)
+input(type=text field, xpath=//*[@id='password'], value=Test1234)
+input(type=text field, xpath=//*[@id='firstname'], value=Auto)
+input(type=text field, xpath=//*[@id='lastname'], value=Var)
+input(type=text field, xpath=//*[@id='company'], value=Cisco)
+input(type=select, xpath=/html/body/div/div[2]/div/form/div[7]/div[3]/select, value=Journalism)
+input(type=select, xpath=/html/body/div/div[2]/div/form/div[7]/div[3]/select[2], value=Management with Staff)
+input(type=select, xpath=/html/body/div/div[2]/div/form/div[7]/div[3]/select[3], value=ETC)
+input(type=select, xpath=/html/body/div/div[2]/div/form/div[7]/div[3]/select[4], value=GMT+9)
+input(type=text field, xpath=//*[@id='streetaddress1'], value=2200 E. George Bush Hwy)
+input(type=text field, xpath=//*[@id='city'], value=Richardson)
+input(type=text field, xpath=//*[@id='state'], value=Texas)
+input(type=text field, xpath=//*[@id='postalcode'], value=75080)
+input(type=text field, xpath=//*[@id='phone_number'], value=1231231234)
+input(type=text field, xpath=//*[@id='email'], value=auto_var1@mail.aws.rcdnlab1.com)
+click(type=checkbox, xpath=//*[@id='privacy'], value=check)
+click(type=button, xpath=/html/body/div/div[2]/div/form/div[14]/span/button)
+verify(type=page, value=https://1-qa.t5a.l1.cisco.com/register_complete.html, stoptype=continue)
+verify(type=text, value=Registration Complete, stoptype=continue)
+wait(type=minutes, value=1)
